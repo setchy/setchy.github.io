@@ -281,7 +281,7 @@ DEPENDENCIES
   github-pages (~> 222)
   jekyll-feed (~> 0.12)
   minima (~> 2.5)
-  tzinfo (~> 1.2)
+  tzinfo (~> 2.0)
   tzinfo-data
   wdm (~> 0.1.1)
   webrick (~> 1.7)
