@@ -10,3 +10,10 @@ bundle install
 cd docs
 bundle exec jekyll serve
 ```
+
+or
+
+```
+cd docs
+jekyll serve --watch
+```
