@@ -17,3 +17,9 @@ or
 cd docs
 jekyll serve --watch
 ```
+
+## To update packages
+
+```
+bundle update
+```
