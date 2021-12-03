@@ -1,22 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-27T13:16:54-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Adam Setch (@setchy)</title><subtitle>Senior Executive //  Architect //  Developer //  GraphQL Enthusiast</subtitle><entry><title type="html">Favorite OSS Projects</title><link href="http://localhost:4000/oss/2021/11/26/favorite-oss-projects.html" rel="alternate" type="text/html" title="Favorite OSS Projects" /><published>2021-11-26T20:27:23-05:00</published><updated>2021-11-26T20:27:23-05:00</updated><id>http://localhost:4000/oss/2021/11/26/favorite-oss-projects</id><content type="html" xml:base="http://localhost:4000/oss/2021/11/26/favorite-oss-projects.html">&lt;p&gt;These are some of my favorite open-source software projects&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-03T08:25:25-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Adam Setch (@setchy)</title><subtitle>Senior Executive //  Architect //  Developer //  GraphQL Enthusiast</subtitle><entry><title type="html">Podcasts</title><link href="http://localhost:4000/oss/2021/12/01/podcasts.html" rel="alternate" type="text/html" title="Podcasts" /><published>2021-12-01T08:00:00-05:00</published><updated>2021-12-01T08:00:00-05:00</updated><id>http://localhost:4000/oss/2021/12/01/podcasts</id><content type="html" xml:base="http://localhost:4000/oss/2021/12/01/podcasts.html">&lt;p&gt;A collection of technology-centric podcasts&lt;/p&gt;
+
+&lt;h4 id=&quot;product-management&quot;&gt;Product Management&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS85MDM2MS5yc3M&quot;&gt;Product School: The Product Podcast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5wb2RjYXN0bWlycm9yLmNvbS90aGUtcHJvZHVjdC1leHBlcmllbmNl&quot;&gt;Mind the Product: The Product Experience&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy80ZjUwY2Q0Yy9wb2RjYXN0L3Jzcw&quot;&gt;Spotify: A Product Story&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;graphql&quot;&gt;GraphQL&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zNjE5NmViMC9wb2RjYXN0L3Jzcw&quot;&gt;GraphQL.FM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;apis&quot;&gt;APIs&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy50cmFuc2lzdG9yLmZtL2FwaS1pbnRlcnNlY3Rpb24&quot;&gt;Stoplight: API Intersection&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy50cmFuc2lzdG9yLmZtL2FwaXMteW91LXdvbnQtaGF0ZQ&quot;&gt;APIs You Won’t Hate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjg4ODY5ODI0NS9zb3VuZHMucnNz&quot;&gt;APIs over IPAs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cDovL2ZlZWRzLnNvdW5kY2xvdWQuY29tL3VzZXJzL3NvdW5kY2xvdWQ6dXNlcnM6MTMyOTAyNjAxL3NvdW5kcy5yc3M&quot;&gt;Mulesoft: APIs Unplugged&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;tech-leadership&quot;&gt;Tech Leadership&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9kMXl5aDVkaGRnaWZueC5jbG91ZGZyb250Lm5ldC9vdGhlci9wb2RjYXN0LnJzcw&quot;&gt;AWS: Conversations with Leaders&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;architecture&quot;&gt;Architecture&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGVyLmZtLzk3MzMvcnNzLnhtbA&quot;&gt;LeanIX: Unleash IT: A Podcast about Continuous Transformation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;engineering&quot;&gt;Engineering&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly90aG91Z2h0d29ya3MubGlic3luLmNvbS9yc3M&quot;&gt;Thoughtworks Technology Podcast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9wcmFnbWF0aXNtaW5wcmFjdGljZS5saWJzeW4uY29tL3Jzcw&quot;&gt;Thoughtworks: Pragmatisn in Practice&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xNjg3MDY5LnJzcw&quot;&gt;StaffEng&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5yZWRjaXJjbGUuY29tL2FjNWU3OWE0LTA0MDUtNDlhMy1hZjJjLTAyYzM3ZjBiMzg3OQ&quot;&gt;Code Story&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81YTg3YjBmNC9wb2RjYXN0L3Jzcw&quot;&gt;GitHub: The ReadME Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;identity&quot;&gt;Identity&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5jYXN0ZWQudXMvNDkvSWRlbnRpdHksLVVubG9ja2VkLi0tYmVkN2ZhZGEvZmVlZA&quot;&gt;Auth0: Identity, Unlocked&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;cloud&quot;&gt;Cloud&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy50cmFuc2lzdG9yLmZtL2F3cy1tb3JuaW5nLWJyaWVm&quot;&gt;Corey Quinn: AWS Morning Brief&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy50cmFuc2lzdG9yLmZtL3NjcmVhbWluZy1pbi10aGUtY2xvdWQ&quot;&gt;Corey Quinn: Screaming in the Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="oss" /><summary type="html">A collection of technology-centric podcasts</summary></entry><entry><title type="html">Favorite OSS Projects</title><link href="http://localhost:4000/oss/2021/11/26/favorite-oss-projects.html" rel="alternate" type="text/html" title="Favorite OSS Projects" /><published>2021-11-26T20:27:23-05:00</published><updated>2021-11-26T20:27:23-05:00</updated><id>http://localhost:4000/oss/2021/11/26/favorite-oss-projects</id><content type="html" xml:base="http://localhost:4000/oss/2021/11/26/favorite-oss-projects.html">&lt;p&gt;These are some of my favorite open-source software projects&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/thoughtworks/build-your-own-radar&quot;&gt;thoughtworks/bring-your-own-radar&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/renovatebot/renovate&quot;&gt;renovatebot/renovate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="oss" /><summary type="html">These are some of my favorite open-source software projects</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2021/04/27/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-04-27T21:27:23-04:00</published><updated>2021-04-27T21:27:23-04:00</updated><id>http://localhost:4000/jekyll/update/2021/04/27/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2021/04/27/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="oss" /><summary type="html">These are some of my favorite open-source software projects</summary></entry></feed>
