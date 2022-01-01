@@ -6,7 +6,7 @@ permalink: /about/
 
 ### 📖 About me
 
-- Senior Executive // Architect // Developer
+- Senior Executive (VP) // Architect // Developer
 
 ### 🔭 Interests
 
