@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Presentations"
+title: Presentations
+# subtitle: Talks/presentations
 date: 2022-04-05 09:00:00 -0400
-categories: presentations
+tags: [graphql, api, community, champion]
 published: true
 ---
 

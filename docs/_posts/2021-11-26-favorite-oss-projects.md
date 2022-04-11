@@ -1,8 +1,11 @@
 ---
 layout: post
-title: "Favorite OSS Projects"
+title: Favorite OSS Projects
+subtitle: A collection of my favorite open source software projects
 date: 2021-11-26 21:27:23 -0400
-categories: oss
+# gh-repo: setchy/setchy
+# gh-badge: [star, fork, follow]
+tags: [opensource]
 published: true
 ---
 
