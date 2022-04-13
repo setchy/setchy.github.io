@@ -17,5 +17,5 @@ permalink: /about/
 
 ### 📫 How to reach me
 
-- You can reach me at the email in my Github proifle.
+- You can reach me at the email in my Github profile.
 - [<img alt="linked-in" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/adamsetch) 
