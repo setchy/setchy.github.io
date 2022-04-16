@@ -16,6 +16,11 @@ author: Adam Setch
 
 navbar-links:
   About Me: "about"
+  Blogs: "blogs"
+  Podcasts: "podcasts"
+  eBooks: "ebooks"
+  
+
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
   #   - Learn markdown: "https://www.markdowntutorial.com/"
@@ -255,9 +260,3 @@ plugins:
   - jekyll-sitemap  
   - jekyll-feed
   - jekyll-seo-tag
-
-
-collections:
-  podcasts:
-    output: true
-    permalink: /:collection/:path/
