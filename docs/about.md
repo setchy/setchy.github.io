@@ -1,7 +1,9 @@
 ---
 layout: page
-title: About
+title: About me
+# subtitle: Senior Executive (VP) // Architect // Developer
 permalink: /about/
+
 ---
 
 ### 📖 About me
