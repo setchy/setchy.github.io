@@ -19,7 +19,9 @@ navbar-links:
   Blogs: "blogs"
   Podcasts: "podcasts"
   eBooks: "ebooks"
-  
+  OSS: "open-source"
+  Prez: "presentations"
+
 
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
