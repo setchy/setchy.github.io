@@ -6,7 +6,7 @@
 # --- Required options --- #
 
 # Name of website
-title: Home
+title: 🏠 Home
 
 # Your name to show in the footer
 author: Adam Setch
@@ -15,11 +15,12 @@ author: Adam Setch
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "about"
+  About: "about"
+  Radar: "radar"
   Blogs: "blogs"
   Podcasts: "podcasts"
   eBooks: "ebooks"
-  OSS: "open-source"
+  Open Source: "open-source"
   Prez: "presentations"
 
 
