@@ -255,7 +255,6 @@ exclude:
   - README.md
   - screenshot.png
   - renovate.json
-  - docs/
 
 # theme: beautiful-jekyll-theme
 
