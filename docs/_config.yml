@@ -85,7 +85,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "setchy.github.io"
+# url-pretty: "setchy.github.io"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -254,6 +254,7 @@ exclude:
   - LICENSE
   - README.md
   - screenshot.png
+  - renovate.json
   - docs/
 
 # theme: beautiful-jekyll-theme
