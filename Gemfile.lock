@@ -265,7 +265,7 @@ PLATFORMS
 DEPENDENCIES
   beautiful-jekyll-theme (= 5.0.0)
   github-pages (~> 228)
-  jekyll-feed (~> 0.12)
+  jekyll-feed (~> 0.15.1)
   tzinfo (~> 2.0, >= 2.0.5)
   tzinfo-data
   wdm (~> 0.1.1)
