@@ -9,12 +9,13 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
-    beautiful-jekyll-theme (5.0.0)
-      jekyll (~> 3.8)
+    beautiful-jekyll-theme (6.0.1)
+      jekyll (>= 3.9.3)
       jekyll-paginate (~> 1.1)
       jekyll-sitemap (~> 1.4)
-      kramdown (~> 2.3.0)
+      kramdown (~> 2.3.2)
       kramdown-parser-gfm (~> 1.1)
+      webrick (~> 1.8)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -31,7 +32,7 @@ GEM
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
     execjs (2.8.1)
-    faraday (2.7.5)
+    faraday (2.7.6)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -93,7 +94,7 @@ GEM
       activesupport (>= 2)
       nokogiri (>= 1.4)
     http_parser.rb (0.8.0)
-    i18n (1.13.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     jekyll (3.9.3)
       addressable (~> 2.4)
@@ -227,7 +228,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.7)
-    racc (1.6.2)
+    racc (1.7.0)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -263,7 +264,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  beautiful-jekyll-theme (= 5.0.0)
+  beautiful-jekyll-theme (= 6.0.1)
   github-pages (~> 228)
   jekyll-feed (~> 0.15.1)
   tzinfo (~> 2.0, >= 2.0.5)
