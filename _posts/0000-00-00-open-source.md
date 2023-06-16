@@ -2,7 +2,7 @@
 layout: post
 title: Open Source Projects
 # subtitle: A collection of my favorite open source software projects
-date: 2023-05-27 00:00:00 -0400
+date: 2023-06-16 00:00:00 -0400
 # gh-repo: setchy/setchy
 # gh-badge: [star, fork, follow]
 tags: [opensource]
@@ -14,14 +14,14 @@ A collection of my favorite open source software projects, which when time allow
 
 #### API Frameworks
 
-- [netflix/dgs-framework](https://github.com/Netflix/dgs-framework)
-- [setchy/dgs-extended-formatters](https://github.com/setchy/dgs-extended-formatters)
+- <span id="github-icon">[netflix/dgs-framework](https://github.com/Netflix/dgs-framework)
+- <span id="github-icon">[setchy/dgs-extended-formatters](https://github.com/setchy/dgs-extended-formatters)
 
 #### Technology Radars
 
-- [thoughtworks/bring-your-own-radar](https://github.com/thoughtworks/build-your-own-radar)
-- [setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes)
+- <span id="github-icon">[thoughtworks/bring-your-own-radar](https://github.com/thoughtworks/build-your-own-radar)
+- <span id="github-icon">[setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes)
 
 #### DevSecOps Tooling
 
-- [renovatebot/renovate](https://github.com/renovatebot/renovate)
+- <span id="github-icon">[renovatebot/renovate](https://github.com/renovatebot/renovate)
