@@ -37,9 +37,10 @@ permalink: /about/
   <a href="https://swagger.io/specification/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/openapi-1.svg" width="36" height="36" alt="Open API Spec" /></a>
   <a href="https://www.postman.com//" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/postman.svg" width="36" height="36" alt="Postman" /></a>
   <a href="https://www.atlassian.com/software/bitbucket" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/bitbucket-icon.svg" width="36" height="36" alt="Bitbucket" /></a>
-  <a href="https://www.atlassian.com/software/compass" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/compass.svg" width="36" height="36" alt="Compass" /></a>
+  <a href="https://www.atlassian.com/software/compass" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/atlassian-compass-1.svg" width="36" height="36" alt="Compass" /></a>
   <a href="https://www.atlassian.com/software/confluence" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/confluence-1.svg" width="36" height="36" alt="Confluence" /></a>
   <a href="https://www.atlassian.com/software/jira" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/jira-1.svg" width="36" height="36" alt="Jira" /></a>
+  <a href="https://launchdarkly.com/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/launchdarkly-2.svg" width="36" height="36" alt="LaunchDarkly" /></a>
   <a href="https://docker.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nx211/homer-icons/master/png/docker.png" width="36" height="36" alt="Docker" /></a>
   <a href="https://jfrog.com/artifactory/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nx211/homer-icons/master/png/artifactory.png" width="36" height="36" alt="Artifactory" /></a>
   <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/intellij-idea-1.svg" width="36" height="36" alt="IntelliJ" /></a>
