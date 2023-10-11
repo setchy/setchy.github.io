@@ -25,3 +25,4 @@ A collection of my favorite open source software projects, which when time allow
 #### DevSecOps Tooling
 
 - <span id="github-icon">[renovatebot/renovate](https://github.com/renovatebot/renovate)
+- <span id="github-icon">[CycloneDX/cdxgen](https://github.com/CycloneDX/cdxgen)
