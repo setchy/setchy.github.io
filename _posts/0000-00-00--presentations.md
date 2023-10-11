@@ -8,7 +8,10 @@ published: true
 permalink: presentations
 ---
 
-Some of the publically accessible presentations I've been part of
+Some of the publicly accessible presentations I've been part of
 
 #### GraphQL
+
+- [Apollo GraphOS: Power digital transformations](https://www.apollographql.com/enterprise?wvideo=4fu2lsjssc)
+- [Promo: GraphQL Summit: it's all about the people](https://youtu.be/090IWEcHbJc?si=tUn4F0oNSPoliVXs)
 - [Apollo GraphQL Summit November 2021 // A Champion’s Guide to Building Your Unified Graph](https://www.apollographql.com/events/roundtable/graphql-summit-november-2021/a-champions-guide-to-building-your-unified-graph)
