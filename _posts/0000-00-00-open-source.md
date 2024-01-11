@@ -12,6 +12,16 @@ permalink: open-source
 
 A collection of my favorite open source software projects, which when time allows I enjoy contributing to.
 
+#### DevSecOps Tooling
+
+- <span id="github-icon">[renovatebot/renovate](https://github.com/renovatebot/renovate)
+- <span id="github-icon">[CycloneDX/cdxgen](https://github.com/CycloneDX/cdxgen)
+
+#### Technology Radars
+
+- <span id="github-icon">[thoughtworks/bring-your-own-radar](https://github.com/thoughtworks/build-your-own-radar)
+- <span id="github-icon">[setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes)
+
 #### API Frameworks
 
 - <span id="github-icon">[netflix/dgs-framework](https://github.com/Netflix/dgs-framework)
@@ -21,13 +31,3 @@ A collection of my favorite open source software projects, which when time allow
 - <span id="github-icon">[chentsulin/awesome-graphql](https://github.com/chentsulin/awesome-graphql)
 - <span id="github-icon">[tailrocks/graphql-java-datetime](https://github.com/tailrocks/graphql-java-datetime)
 - <span id="github-icon">[graphql-java-kickstart](https://github.com/graphql-java-kickstart)
-
-#### Technology Radars
-
-- <span id="github-icon">[thoughtworks/bring-your-own-radar](https://github.com/thoughtworks/build-your-own-radar)
-- <span id="github-icon">[setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes)
-
-#### DevSecOps Tooling
-
-- <span id="github-icon">[renovatebot/renovate](https://github.com/renovatebot/renovate)
-- <span id="github-icon">[CycloneDX/cdxgen](https://github.com/CycloneDX/cdxgen)
