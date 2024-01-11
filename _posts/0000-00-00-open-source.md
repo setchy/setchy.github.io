@@ -16,6 +16,11 @@ A collection of my favorite open source software projects, which when time allow
 
 - <span id="github-icon">[netflix/dgs-framework](https://github.com/Netflix/dgs-framework)
 - <span id="github-icon">[setchy/dgs-extended-formatters](https://github.com/setchy/dgs-extended-formatters)
+- <span id="github-icon">[graphql-java/graphql-java-extended-scalars](https://github.com/graphql-java/graphql-java-extended-scalars)
+- <span id="github-icon">[graphql-java/graphql-java-extended-validation](https://github.com/graphql-java/graphql-java-extended-scalars)
+- <span id="github-icon">[chentsulin/awesome-graphql](https://github.com/chentsulin/awesome-graphql)
+- <span id="github-icon">[tailrocks/graphql-java-datetime](https://github.com/tailrocks/graphql-java-datetime)
+- <span id="github-icon">[graphql-java-kickstart](https://github.com/graphql-java-kickstart)
 
 #### Technology Radars
 
