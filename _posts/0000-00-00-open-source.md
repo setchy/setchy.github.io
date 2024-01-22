@@ -2,7 +2,7 @@
 layout: post
 title: Open Source Projects
 # subtitle: A collection of my favorite open source software projects
-date: 2024-01-11 00:00:00 -0400
+date: 2024-01-22 00:00:00 -0400
 # gh-repo: setchy/setchy
 # gh-badge: [star, fork, follow]
 tags: [opensource]
@@ -21,6 +21,10 @@ A collection of my favorite open source software projects, which when time allow
 
 - <span id="github-icon">[thoughtworks/bring-your-own-radar](https://github.com/thoughtworks/build-your-own-radar)
 - <span id="github-icon">[setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes)
+
+#### Productivity Tooling
+
+- <span id="github-icon">[gitify-app/gitify](https://github.com//gitify-app/gitify)
 
 #### API Frameworks
 
