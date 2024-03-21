@@ -21,7 +21,7 @@ navbar-links:
   eBooks: "ebooks"
   Open Source: "open-source"
   Videos: "vids"
-  Case Studies: case-studies"
+  Case Studies: "case-studies"
 
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
