@@ -9,4 +9,4 @@ permalink: case-studies
 
 Some of the publicly accessible case studies that I've been part of
 
-- 03/2024 [LaunchDarkly: World Kinect increases release velocity by 400%](https://launchdarkly.com/case-studies/world-kinect/)
+- [LaunchDarkly: World Kinect increases release velocity by 400%](https://launchdarkly.com/case-studies/world-kinect/){:target="_blank"} - _March, 2024_
