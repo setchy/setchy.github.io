@@ -15,13 +15,13 @@ author: Adam Setch
 
 navbar-links:
   About: "about"
-  # Radar: "radar"
+  OSS: "open-source"
+  Videos: "vids"
+  Studies: "case-studies"
+  Radars: "radars"
   Blogs: "blogs"
   Podcasts: "podcasts"
   eBooks: "ebooks"
-  Open Source: "open-source"
-  Videos: "vids"
-  Case Studies: "case-studies"
 
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
@@ -59,7 +59,7 @@ social-network-links:
   #  spotify: yourname
   #  telephone: +14159998888
   #  steam: deanat78
-  # twitch: yourname
+  #  twitch: yourname
   #  yelp: yourname
   #  telegram: yourname
   #  calendly: yourname

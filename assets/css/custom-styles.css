@@ -2,7 +2,7 @@
  Thumbs
  ========================================================================== */
 #github-icon {
-  background-image: url("../img/github.svg");
+  background-image: url("../icons/github.svg");
   background-repeat: no-repeat;
   background-size: contain;
   height: 20px;
@@ -11,7 +11,7 @@
 }
 
 #podcast-icon {
-  background-image: url("../img/podcast.svg");
+  background-image: url("../icons/podcast.svg");
   background-repeat: no-repeat;
   background-size: contain;
   height: 20px;
@@ -20,7 +20,34 @@
 }
 
 #rss-icon {
-  background-image: url("../img/rss.svg");
+  background-image: url("../icons/rss.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  padding-left: 30px;
+}
+
+#google-sheets-icon {
+  background-image: url("../icons/google-sheets.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  padding-left: 30px;
+}
+
+#radar-icon {
+  background-image: url("../icons/radar.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  padding-left: 30px;
+}
+
+#pdf-icon {
+  background-image: url("../icons/pdf.svg");
   background-repeat: no-repeat;
   background-size: contain;
   height: 20px;
@@ -37,5 +64,17 @@
 }
 
 #rss-icon:hover {
+  opacity: 0.5;
+}
+
+#google-sheets-icon:hover {
+  opacity: 0.5;
+}
+
+#radar-icon:hover {
+  opacity: 0.5;
+}
+
+#pdf-icon:hover {
   opacity: 0.5;
 }
