@@ -11,15 +11,12 @@ permalink: /about/
 - Technology Advisor
 - OSS Maintainer and Contributor
 
-<br />
 ### 🔭 Interests
 
 - GraphQL // Apollo // REST // AsyncAPI
 - LeanIX // Renovate // Tech Radar
 - Developer Experience // Developer Productivity
 - Building engineering communities of practice (guilds, chapters, etc)
-
-<br />
 
 ### 💪 Skills
 
