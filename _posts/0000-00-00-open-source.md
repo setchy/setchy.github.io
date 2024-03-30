@@ -5,7 +5,7 @@ title: Open Source Projects
 date: 2024-03-21 00:00:00 -0400
 # gh-repo: setchy/setchy
 # gh-badge: [star, fork, follow]
-tags: [opensource, oss, github]
+tags: [opensource, oss, github, open source, dx]
 published: true
 permalink: open-source
 ---
