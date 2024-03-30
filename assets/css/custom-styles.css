@@ -1,80 +1,38 @@
 /* ==========================================================================
  Thumbs
  ========================================================================== */
-#github-icon {
+.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  padding-left: 30px;
+}
+
+.github {
   background-image: url("../icons/github.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
 }
 
-#podcast-icon {
+.podcast {
   background-image: url("../icons/podcast.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
 }
 
-#rss-icon {
+.rss {
   background-image: url("../icons/rss.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
 }
 
-#google-sheets-icon {
+.google-sheets {
   background-image: url("../icons/google-sheets.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
 }
 
-#radar-icon {
+.radar {
   background-image: url("../icons/radar.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
 }
 
-#pdf-icon {
+.pdf {
   background-image: url("../icons/pdf.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
 }
 
-#github-icon:hover {
-  opacity: 0.5;
-}
-
-#podcast-icon:hover {
-  opacity: 0.5;
-}
-
-#rss-icon:hover {
-  opacity: 0.5;
-}
-
-#google-sheets-icon:hover {
-  opacity: 0.5;
-}
-
-#radar-icon:hover {
-  opacity: 0.5;
-}
-
-#pdf-icon:hover {
+.icon:hover {
   opacity: 0.5;
 }
