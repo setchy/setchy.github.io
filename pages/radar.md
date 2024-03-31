@@ -13,7 +13,7 @@ published: false
     ">
 
     <iframe id="radar"
-        src="https://radar.thoughtworks.com/?sheetId=https%3A%2F%2Fraw.githubusercontent.com%2Fsetchy%2Fsetchy.github.io%2Fmain%2Fdocs%2Fassets%2Fcsv%2FRadar%2520Vol.%252026.csv"
+        src="https://radar.setchy.io/?sheetId=https%3A%2F%2Fraw.githubusercontent.com%2Fsetchy%2Fsetchy.github.io%2Fmain%2Fdocs%2Fassets%2Fcsv%2FRadar%2520Vol.%252026.csv"
         style="
             width: 100%!important;
             height: 100%!important;
