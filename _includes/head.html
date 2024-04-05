@@ -97,6 +97,8 @@
       {%- endif -%}
     {%- elsif page.thumbnail-img -%}
       {{ page.thumbnail-img }}
+    {%- elsif site.site-img -%}
+      {{ site.site-img }}
     {%- elsif site.avatar -%}
       {{ site.avatar }}
     {% endif %}
