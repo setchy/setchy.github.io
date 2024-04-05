@@ -10,7 +10,6 @@ title: 🏠 Home
 
 # Your name to show in the footer
 author: Adam Setch
-remove-ads: true
 
 # --- List of links in the navigation bar --- #
 
@@ -32,7 +31,6 @@ navbar-links:
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/assets/img/avatar.png"
-site-img: "/assets/img/banner.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: false
@@ -86,7 +84,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "setchy.io"
+# url-pretty: "setchy.github.io"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
