@@ -1,7 +1,12 @@
 /* ==========================================================================
- Thumbs
+ Thumbnails / Icons
  ========================================================================== */
-.icon {
+.icon-gallery a {
+  padding: 5px;
+  display: inline-block
+}
+
+ .icon {
   background-repeat: no-repeat;
   background-size: contain;
   height: 20px;
@@ -36,3 +41,4 @@
 .icon:hover {
   opacity: 0.5;
 }
+

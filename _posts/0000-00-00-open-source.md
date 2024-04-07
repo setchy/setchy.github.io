@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Open Source Projects
-# subtitle: A collection of my favorite open source software projects
+# subtitle: 
 date: 2024-03-21 00:00:00 -0400
-# gh-repo: setchy/setchy
-# gh-badge: [star, fork, follow]
+gh-repo: setchy/setchy
+gh-badge: [follow]
 tags: [opensource, oss, github, open source, dx]
 published: true
 permalink: open-source
