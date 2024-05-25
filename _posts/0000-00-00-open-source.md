@@ -12,7 +12,7 @@ permalink: open-source
 
 A collection of <span class="icon github"></span> open source software projects which I enjoy working on:
 
-- <span class="fas fa-lightbulb" style="color:orange; padding-right:22px;"></span> *Projects I Created*
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:20px;"></span> *Projects I Created*
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span> *Projects I Maintain*
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span> *Projects I Contribute To*
 
@@ -30,13 +30,13 @@ A collection of <span class="icon github"></span> open source software projects 
 
 #### Technology Radars
 
-- <span class="fas fa-lightbulb" style="color:orange; padding-right:22px;"></span>**[setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes){:target="\_blank"}** - CLI and complete collection of Thoughtworks Technology Radar datasets (JSON, CSV and Google Sheets).
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:20px;"></span>**[setchy/thoughtworks-tech-radar-volumes](https://github.com/setchy/thoughtworks-tech-radar-volumes){:target="\_blank"}** - CLI and complete collection of Thoughtworks Technology Radar datasets (JSON, CSV and Google Sheets).
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span>**[thoughtworks/bring-your-own-radar](https://github.com/thoughtworks/build-your-own-radar){:target="\_blank"}** - A library that generates an interactive radar, inspired by https://thoughtworks.com/radar/.
 
 #### API Frameworks
 
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span>**[netflix/dgs-framework](https://github.com/Netflix/dgs-framework){:target="\_blank"}** - GraphQL for Java with Spring Boot made easy.
-- <span class="fas fa-lightbulb" style="color:orange; padding-right:22px;"></span>**[setchy/dgs-extended-formatters](https://github.com/setchy/dgs-extended-formatters){:target="\_blank"}** - A set of DGS Directives for common formatting use-cases.
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:20px;"></span>**[setchy/dgs-extended-formatters](https://github.com/setchy/dgs-extended-formatters){:target="\_blank"}** - A set of DGS Directives for common formatting use-cases.
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span>**[graphql-java/graphql-java-extended-scalars](https://github.com/graphql-java/graphql-java-extended-scalars){:target="\_blank"}** - A library of extended scalars for graphql-java.
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span>**[graphql-java/graphql-java-extended-validation](https://github.com/graphql-java/graphql-java-extended-validation){:target="\_blank"}** -  Validation library for graphql-java input.
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span>**[chentsulin/awesome-graphql](https://github.com/chentsulin/awesome-graphql){:target="\_blank"}** -  Awesome list of GraphQL.
