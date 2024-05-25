@@ -10,11 +10,11 @@ published: true
 permalink: open-source
 ---
 
-A collection of my favorite open source software projects, which when time allows I enjoy maintain and/or contributing to.
+A collection of my favorite open source software projects, which when time allows I enjoy working on.
 
 #### Productivity Tooling
 
-- **<span class="icon github">[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"}** - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.  [maintainer]
+- <span class="icon github">**[gitify-app/gitify](https://github.com//gitify-app/gitify)**{:target="\_blank"} - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.  [maintainer]
 
 #### DevSecOps Tooling
 
