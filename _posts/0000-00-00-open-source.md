@@ -12,7 +12,7 @@ permalink: open-source
 
 A collection of <span class="icon github"></span> open source software projects which I enjoy working on:
 
-- <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>&nbsp;&nbsp;*Projects I Created*
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>&nbsp;&nbsp;&nbsp;*Projects I Created*
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span> *Projects I Maintain*
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span> *Projects I Contribute To*
 
