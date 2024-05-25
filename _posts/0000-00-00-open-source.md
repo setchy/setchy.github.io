@@ -14,7 +14,7 @@ A collection of my favorite open source software projects, which when time allow
 
 #### Productivity Tooling
 
-- <span class="icon github">[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"} [maintainer]
+- **<span class="icon github">[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"}** - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.  [maintainer]
 
 #### DevSecOps Tooling
 
