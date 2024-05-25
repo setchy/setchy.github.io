@@ -10,16 +10,16 @@ published: true
 permalink: open-source
 ---
 
-A collection of open source software projects which I enjoy working on:
+A collection of <span class="icon github"></span> open source software projects which I enjoy working on:
 
-- <span class="fas fa-lightbulb" style="color:orange;"></span>  *Projects I Created*
-- <span class="fas fa-crown" style="color:green;"></span> *Projects I Maintain*
-- <span class="fas fa-hands-helping" style="color:teal;"></span> *Projects I Contribute To*
+- <span class="icon fas fa-lightbulb" style="color:orange;"></span>  *Projects I Created*
+- <span class="icon  fas fa-crown" style="color:green;"></span> *Projects I Maintain*
+- <span class="icon  fas fa-hands-helping" style="color:teal;"></span> *Projects I Contribute To*
 
 
 #### Productivity Tooling
 
-- <span class="fas fa-crown" style="color:green;"></span><span class="icon github"></span>**[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"}** - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.
+- <span class="icon fas fa-crown" style="color:green;"></span>**[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"}** - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.
 
 #### DevSecOps Tooling
 
