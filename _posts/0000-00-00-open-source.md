@@ -12,9 +12,9 @@ permalink: open-source
 
 A collection of open source software projects which I enjoy working on:
 
-- <span class="fas fa-lightbulb" style="color:orange;"></span> Creator Project
-- <span class="fas fa-crown" style="color:green;"></span> My Maintained Project 
-- <span class="fas fa-hands-helping" style="color:lightblue;"></span> Project I Contribute To
+- <span class="fas fa-lightbulb" style="color:orange;"></span> *Projects I Created*
+- <span class="fas fa-crown" style="color:green;"></span> *Projects I Maintain*
+- <span class="fas fa-hands-helping" style="color:lightblue;"></span> *Projects I Contribute To*
 
 
 #### Productivity Tooling
