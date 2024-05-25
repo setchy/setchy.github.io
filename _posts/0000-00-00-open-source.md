@@ -10,7 +10,11 @@ published: true
 permalink: open-source
 ---
 
-A collection of my favorite open source software projects, which when time allows I enjoy working on.
+A collection of my favorite open source software projects which when time allows I enjoy working on.
+
+<i class="fas fa-crown"><i>Projects I Maintain
+<i class="fas fa-hands-helping"></i> Project I Contribute To
+
 
 #### Productivity Tooling
 
