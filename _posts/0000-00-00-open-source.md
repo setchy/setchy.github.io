@@ -2,7 +2,7 @@
 layout: post
 title: Open Source Projects
 # subtitle: 
-date: 2024-05-25 00:00:00 -0400
+date: 2024-09-19 00:00:00 -0400
 gh-repo: setchy/setchy
 gh-badge: [follow]
 tags: [opensource, oss, github, open source, dx]
@@ -19,6 +19,7 @@ A collection of <span class="icon github"></span> open source software projects 
 
 #### Productivity Tooling
 
+- <span class="fas fa-lightbulb" style="color:green; padding-right:10px;"></span>**[setchy/atlassify](https://github.com//setchy/atlassify){:target="\_blank"}** - Atlassian notifications on your menu bar. Available on macOS, Windows & Linux.
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span>**[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"}** - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.
 
 #### DevSecOps Tooling
