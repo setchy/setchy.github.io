@@ -21,12 +21,10 @@ author: Adam Setch
 navbar-links:
   About: "about"
   OSS: "open-source"
-  Videos: "vids"
-  Studies: "case-studies"
+  Industry: "industry"
   Radars: "radars"
-  Blogs: "blogs"
-  Podcasts: "podcasts"
-  eBooks: "ebooks"
+  Library: "library"
+
 
 ################
 # --- Logo --- #
@@ -305,3 +303,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from

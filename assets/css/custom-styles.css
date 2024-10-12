@@ -6,7 +6,7 @@
   display: inline-block
 }
 
- .icon {
+.icon {
   background-repeat: no-repeat;
   background-size: contain;
   height: 20px;
@@ -14,31 +14,38 @@
   padding-left: 30px;
 }
 
+.icon:hover {
+  opacity: 0.5;
+}
+
 .github {
   background-image: url("../icons/github.svg");
-}
-
-.podcast {
-  background-image: url("../icons/podcast.svg");
-}
-
-.rss {
-  background-image: url("../icons/rss.svg");
 }
 
 .google-sheets {
   background-image: url("../icons/google-sheets.svg");
 }
 
-.radar {
-  background-image: url("../icons/radar.png");
-}
-
 .pdf {
   background-image: url("../icons/pdf.svg");
 }
 
-.icon:hover {
-  opacity: 0.5;
+.podcast {
+  background-image: url("../icons/podcast.svg");
 }
 
+.radar {
+  background-image: url("../icons/radar.png");
+}
+
+.rss {
+  background-image: url("../icons/rss.svg");
+}
+
+.web {
+  background-image: url("../icons/web.svg");
+}
+
+.youtube {
+  background-image: url("../icons/youtube.svg");
+}

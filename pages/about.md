@@ -36,6 +36,7 @@ permalink: /about/
   <a href="https://pnpm.io/" target="_blank" rel="noreferrer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcwBnoTNg212cvEclMX-_qRw_P-_odFp3aafVal77Hg&s" width="36" height="36" alt="pnpm" /></a>
   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/npm-square-red-1.svg" width="36" height="36" alt="npm" /></a>
   <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg" width="36" height="36" alt="Express" /></a>
+  <a href="https://docs.renovatebot.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/renovatebot/renovate/refs/heads/main/docs/usage/assets/images/logo.png" width="36" height="36" alt="Renovate" /></a>
   <a href="https://graphql.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/graphql-colored.svg" width="36" height="36" alt="GraphQL" /></a>
   <a href="https://netflix.github.io/dgs/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/Netflix/dgs/main/docs/images/dgs-framework-brand/Icon/dgs-icon--blue.svg" width="36" height="36" alt="Netflix DGS" /></a>
   <a href="https://apollographql.com/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/apollo-graphql-compact.svg" width="36" height="36" alt="Apollo GraphQL" /></a>
