@@ -10,7 +10,7 @@ published: true
 permalink: open-source
 ---
 
-A collection of&nbsp;&nbsp;<span class="icon github"></span>open source software projects which I enjoy working on:
+A collection of {% octicon mark-github height:16 %} open source software projects which I enjoy working on:
 
 - <span class="fas fa-lightbulb" style="color:orange; padding-right:20px;"></span> *Projects I Created*
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span> *Projects I Maintain*
