@@ -2,7 +2,7 @@
 layout: post
 title: Open Source Projects
 # subtitle: 
-date: 2024-09-19 00:00:00 -0400
+date: 2024-12-03 00:00:00 -0400
 gh-repo: setchy/setchy
 gh-badge: [follow]
 tags: [opensource, oss, github, open source, dx, productivity, atlassify, gitify]
@@ -21,6 +21,7 @@ A collection of {% octicon mark-github height:16 %} open source software project
 
 - <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>**[setchy/atlassify](https://github.com//setchy/atlassify){:target="\_blank"}** - Atlassian notifications on your menu bar. Available on macOS, Windows & Linux.
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span>**[gitify-app/gitify](https://github.com//gitify-app/gitify){:target="\_blank"}** - GitHub notifications on your menu bar. Available on macOS, Windows & Linux.
+  
 
 #### DevSecOps Tooling
 
@@ -43,3 +44,7 @@ A collection of {% octicon mark-github height:16 %} open source software project
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span>**[chentsulin/awesome-graphql](https://github.com/chentsulin/awesome-graphql){:target="\_blank"}** -  Awesome list of GraphQL.
 - <span class="fas fa-hands-helping" style="color:teal; padding-right:10px;"></span>**[tailrocks/graphql-java-datetime](https://github.com/tailrocks/graphql-java-datetime){:target="\_blank"}** -   GraphQL ISO Date is a set of RFC 3339 compliant date/time scalar types to be used with graphql-java.
 - <span class="fas fa-crown" style="color:green; padding-right:10px;"></span>**[graphql-java-kickstart](https://github.com/graphql-java-kickstart){:target="\_blank"}** - GraphQL and GraphiQL Spring Framework Boot Starters.
+
+#### Methodologies
+
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>**[setchy/meme-driven.dev](https://github.com//setchy/meme-driven.dev){:target="\_blank"}** -  Meme Driven Development (MDD) - A novel (and fun) approach to modern software development .
