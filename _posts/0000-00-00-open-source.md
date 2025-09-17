@@ -2,7 +2,7 @@
 layout: post
 title: Open Source Projects
 # subtitle: 
-date: 2024-12-03 00:00:00 -0400
+date: 2025-09-17 00:00:00 -0400
 gh-repo: setchy/setchy
 gh-badge: [follow]
 tags: [opensource, oss, github, open source, dx, productivity, atlassify, gitify]
@@ -47,4 +47,8 @@ A collection of {% octicon mark-github height:16 %} open source software project
 
 #### Methodologies
 
-- <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>**[setchy/meme-driven.dev](https://github.com//setchy/meme-driven.dev){:target="\_blank"}** -  Meme Driven Development (MDD) - A novel (and fun) approach to modern software development .
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>**[setchy/meme-driven.dev](https://github.com//setchy/meme-driven.dev){:target="\_blank"}** -  Meme Driven Development (MDD) - A novel (and fun) approach to modern software development.
+
+#### Travel
+
+- <span class="fas fa-lightbulb" style="color:orange; padding-right:10px;"></span>**[setchy/guidealong-maps](https://github.com/setchy/guidealong-maps){:target="\_blank"}** -   Global [GuideAlong](https://guidealong.com) tour visualization.
