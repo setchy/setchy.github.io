@@ -9,7 +9,7 @@
   "customManagers": [
     {
       "managerFilePatterns": [
-        "**.css$"
+        "**/*.css"
       ],
       "matchStrings": [
         "@import url\\(\"https://cdnjs\\.cloudflare\\.com/ajax/libs/(?<depName>[^/]+)/(?<currentValue>[^/]+)/css/all\\.min\\.css\"\\);"
