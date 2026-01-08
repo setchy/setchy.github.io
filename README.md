@@ -9,7 +9,7 @@ This repository contains the content for [setchy.io][setchyio].
 
 - [Jekyll][jekyll]
 - [Beautiful Jekyll Theme][beautiful-jekyll]
-- [Netlify][netlify]
+- [Netlify][netlify-deploys]
 
 
 ### Updating Theme
