@@ -5,12 +5,16 @@
 ### the initial set up you won't need to come back to this file often.
 ###########################################################
 
+# See https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml for latest config options
+theme: beautiful-jekyll-theme
+
 ############################
 # --- Required options --- #
 ############################
 
 # Name of website
 title: 🏠 Home
+
 # Your name to show in the footer
 author: Adam Setch
 
@@ -24,7 +28,6 @@ navbar-links:
   Industry: "industry"
   Radars: "radars"
   Library: "library"
-
 
 ################
 # --- Logo --- #
@@ -40,7 +43,6 @@ round-avatar: false
 # then specify the following parameter
 #title-img: /path/to/image
 
-
 #####################################
 # --- Footer social media links --- #
 #####################################
@@ -50,7 +52,7 @@ round-avatar: false
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   # email: "someone@example.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  rss: true # remove this line if you don't want to show an RSS link at the bottom
   facebook: adam.setch
   github: setchy
   twitter: setchy87
@@ -75,16 +77,17 @@ social-network-links:
   #  bluesky: yourname
   #  ORCID: your ORCID ID
   #  google-scholar: your google scholar
-  #  discord: "invite_code" or "users/userid" or "invite/invite_code" 
+  #  discord: "invite_code" or "users/userid" or "invite/invite_code"
   #  kaggle: yourname
   #  hackerrank: yourname
   #  gitlab: yourname
   #  itchio: yourname
   untappd: setchy
+  #  strava: youruserid
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-#rss-description: This website is a virtual proof that I'm awesome
+rss-description: Adam Setch Personal Site
 
 ###########################
 # --- General options --- #
@@ -101,6 +104,7 @@ share-links-active:
   facebook: false
   linkedin: true
   vk: false
+  reddit: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
@@ -138,13 +142,13 @@ navbar-var-length: false
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
 page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
+navbar-col: "#EAEAEA"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
@@ -163,6 +167,7 @@ footer-hover-col: "#0085A1"
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
 site-css:
   - "/assets/css/custom-styles.css"
+  - "/assets/css/fontawesome6.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
 #site-js:
@@ -217,23 +222,23 @@ gtag: "G-1KRZQ6HQZ6"
 #  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
 
 # To use Staticman comments, uncomment the following section. You may leave the reCaptcha
-# section commented if you aren't using reCaptcha for spam protection. 
-# Using Staticman requires advanced knowledge, please consult 
-# https://github.com/eduardoboucas/staticman/ and https://staticman.net/ for further 
-# instructions. For any support with staticman please direct questions to staticman and 
+# section commented if you aren't using reCaptcha for spam protection.
+# Using Staticman requires advanced knowledge, please consult
+# https://github.com/eduardoboucas/staticman/ and https://staticman.net/ for further
+# instructions. For any support with staticman please direct questions to staticman and
 # not to BeautifulJekyll.
 #staticman:
 #  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
 #  branch     : master # If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
 #  endpoint   : # URL of your deployment, with a trailing slash eg. "https://<your-api>/v3/entry/github/"
-#  reCaptcha:   # (optional, set these parameters in `staticman.yml` as well) 
+#  reCaptcha:   # (optional, set these parameters in `staticman.yml` as well)
 #    siteKey  : # You need to apply for a site key on Google
 #    secret   : # Encrypt your password by going to https://<your-own-api>/v3/encrypt/<your-site-secret>
 
 # To use giscus comments:
-# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository, 
+# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository,
 # (2) Install the giscus app in your repository (details at https://giscus.app),
-# (3) Fill in *all* the parameters below 
+# (3) Fill in *all* the parameters below
 # See more details about giscus and each of the following parameters at https://giscus.app
 #giscus:
 #  hostname: giscus.app # Replace with your giscus instance's hostname if self-hosting
@@ -272,16 +277,14 @@ kramdown:
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
+      comments: true # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
+  - scope:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
@@ -302,6 +305,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-redirect-from
+  # - jekyll-seo-tag
+  # - jekyll-redirect-from
   - jekyll-octicons
