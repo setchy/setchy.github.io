@@ -8,6 +8,7 @@
   },
   "customManagers": [
     {
+      "customType": "regex",
       "managerFilePatterns": [
         "**/*.css"
       ],
