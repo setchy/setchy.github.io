@@ -41,3 +41,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 # Extra gems
 #gem "webrick", "~> 1.7"
 gem 'jekyll-octicons', "~> 19.8"
+gem 'logger', "~> 1.3"
