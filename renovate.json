@@ -5,5 +5,18 @@
   ],
   "lockFileMaintenance": {
     "enabled": true
-  }
+  },
+  "customManagers": [
+    {
+      "managerFilePatterns": [
+        "**.css$"
+      ],
+      "matchStrings": [
+        "@import url\\(\"https://cdnjs\\.cloudflare\\.com/ajax/libs/(?<depName>[^/]+)/(?<currentValue>[^/]+)/css/all\\.min\\.css\"\\);"
+      ],
+      "datasourceTemplate": "cdnjs",
+      "versioningTemplate": "semver",
+      "autoReplaceStringTemplate": "@import url(\"https://cdnjs.cloudflare.com/ajax/libs/{{depName}}/{{newValue}}/css/all.min.css\");"
+    }
+  ]
 }
