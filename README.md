@@ -31,7 +31,7 @@ bundle update
 <!-- LINK LABELS -->
 [setchyio]: https://setchy.io
 
-[netlify-badge]: [netlify-badge]: https://img.shields.io/netlify/9abe65ca-45b7-47c3-a0c8-8338b6c1252c?logo=netlify&logoColor=white
+[netlify-badge]: https://img.shields.io/netlify/9abe65ca-45b7-47c3-a0c8-8338b6c1252c?logo=netlify&logoColor=white
 [netlify-deploys]: https://app.netlify.com/projects/setchy/deploys
 
 [jekyll]: https://jekyllrb.com/
