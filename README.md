@@ -31,11 +31,11 @@ bundle update
 <!-- LINK LABELS -->
 [setchyio]: https://setchy.io
 
-[netlify-badge]: https://api.netlify.com/api/v1/badges/9abe65ca-45b7-47c3-a0c8-8338b6c1252c/deploy-status
+[netlify-badge]: [netlify-badge]: https://img.shields.io/netlify/9abe65ca-45b7-47c3-a0c8-8338b6c1252c?logo=netlify&logoColor=white
 [netlify-deploys]: https://app.netlify.com/projects/setchy/deploys
 
 [jekyll]: https://jekyllrb.com/
 [beautiful-jekyll]: https://github.com/daattali/beautiful-jekyll
 
 [renovate]: https://github.com/setchy/setchy.github.io/issues/4
-[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate
+[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
