@@ -157,7 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   beautiful-jekyll-theme (= 6.0.1)
-  http_parser.rb (~> 0.6.0)
+  http_parser.rb (~> 0.8.0)
   jekyll (~> 4.4.1)
   jekyll-feed (~> 0.17.0)
   jekyll-octicons (~> 19.8)
