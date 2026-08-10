@@ -15,6 +15,12 @@ theme: beautiful-jekyll-theme
 # Name of website
 title: 🏠 Home
 
+# The base URL of your site (the part after the domain). Leave empty for a site at the domain root.
+baseurl: ""
+
+# The URL of your site. Required for the home link and other absolute links to work.
+url: "https://setchy.io"
+
 # Your name to show in the footer
 author: Adam Setch
 

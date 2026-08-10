@@ -29,10 +29,10 @@ permalink: /about/
   <a href="https://spring.io/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/spring-3.svg" width="36" height="36" alt="Spring" /></a> 
   <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a>
   <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a>
-  <a href="https://react.dev/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="36" height="36" alt="React" /></a>
+  <a href="https://react.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
   <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg" width="36" height="36" alt="Tailwind CSS" /></a>
   <a href="https://www.electronjs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/electron-1.svg" width="36" height="36" alt="Electron" /></a>
-  <a href="https://vuejs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/vue-9.svg" width="36" height="36" alt="Vue" /></a>
+  <a href="https://vuejs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg" width="36" height="36" alt="Vue" /></a>
   <a href="https://pnpm.io/" target="_blank" rel="noreferrer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcwBnoTNg212cvEclMX-_qRw_P-_odFp3aafVal77Hg&s" width="36" height="36" alt="pnpm" /></a>
   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/npm-square-red-1.svg" width="36" height="36" alt="npm" /></a>
   <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg" width="36" height="36" alt="Express" /></a>
