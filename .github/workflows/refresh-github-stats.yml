@@ -1,0 +1,60 @@
+name: Refresh GitHub stats
+
+on:
+  schedule:
+    # Weekly on Monday at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-github-stats
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch GitHub repository stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run fetch:github
+
+      - name: Create pull request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(deps): refresh GitHub repository stats"
+          branch: chore/refresh-github-stats
+          delete-branch: true
+          base: main
+          title: "chore(deps): refresh GitHub repository stats"
+          body: |
+            Auto-generated weekly refresh of GitHub repository statistics
+            (stars, forks, description, language) from the GitHub API.
+
+            Run `npm run fetch:github` locally to refresh manually.
+          labels:
+            - dependency
+          add-paths: |
+            src/data/github-cache.json
+
+      - name: Summarize
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: echo "PR opened: #${{ steps.cpr.outputs.pull-request-number }}"
