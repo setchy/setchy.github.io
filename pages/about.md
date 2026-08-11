@@ -5,7 +5,7 @@ title: About me
 permalink: /about/
 ---
 
-### 📖 About me
+### 🚀 About me
 
 - Distinguished Engineer // Chief Architect // Senior Executive (VP)
 - Technology Advisor
@@ -19,7 +19,7 @@ permalink: /about/
 - **Dependency Management & Technical Health**: *LeanIX // Renovate // SBOM*
 - **Innovation**: *Communicating emerging technology trends via Tech Radars*
 
-### 💪 Skills
+### 🛠️ Skills
 
 <p class="icon-gallery">
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>

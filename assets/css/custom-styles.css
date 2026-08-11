@@ -1,4 +1,21 @@
 /* ==========================================================================
+ Page header width
+ ========================================================================== */
+/* beautiful-jekyll constrains the title/subtitle to a narrow Bootstrap
+   column (col-xl-8/col-lg-10), which wraps longer subtitles. Let the
+   header use the full container-md width instead. */
+.intro-header .col-xl-8,
+.intro-header .col-lg-10 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.intro-header .offset-xl-2,
+.intro-header .offset-lg-1 {
+  margin-left: 0;
+}
+
+/* ==========================================================================
  Thumbnails / Icons
  ========================================================================== */
 .icon-gallery a {
