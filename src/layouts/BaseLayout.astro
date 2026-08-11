@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Hi, I'm Adam",
+  description = "Senior Executive (VP) // Architect // Developer",
+  cover = "/covers/home.svg",
+} = Astro.props;
+
+const SITE = {
+  title: "🏠 Home",
+  url: "https://setchy.io",
+  author: "Adam Setch",
+  gaId: "G-1KRZQ6HQZ6",
+  cfBeacon: '{"version":"2024.11.0","token":"2f35818ec90b4323a9400a2ff51d952a","r":1}',
+};
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | {SITE.title}</title>
+    <meta name="author" content={SITE.author} />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/feed.xml" />
+
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={SITE.url + cover} />
+    <link rel="canonical" href={SITE.url + Astro.url.pathname} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@setchy87" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={SITE.url + cover} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {}
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KRZQ6HQZ6"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-1KRZQ6HQZ6');
+    </script>
+
+    <!-- Cloudflare Analytics -->
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+      integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+      data-cf-beacon={SITE.cfBeacon}
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

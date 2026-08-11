@@ -1,0 +1,53 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const sections = (await getCollection('sections'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const cardMeta: Record<string, { icon: string; blurb: string }> = {
+  blogs: { icon: '📝', blurb: 'A collection of my favorite blogs' },
+  industry: { icon: '🎤', blurb: 'Industry contributions through conference presentations, webinars and case studies' },
+  'open-source': { icon: '💻', blurb: 'Open source software projects which I enjoy working on' },
+  library: { icon: '📚', blurb: 'My favorite technology resources: blogs, podcasts and ebooks' },
+  radars: { icon: '📡', blurb: 'Technology radars, Thoughtworks radar volumes and enhancements' },
+};
+
+const title = 'Hi, I\'m Adam';
+const subtitle = 'Senior Executive (VP) // Architect // Developer';
+---
+<PageLayout title={title} description={subtitle}>
+  <header class="home-hero">
+    <img class="avatar" src="/avatar.png" alt="Adam Setch" />
+    <h1>{title}</h1>
+    <p class="hero-sub">{subtitle}</p>
+  </header>
+
+  <div class="container">
+    <div class="card-grid">
+      {
+        sections.map((s) => {
+          const meta = cardMeta[s.data.permalink] || {};
+          return (
+            <a class="card" href={`/${s.data.permalink}`}>
+              <div class="card-cover" style={`background-image: url('${s.data.cover || '/covers/home.svg'}')`}></div>
+              <div class="card-body">
+                <div class="card-title">
+                  <span class="card-icon">{meta.icon}</span>
+                  {s.data.title}
+                </div>
+                <p class="card-desc">{meta.blurb || s.data.description}</p>
+                <div class="card-meta">
+                  Last updated {dateFmt.format(s.data.date)}
+                  <span class="card-link"> &rarr;</span>
+                </div>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</PageLayout>

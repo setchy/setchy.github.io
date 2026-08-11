@@ -1,0 +1,50 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+const sections = await getCollection('sections');
+
+const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const tagMap = new Map<string, CollectionEntry<'sections'>[]>();
+for (const entry of sections) {
+  for (const tag of entry.data.tags) {
+    if (!tagMap.has(tag)) tagMap.set(tag, []);
+    tagMap.get(tag)!.push(entry);
+  }
+}
+const tags = [...tagMap.keys()].sort();
+---
+<PageLayout title="Tag Index" description="All tags used across the site">
+  <header class="hero" style="background-image: url('/covers/home.svg')">
+    <div class="hero-content">
+      <h1>Tag Index</h1>
+    </div>
+  </header>
+  <main class="main prose tags-page">
+    {
+      tags.map((tag) => (
+        <a class="tag" href={`#${tag}`}>
+          #{tag} ({tagMap.get(tag)!.length})
+        </a>
+      ))
+    }
+    {
+      tags.map((tag) => (
+        <section>
+          <h2 id={tag}>#{tag} ({tagMap.get(tag)!.length})</h2>
+          <div class="post-list">
+            {
+              tagMap.get(tag)!.map((entry) => (
+                <div class="tag-entry">
+                  <a href={`/${entry.data.permalink}`}>{entry.data.title}</a>
+                  <span class="entry-date">{dateFmt.format(entry.data.date)}</span>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</PageLayout>

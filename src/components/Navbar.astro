@@ -1,0 +1,38 @@
+---
+const navLinks = [
+  { label: 'About', href: '/about/' },
+  { label: 'OSS', href: '/open-source' },
+  { label: 'Industry', href: '/industry' },
+  { label: 'Radars', href: '/radars' },
+  { label: 'Library', href: '/library' },
+];
+---
+<nav class="site-nav">
+  <div class="container site-nav-inner">
+    <a class="brand" href="/">
+      <img class="avatar-nav" src="/avatar.png" alt="Adam Setch avatar" />
+      <span>🏠 Home</span>
+    </a>
+
+    <button class="nav-toggle nav-btn" data-nav-toggle aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <ul class="nav-links" data-nav-links>
+      {navLinks.map((l) => (
+        <li>
+          <a href={l.href}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="nav-actions">
+      <button class="nav-btn" data-search-toggle aria-label="Search">
+        🔍
+      </button>
+      <button class="nav-btn" data-theme-toggle aria-label="Toggle dark mode">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>

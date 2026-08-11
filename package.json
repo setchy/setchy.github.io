@@ -1,0 +1,23 @@
+{
+  "name": "setchy.io",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal site of Adam Setch",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fetch:github": "node scripts/fetch-github.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10"
+  }
+}
