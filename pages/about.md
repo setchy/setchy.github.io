@@ -7,9 +7,9 @@ permalink: /about/
 
 ### 📖 About me
 
-- Senior Executive (VP) // Architect // Developer
+- Distinguished Engineer // Chief Architect // Senior Executive (VP)
 - Technology Advisor
-- OSS Maintainer and Contributor
+- OSS Creator, Maintainer and Contributor
 
 ### 🔭 Interests
 
