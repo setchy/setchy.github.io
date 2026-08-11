@@ -1,0 +1,114 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { projects, ROLE_LABELS, type Project, type ProjectRole } from '../data/projects';
+import githubCache from '../data/github-cache.json';
+
+interface RepoMeta {
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  language: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  topics: string[];
+  license: string | null;
+  archived: boolean;
+}
+
+type Cache = Record<string, RepoMeta>;
+
+interface ProjectCard extends Project {
+  meta: RepoMeta | null;
+  link: string;
+  roleInfo: { label: string; icon: string };
+}
+
+function formatStars(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
+  return String(n);
+}
+
+const cache = githubCache as Cache;
+
+const cards: ProjectCard[] = projects
+  .map((p) => {
+    const key = p.repo ? `${p.owner}/${p.repo}` : '';
+    const meta = key && cache[key] ? cache[key] : null;
+    const link = p.url ?? `https://github.com/${p.owner}/${p.repo}`;
+    return { ...p, meta, link, roleInfo: ROLE_LABELS[p.role] };
+  })
+  .sort((a, b) => {
+    const aStars = a.meta?.stargazers_count ?? -1;
+    const bStars = b.meta?.stargazers_count ?? -1;
+    return bStars - aStars;
+  });
+
+const categoryOrder = [
+  'Productivity Tooling',
+  'DevSecOps Tooling',
+  'Technology Radars',
+  'API Frameworks',
+  'Methodologies',
+  'Travel',
+];
+const categories = categoryOrder.filter((c) => cards.some((card) => card.category === c));
+const roleOrder: Record<ProjectRole, number> = { created: 0, maintain: 1, contribute: 2 };
+const countForRole = (role: ProjectRole) => cards.filter((c) => c.role === role).length;
+
+const title = 'Open Source Projects';
+const description = 'A collection of open source software projects which I enjoy working on';
+---
+<PageLayout title={title} description={description} cover="/covers/oss.svg">
+  <header class="hero" style="background-image: url('/covers/oss.svg')">
+    <div class="hero-content">
+      <h1>{title}</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <p class="prose">
+        {description}:
+      </p>
+
+      <div class="role-legend">
+        {(["created", "maintain", "contribute"] as ProjectRole[]).map((role) => (
+          <span class="role-badge" data-role={role}>
+            {ROLE_LABELS[role].icon} {ROLE_LABELS[role].label}
+            <span class="role-count">{countForRole(role)}</span>
+          </span>
+        ))}
+      </div>
+
+      {
+        categories.map((cat) => (
+          <section class="project-section">
+            <h2>{cat}</h2>
+            <div class="project-grid">
+              {cards
+                .filter((c) => c.category === cat)
+                .map((c) => (
+                  <a class="project-card" href={c.link} target="_blank" rel="noopener">
+                    <div class="project-card-top">
+                      <span class="project-role" data-role={c.role} title={c.roleInfo.label}>
+                        {c.roleInfo.icon}
+                      </span>
+                      <span class="project-stars">★ {formatStars(c.meta?.stargazers_count ?? 0)}</span>
+                    </div>
+                    <div class="project-name">{c.owner}/{c.repo}</div>
+                    <p class="project-desc">{c.meta?.description ?? c.note ?? ''}</p>
+                    <div class="project-card-bottom">
+                      {c.meta?.language && <span class="project-lang">{c.meta.language}</span>}
+                      {c.meta?.homepage && (
+                        <span class="project-homepage">{c.meta.homepage.replace(/^https?:\/\//, '')}</span>
+                      )}
+                    </div>
+                  </a>
+                ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </main>
+</PageLayout>

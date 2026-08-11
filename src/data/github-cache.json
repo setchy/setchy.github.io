@@ -1,0 +1,285 @@
+{
+  "setchy/atlassify": {
+    "description": "Atlassian notifications on your menu bar. Available on macOS, Windows & Linux. ",
+    "html_url": "https://github.com/setchy/atlassify",
+    "homepage": "https://atlassify.io",
+    "language": "TypeScript",
+    "stargazers_count": 39,
+    "forks_count": 2,
+    "topics": [
+      "atlassian",
+      "atlassify",
+      "bitbucket",
+      "compass",
+      "confluence",
+      "electron",
+      "jira",
+      "node",
+      "react",
+      "tailwindcss"
+    ],
+    "license": "MIT",
+    "archived": false
+  },
+  "gitify-app/gitify": {
+    "description": "Git notifications on your menu bar. Available on macOS, Windows & Linux.",
+    "html_url": "https://github.com/gitify-app/gitify",
+    "homepage": "https://gitify.io",
+    "language": "TypeScript",
+    "stargazers_count": 5315,
+    "forks_count": 291,
+    "topics": [
+      "bitbucket",
+      "codeberg",
+      "electron",
+      "forgejo",
+      "gitea",
+      "github",
+      "github-api",
+      "gitify",
+      "menubar",
+      "node",
+      "notifications",
+      "react",
+      "tailwindcss"
+    ],
+    "license": "MIT",
+    "archived": false
+  },
+  "renovatebot/renovate": {
+    "description": "Home of the Renovate CLI: Cross-platform Dependency Automation by Mend.io",
+    "html_url": "https://github.com/renovatebot/renovate",
+    "homepage": "https://mend.io/renovate",
+    "language": "TypeScript",
+    "stargazers_count": 22227,
+    "forks_count": 3235,
+    "topics": [
+      "azure-devops",
+      "bitbucket",
+      "dependencies",
+      "dependencies-checking",
+      "dependency-manager",
+      "github",
+      "gitlab",
+      "npm",
+      "package-management"
+    ],
+    "license": "AGPL-3.0",
+    "archived": false
+  },
+  "CycloneDX/cdxgen": {
+    "description": "Creates CycloneDX Bill of Materials (BOM) for your projects from source and container images. Supports many languages and package managers. Integrate in your CI/CD pipeline with automatic submission to Dependency Track server",
+    "html_url": "https://github.com/cdxgen/cdxgen",
+    "homepage": "https://cdxgen.github.io/cdxgen/",
+    "language": "JavaScript",
+    "stargazers_count": 1037,
+    "forks_count": 256,
+    "topics": [
+      "bom",
+      "cbom",
+      "containers",
+      "cyclonedx",
+      "docker",
+      "oci",
+      "owasp",
+      "package-url",
+      "purl",
+      "saasbom",
+      "sbom",
+      "sca",
+      "software-bill-of-materials",
+      "spdx",
+      "spdx-sbom",
+      "supply-chain"
+    ],
+    "license": "Apache-2.0",
+    "archived": false
+  },
+  "DependencyTrack/frontend": {
+    "description": "Frontend UI for Dependency-Track",
+    "html_url": "https://github.com/DependencyTrack/frontend",
+    "homepage": "https://dependencytrack.org/",
+    "language": "Vue",
+    "stargazers_count": 168,
+    "forks_count": 246,
+    "topics": [
+      "front-end",
+      "hacktoberfest",
+      "vue",
+      "vuejs"
+    ],
+    "license": "Apache-2.0",
+    "archived": false
+  },
+  "DependencyTrack/dependency-track": {
+    "description": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain.",
+    "html_url": "https://github.com/DependencyTrack/dependency-track",
+    "homepage": "https://dependencytrack.org/",
+    "language": "Java",
+    "stargazers_count": 4095,
+    "forks_count": 793,
+    "topics": [
+      "appsec",
+      "bill-of-materials",
+      "bom",
+      "component-analysis",
+      "cyclonedx",
+      "devsecops",
+      "hacktoberfest",
+      "nvd",
+      "ossindex",
+      "owasp",
+      "package-url",
+      "purl",
+      "sbom",
+      "sca",
+      "security",
+      "security-automation",
+      "software-composition-analysis",
+      "software-security",
+      "vulnerabilities",
+      "vulnerability-detection"
+    ],
+    "license": "Apache-2.0",
+    "archived": false
+  },
+  "setchy/thoughtworks-tech-radar-volumes": {
+    "description": "CLI and complete collection of Thoughtworks Technology Radar datasets (JSON, CSV and Google Sheets)",
+    "html_url": "https://github.com/setchy/thoughtworks-tech-radar-volumes",
+    "homepage": "https://setchy.io/radars",
+    "language": "TypeScript",
+    "stargazers_count": 19,
+    "forks_count": 4,
+    "topics": [
+      "tech-radar"
+    ],
+    "license": null,
+    "archived": false
+  },
+  "thoughtworks/build-your-own-radar": {
+    "description": "A library that generates an interactive radar, inspired by https://thoughtworks.com/radar/.",
+    "html_url": "https://github.com/thoughtworks/build-your-own-radar",
+    "homepage": "",
+    "language": "CSS",
+    "stargazers_count": 2562,
+    "forks_count": 1124,
+    "topics": [
+      "opensource",
+      "radar",
+      "thoughtworks"
+    ],
+    "license": "AGPL-3.0",
+    "archived": false
+  },
+  "Netflix/dgs-framework": {
+    "description": "GraphQL for Java with Spring Boot made easy.",
+    "html_url": "https://github.com/Netflix/dgs-framework",
+    "homepage": "https://netflix.github.io/dgs",
+    "language": "Kotlin",
+    "stargazers_count": 3385,
+    "forks_count": 337,
+    "topics": [
+      "dgs",
+      "graphql",
+      "graphql-java",
+      "java",
+      "spring-boot"
+    ],
+    "license": "Apache-2.0",
+    "archived": false
+  },
+  "setchy/dgs-extended-formatters": {
+    "description": "A set of DGS Directives for common formatting use-cases",
+    "html_url": "https://github.com/setchy/dgs-extended-formatters",
+    "homepage": "",
+    "language": "Java",
+    "stargazers_count": 7,
+    "forks_count": 0,
+    "topics": [],
+    "license": "MIT",
+    "archived": false
+  },
+  "graphql-java/graphql-java-extended-scalars": {
+    "description": "A library of extended scalars for graphql-java",
+    "html_url": "https://github.com/graphql-java/graphql-java-extended-scalars",
+    "homepage": null,
+    "language": "Java",
+    "stargazers_count": 287,
+    "forks_count": 62,
+    "topics": [],
+    "license": "MIT",
+    "archived": false
+  },
+  "graphql-java/graphql-java-extended-validation": {
+    "description": "Validation library for graphql-java input",
+    "html_url": "https://github.com/graphql-java/graphql-java-extended-validation",
+    "homepage": null,
+    "language": "Java",
+    "stargazers_count": 138,
+    "forks_count": 34,
+    "topics": [],
+    "license": "MIT",
+    "archived": false
+  },
+  "chentsulin/awesome-graphql": {
+    "description": "Awesome list of GraphQL",
+    "html_url": "https://github.com/chentsulin/awesome-graphql",
+    "homepage": "",
+    "language": null,
+    "stargazers_count": 15084,
+    "forks_count": 1246,
+    "topics": [
+      "awesome",
+      "awesome-list",
+      "graphql",
+      "list"
+    ],
+    "license": null,
+    "archived": false
+  },
+  "tailrocks/graphql-java-datetime": {
+    "description": "GraphQL ISO Date is a set of RFC 3339 compliant date/time scalar types to be used with graphql-java.",
+    "html_url": "https://github.com/tailrocks/graphql-java-datetime",
+    "homepage": "",
+    "language": "Java",
+    "stargazers_count": 153,
+    "forks_count": 25,
+    "topics": [
+      "date",
+      "datetime",
+      "graphql",
+      "graphql-java",
+      "scalars",
+      "time"
+    ],
+    "license": "Apache-2.0",
+    "archived": false
+  },
+  "setchy/meme-driven.dev": {
+    "description": "Meme Driven Development (MDD) - A novel (and fun) approach to modern software development",
+    "html_url": "https://github.com/setchy/meme-driven.dev",
+    "homepage": "https://meme-driven.dev",
+    "language": "Astro",
+    "stargazers_count": 16,
+    "forks_count": 3,
+    "topics": [
+      "development",
+      "mdd",
+      "meme-driven",
+      "memes"
+    ],
+    "license": "MIT",
+    "archived": false
+  },
+  "setchy/guidealong-maps": {
+    "description": "Global GuideAlong tour explorer",
+    "html_url": "https://github.com/setchy/guidealong-maps",
+    "homepage": "https://guidealong.setchy.io/",
+    "language": "JavaScript",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "topics": [],
+    "license": null,
+    "archived": false
+  }
+}

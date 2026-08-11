@@ -1,0 +1,19 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { render, getEntry } from 'astro:content';
+
+const about = await getEntry('pages', 'about');
+if (!about) throw new Error('About page not found');
+const { Content } = await render(about);
+---
+<PageLayout title={about.data.title} description={about.data.subtitle} cover={about.data.cover}>
+  <header class="hero" style={`background-image: url('${about.data.cover || '/covers/home.svg'}')`}>
+    <div class="hero-content">
+      <h1>{about.data.title}</h1>
+      {about.data.subtitle && <p class="hero-sub">{about.data.subtitle}</p>}
+    </div>
+  </header>
+  <main class="main prose" data-page="about">
+    <Content />
+  </main>
+</PageLayout>
