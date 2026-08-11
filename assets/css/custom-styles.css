@@ -6,63 +6,63 @@
    header use the full container-md width instead. */
 .intro-header .col-xl-8,
 .intro-header .col-lg-10 {
-  flex: 0 0 100%;
-  max-width: 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
 }
 
 .intro-header .offset-xl-2,
 .intro-header .offset-lg-1 {
-  margin-left: 0;
+	margin-left: 0;
 }
 
 /* ==========================================================================
  Thumbnails / Icons
  ========================================================================== */
 .icon-gallery a {
-  padding: 5px;
-  display: inline-block
+	padding: 5px;
+	display: inline-block;
 }
 
 .icon {
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20px;
-  width: 20px;
-  padding-left: 30px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 20px;
+	width: 20px;
+	padding-left: 30px;
 }
 
 .icon:hover {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .github {
-  background-image: url("../icons/github.svg");
+	background-image: url("../icons/github.svg");
 }
 
 .google-sheets {
-  background-image: url("../icons/google-sheets.svg");
+	background-image: url("../icons/google-sheets.svg");
 }
 
 .pdf {
-  background-image: url("../icons/pdf.svg");
+	background-image: url("../icons/pdf.svg");
 }
 
 .podcast {
-  background-image: url("../icons/podcast.svg");
+	background-image: url("../icons/podcast.svg");
 }
 
 .radar {
-  background-image: url("../icons/radar.png");
+	background-image: url("../icons/radar.png");
 }
 
 .rss {
-  background-image: url("../icons/rss.svg");
+	background-image: url("../icons/rss.svg");
 }
 
 .web {
-  background-image: url("../icons/web.svg");
+	background-image: url("../icons/web.svg");
 }
 
 .youtube {
-  background-image: url("../icons/youtube.svg");
+	background-image: url("../icons/youtube.svg");
 }
