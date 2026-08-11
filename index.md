@@ -1,5 +1,5 @@
 ---
 layout: home
 title: Hi, I'm Adam
-subtitle: Senior Executive (VP) // Architect // Developer
+subtitle: Distinguished Engineer // Chief Architect // Senior Executive (VP)
 ---
