@@ -40,20 +40,22 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(deps): refresh GitHub repository stats"
+          commit-message: "chore(deps): refresh GitHub stats"
           branch: chore/refresh-github-stats
           delete-branch: true
           base: main
-          title: "chore(deps): refresh GitHub repository stats"
+          title: "chore(deps): refresh GitHub stats"
           body: |
             Auto-generated weekly refresh of GitHub repository statistics
-            (stars, forks, description, language) from the GitHub API.
+            (stars, forks, description, language) and user stats (followers)
+            from the GitHub API.
 
             Run `npm run fetch:github` locally to refresh manually.
           labels:
             - dependency
           add-paths: |
             src/data/github-cache.json
+            src/data/stats.json
 
       - name: Summarize
         if: ${{ steps.cpr.outputs.pull-request-number }}
