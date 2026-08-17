@@ -661,6 +661,10 @@ img {
   }
 }
 
+[hidden] {
+  display: none !important;
+}
+
 /* ---- OSS page: project cards ---- */
 .role-legend {
   display: flex;
@@ -830,6 +834,52 @@ img {
 [data-page="open-source"] h4 {
   margin-bottom: 0.5rem;
   color: var(--text-strong);
+}
+
+/* ---- Library page: compact cards ---- */
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.library-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.library-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--hover);
+  text-decoration: none;
+}
+
+.library-card-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.library-card-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--link);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.library-card:hover .library-card-title {
+  color: var(--hover);
 }
 
 /* ---- Radars page: volume links as a table ---- */

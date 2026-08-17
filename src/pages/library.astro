@@ -1,0 +1,82 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { libraryItems, TYPE_LABELS, type LibraryType } from '../data/library';
+
+type TopicGroup = {
+  topic: string;
+  items: typeof libraryItems;
+};
+
+const topicOrder = [
+  'Architecture',
+  'APIs',
+  'API',
+  'Engineering',
+  'Tech Orgs',
+  'Product Management',
+  'WoW',
+  'Thought Leaders',
+  'GraphQL',
+  'Tech Leadership',
+  'Identity',
+  'Cloud',
+  'Product Delivery',
+  'Other',
+];
+
+const topics = topicOrder.filter((t) => libraryItems.some((item) => item.topic === t));
+
+const groups: TopicGroup[] = topics.map((topic) => ({
+  topic,
+  items: libraryItems.filter((item) => item.topic === topic),
+}));
+
+const countForType = (type: LibraryType) => libraryItems.filter((item) => item.type === type).length;
+
+const title = 'Library';
+const description = 'A collection of my favorite technology resources that I use to keep up-to-date with the technology industry';
+---
+<PageLayout title={title} description={description} cover="/covers/library.svg">
+  <header class="hero" style="background-image: url('/covers/library.svg')">
+    <div class="hero-content">
+      <h1>{title}</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <p class="prose">
+        {description}:
+      </p>
+
+      <div class="role-legend">
+        <button class="role-badge type-filter active" data-type-filter="all">
+          All
+          <span class="role-count">{libraryItems.length}</span>
+        </button>
+        {(["blog", "podcast", "ebook"] as LibraryType[]).map((type) => (
+          <button class="role-badge type-filter" data-type-filter={type}>
+            {TYPE_LABELS[type].icon} {TYPE_LABELS[type].label}
+            <span class="role-count">{countForType(type)}</span>
+          </button>
+        ))}
+      </div>
+
+      {
+        groups.map((group) => (
+          <section class="project-section" data-topic={group.topic}>
+            <h2>{group.topic}</h2>
+            <div class="library-grid">
+              {group.items.map((item) => (
+                <a class="library-card" data-type={item.type} href={item.url} target="_blank" rel="noopener">
+                  <span class="library-card-icon">{TYPE_LABELS[item.type].icon}</span>
+                  <span class="library-card-title">{item.title}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </main>
+</PageLayout>

@@ -140,6 +140,35 @@ declare global {
       });
     });
   }
+
+  // Library type filtering
+  const typeFilterButtons = document.querySelectorAll<HTMLButtonElement>('.type-filter');
+  if (typeFilterButtons.length) {
+    const allCards = document.querySelectorAll<HTMLElement>('.library-card[data-type]');
+    const allSections = document.querySelectorAll<HTMLElement>('.project-section[data-topic]');
+
+    typeFilterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        typeFilterButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const type = btn.getAttribute('data-type-filter');
+
+        allCards.forEach((card) => {
+          if (type === 'all' || card.getAttribute('data-type') === type) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden', '');
+          }
+        });
+
+        allSections.forEach((section) => {
+          const visibleCards = section.querySelectorAll('.library-card:not([hidden])');
+          section.hidden = visibleCards.length === 0;
+        });
+      });
+    });
+  }
 })();
 
 export {};
