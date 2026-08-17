@@ -10,11 +10,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "fetch:github": "node scripts/fetch-github.mjs"
+    "fetch:github": "node scripts/fetch-github.mjs",
+    "generate:skills-badge": "node scripts/generate-skills-badge.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
+    "@fortawesome/fontawesome-free": "^7.3.1",
     "astro": "^7.2.0"
   },
   "devDependencies": {

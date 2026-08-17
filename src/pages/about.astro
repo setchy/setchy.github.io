@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import skillCategories from '../data/skills.json';
 
 const title = 'About me';
 const subtitle = 'Distinguished Engineer // Chief Architect // Senior Executive (VP)';
@@ -10,100 +11,6 @@ const interests = [
   { icon: '🔗', title: 'APIs & Integration', description: 'GraphQL // Apollo // REST // AsyncAPI' },
   { icon: '🛡️', title: 'Dependency Management & Technical Health', description: 'LeanIX // Renovate // SBOM' },
   { icon: '💡', title: 'Innovation', description: 'Communicating emerging technology trends via Tech Radars' },
-];
-
-const skillCategories = [
-  {
-    title: 'Languages',
-    skills: [
-      { name: 'JavaScript', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', icon: 'https://skills.syvixor.com/api/icons?i=javascript' },
-      { name: 'TypeScript', url: 'https://www.typescriptlang.org/', icon: 'https://skills.syvixor.com/api/icons?i=typescript' },
-      { name: 'Java', url: 'https://www.oracle.com/java/', icon: 'https://skills.syvixor.com/api/icons?i=java' },
-      { name: 'HTML5', url: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5', icon: 'https://skills.syvixor.com/api/icons?i=html' },
-      { name: 'CSS3', url: 'https://www.w3.org/TR/CSS/#css', icon: 'https://skills.syvixor.com/api/icons?i=css3' },
-    ],
-  },
-  {
-    title: 'Frameworks & Libraries',
-    skills: [
-      { name: 'React', url: 'https://react.dev/', icon: 'https://skills.syvixor.com/api/icons?i=reactjs' },
-      { name: 'Vue', url: 'https://vuejs.org/', icon: 'https://skills.syvixor.com/api/icons?i=vuejs' },
-      { name: 'Astro', url: 'https://astro.build/', icon: 'https://skills.syvixor.com/api/icons?i=astro' },
-      { name: 'Tailwind CSS', url: 'https://tailwindcss.com/', icon: 'https://skills.syvixor.com/api/icons?i=tailwindcss' },
-      { name: 'Electron', url: 'https://www.electronjs.org/', icon: 'https://skills.syvixor.com/api/icons?i=electron' },
-      { name: 'Expo', url: 'https://expo.dev/', icon: 'https://skills.syvixor.com/api/icons?i=expo' },
-    ],
-  },
-  {
-    title: 'State & Data',
-    skills: [
-      { name: 'TanStack', url: 'https://tanstack.com/', icon: 'https://skills.syvixor.com/api/icons?i=tanstack' },
-      { name: 'Zustand', url: 'https://github.com/pmndrs/zustand', icon: 'https://skills.syvixor.com/api/icons?i=zustand' },
-      { name: 'Axios', url: 'https://axios-http.com/', icon: 'https://skills.syvixor.com/api/icons?i=axios' },
-      { name: 'Auth0', url: 'https://auth0.com/', icon: 'https://skills.syvixor.com/api/icons?i=auth0' },
-    ],
-  },
-  {
-    title: 'Backend',
-    skills: [
-      { name: 'Node.js', url: 'https://nodejs.org/', icon: 'https://skills.syvixor.com/api/icons?i=nodejs' },
-      { name: 'Express', url: 'https://expressjs.com/', icon: 'https://skills.syvixor.com/api/icons?i=expressjs' },
-      { name: 'Spring', url: 'https://spring.io/', icon: 'https://skills.syvixor.com/api/icons?i=spring' },
-      { name: 'Spring Boot', url: 'https://spring.io/projects/spring-boot', icon: 'https://skills.syvixor.com/api/icons?i=springboot' },
-    ],
-  },
-  {
-    title: 'APIs & Integrations',
-    skills: [
-      { name: 'GraphQL', url: 'https://graphql.org/', icon: 'https://skills.syvixor.com/api/icons?i=graphql' },
-      { name: 'Apollo', url: 'https://apollographql.com/', icon: 'https://skills.syvixor.com/api/icons?i=apollo' },
-      { name: 'Netflix DGS', url: 'https://netflix.github.io/dgs/', icon: 'https://skills.syvixor.com/api/icons?i=netflixdgs' },
-      { name: 'OpenAPI', url: 'https://swagger.io/specification/', icon: 'https://skills.syvixor.com/api/icons?i=openapi' },
-      { name: 'Swagger', url: 'https://swagger.io/', icon: 'https://skills.syvixor.com/api/icons?i=swagger' },
-      { name: 'Postman', url: 'https://www.postman.com/', icon: 'https://skills.syvixor.com/api/icons?i=postman' },
-    ],
-  },
-  {
-    title: 'Package Management',
-    skills: [
-      { name: 'npm', url: 'https://www.npmjs.com/', icon: 'https://skills.syvixor.com/api/icons?i=npm' },
-      { name: 'pnpm', url: 'https://pnpm.io/', icon: 'https://skills.syvixor.com/api/icons?i=pnpm' },
-      { name: 'Maven', url: 'https://maven.apache.org/', icon: 'https://skills.syvixor.com/api/icons?i=apachemaven' },
-    ],
-  },
-  {
-    title: 'Build & Quality',
-    skills: [
-      { name: 'Vite', url: 'https://vitejs.dev/', icon: 'https://skills.syvixor.com/api/icons?i=vite' },
-      { name: 'Vitest', url: 'https://vitest.dev/', icon: 'https://skills.syvixor.com/api/icons?i=vitest' },
-      { name: 'Biome', url: 'https://biomejs.dev/', icon: 'https://skills.syvixor.com/api/icons?i=biome' },
-      { name: 'SonarQube', url: 'https://www.sonarsource.com/products/sonarqube/', icon: 'https://skills.syvixor.com/api/icons?i=sonarqube' },
-      { name: 'Renovate', url: 'https://docs.renovatebot.com/', icon: 'https://skills.syvixor.com/api/icons?i=renovate' },
-    ],
-  },
-  {
-    title: 'DevOps',
-    skills: [
-      { name: 'Docker', url: 'https://docker.com/', icon: 'https://skills.syvixor.com/api/icons?i=docker' },
-      { name: 'GitHub Actions', url: 'https://github.com/features/actions', icon: 'https://skills.syvixor.com/api/icons?i=githubactions' },
-      { name: 'GitHub Pages', url: 'https://pages.github.com/', icon: 'https://skills.syvixor.com/api/icons?i=githubpages' },
-    ],
-  },
-  {
-    title: 'Tools',
-    skills: [
-      { name: 'LaunchDarkly', url: 'https://launchdarkly.com/', icon: 'https://skills.syvixor.com/api/icons?i=launchdarkly' },
-      { name: 'GitHub', url: 'https://github.com/', icon: 'https://skills.syvixor.com/api/icons?i=github' },
-      { name: 'GitHub Copilot', url: 'https://github.com/features/copilot', icon: 'https://skills.syvixor.com/api/icons?i=githubcopilot' },
-      { name: 'Bitbucket', url: 'https://www.atlassian.com/software/bitbucket', icon: 'https://skills.syvixor.com/api/icons?i=bitbucket' },
-      { name: 'Jira', url: 'https://www.atlassian.com/software/jira', icon: 'https://skills.syvixor.com/api/icons?i=jira' },
-      { name: 'Confluence', url: 'https://www.atlassian.com/software/confluence', icon: 'https://skills.syvixor.com/api/icons?i=confluence' },
-      { name: 'Slack', url: 'https://slack.com/', icon: 'https://skills.syvixor.com/api/icons?i=slack' },
-      { name: 'Draw.io', url: 'https://drawio-app.com/', icon: 'https://skills.syvixor.com/api/icons?i=drawio' },
-      { name: 'IntelliJ', url: 'https://www.jetbrains.com/idea/', icon: 'https://skills.syvixor.com/api/icons?i=intellijidea' },
-      { name: 'VSCode', url: 'https://code.visualstudio.com/', icon: 'https://skills.syvixor.com/api/icons?i=visualstudiocode' },
-    ],
-  },
 ];
 ---
 <PageLayout title={title} description={subtitle} cover="/covers/home.svg">
@@ -150,7 +57,7 @@ const skillCategories = [
             <div class="skill-grid">
               {category.skills.map((skill) => (
                 <a class="skill-item" href={skill.url} target="_blank" rel="noreferrer" title={skill.name}>
-                  <img src={skill.icon} alt={skill.name} width="40" height="40" loading="lazy" />
+                  <img src={`https://skills.syvixor.com/api/icons?i=${skill.slug}`} alt={skill.name} width="40" height="40" loading="lazy" />
                 </a>
               ))}
             </div>

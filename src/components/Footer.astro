@@ -1,14 +1,10 @@
 ---
 import SocialLinks from './SocialLinks.astro';
 const year = new Date().getFullYear();
-const editUrl = 'https://github.com/setchy/setchy.github.io/edit/main/index.md';
 ---
 <footer class="site-footer">
   <div class="container">
     <SocialLinks />
     <p class="footer-note">Adam Setch &bull; {year}</p>
-    <p class="footer-note">
-      <a href={editUrl} target="_blank" rel="noopener">Edit this page on GitHub</a>
-    </p>
   </div>
 </footer>
