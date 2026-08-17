@@ -51,12 +51,11 @@ jobs:
             from the GitHub API.
 
             Run `npm run fetch:github` locally to refresh manually.
-          labels:
-            - dependency
           add-paths: |
             src/data/github-cache.json
             src/data/stats.json
 
       - name: Summarize
         if: ${{ steps.cpr.outputs.pull-request-number }}
-        run: echo "PR opened: #${{ steps.cpr.outputs.pull-request-number }}"
+        run: |
+          echo "PR opened: ${{ steps.cpr.outputs.pull-request-number }}"
