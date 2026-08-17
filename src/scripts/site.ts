@@ -111,6 +111,35 @@ declare global {
         .join('');
     });
   }
+
+  // OSS role filtering
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.role-filter');
+  if (filterButtons.length) {
+    const allCards = document.querySelectorAll<HTMLElement>('.project-card[data-role]');
+    const allSections = document.querySelectorAll<HTMLElement>('.project-section[data-category]');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const role = btn.getAttribute('data-role-filter');
+
+        allCards.forEach((card) => {
+          if (role === 'all' || card.getAttribute('data-role') === role) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden', '');
+          }
+        });
+
+        allSections.forEach((section) => {
+          const visibleCards = section.querySelectorAll('.project-card:not([hidden])');
+          section.hidden = visibleCards.length === 0;
+        });
+      });
+    });
+  }
 })();
 
 export {};

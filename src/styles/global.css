@@ -680,6 +680,23 @@ img {
   border: 1px solid var(--card-border);
   background: var(--card-bg);
   color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.role-badge:hover {
+  border-color: var(--link);
+}
+
+.role-badge.active {
+  background: var(--link);
+  color: #fff;
+  border-color: var(--link);
+}
+
+.role-badge.active .role-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 
 .role-count {

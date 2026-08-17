@@ -72,23 +72,27 @@ const description = 'A collection of open source software projects which I enjoy
       </p>
 
       <div class="role-legend">
+        <button class="role-badge role-filter active" data-role-filter="all">
+          All
+          <span class="role-count">{cards.length}</span>
+        </button>
         {(["created", "maintain", "contribute"] as ProjectRole[]).map((role) => (
-          <span class="role-badge" data-role={role}>
+          <button class="role-badge role-filter" data-role-filter={role}>
             {ROLE_LABELS[role].icon} {ROLE_LABELS[role].label}
             <span class="role-count">{countForRole(role)}</span>
-          </span>
+          </button>
         ))}
       </div>
 
       {
         categories.map((cat) => (
-          <section class="project-section">
+          <section class="project-section" data-category={cat}>
             <h2>{cat}</h2>
             <div class="project-grid">
               {cards
                 .filter((c) => c.category === cat)
                 .map((c) => (
-                  <a class="project-card" href={c.link} target="_blank" rel="noopener">
+                  <a class="project-card" data-role={c.role} href={c.link} target="_blank" rel="noopener">
                     <div class="project-card-top">
                       <span class="project-role" data-role={c.role} title={c.roleInfo.label}>
                         {c.roleInfo.icon}
