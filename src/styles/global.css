@@ -195,7 +195,7 @@ img {
 /* ---- Hero / cover ---- */
 .hero {
   position: relative;
-  min-height: 320px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,7 +217,7 @@ img {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 3.5rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .hero h1 {
@@ -246,17 +246,17 @@ img {
 /* ---- Homepage hero (no cover image) ---- */
 .home-hero {
   position: relative;
-  padding: 4rem 1.5rem;
+  padding: 2.5rem 1.5rem;
   text-align: center;
 }
 
 .home-hero .avatar {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--card-shadow);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 /* ---- Card grid ---- */
@@ -264,7 +264,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-  padding: 2.5rem 0 3rem;
+  padding: 1.5rem 0 3rem;
 }
 
 .card {
@@ -288,7 +288,7 @@ img {
 }
 
 .card-cover {
-  height: 140px;
+  height: 110px;
   background-size: cover;
   background-position: center;
 }
@@ -878,14 +878,220 @@ img {
   white-space: nowrap;
 }
 
+.library-card-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
 .library-card:hover .library-card-title {
   color: var(--hover);
+}
+
+/* ---- About page ---- */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.about-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about-bio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-bio-list li {
+  font-size: 1rem;
+  color: var(--text);
+  padding: 0.25rem 0;
+}
+
+.about-section {
+  margin-bottom: 2.5rem;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--nav-border);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.interest-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.interest-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.interest-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.interest-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: var(--text-strong);
+}
+
+.interest-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.skill-category {
+  margin-bottom: 1.5rem;
+}
+
+.skill-category h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-strong);
+}
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.skill-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--hover);
+  box-shadow: var(--shadow-lift);
+}
+
+.skill-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* ---- OSS page: header with badges ---- */
+.oss-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.oss-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.stat-badge:hover {
+  transform: translateY(-1px);
+  border-color: var(--hover);
+  box-shadow: var(--shadow-lift);
+}
+
+.stat-icon {
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.stat-label {
+  color: var(--text-muted);
+}
+
+.sponsor-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #ea4aaa, #bf40bf);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  white-space: nowrap;
+}
+
+.sponsor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 74, 170, 0.3);
 }
 
 /* ---- Radars page: volume links as a table ---- */
 [data-page="radars"] ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 0.5rem;
   list-style: none;
   padding-left: 0;
@@ -896,16 +1102,17 @@ img {
   border: 1px solid var(--card-border);
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
 [data-page="radars"] ul li:hover {
   border-color: var(--hover);
   background: var(--bg-alt);
+  transform: translateY(-1px);
 }
 
 [data-page="radars"] .icon.radar {

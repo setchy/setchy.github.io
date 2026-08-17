@@ -14,14 +14,4 @@ const sections = defineCollection({
   }),
 });
 
-const pages = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
-  schema: z.object({
-    title: z.string(),
-    subtitle: z.string().optional(),
-    permalink: z.string(),
-    cover: z.string().optional(),
-  }),
-});
-
-export const collections = { sections, pages };
+export const collections = { sections };

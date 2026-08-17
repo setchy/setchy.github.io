@@ -1,0 +1,72 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { industryItems, TYPE_LABELS, type IndustryType } from '../data/industry';
+
+type TopicGroup = {
+  topic: string;
+  items: typeof industryItems;
+};
+
+const topicOrder = [
+  'GraphQL',
+  'LaunchDarkly',
+  'OWASP Dependency Track',
+];
+
+const topics = topicOrder.filter((t) => industryItems.some((item) => item.topic === t));
+
+const groups: TopicGroup[] = topics.map((topic) => ({
+  topic,
+  items: industryItems.filter((item) => item.topic === topic),
+}));
+
+const countForType = (type: IndustryType) => industryItems.filter((item) => item.type === type).length;
+
+const title = 'Industry';
+const description = 'A collection of my industry contributions through conference presentations, webinars and case studies';
+---
+<PageLayout title={title} description={description} cover="/covers/industry.svg">
+  <header class="hero" style="background-image: url('/covers/industry.svg')">
+    <div class="hero-content">
+      <h1>{title}</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <p class="prose">
+        {description}:
+      </p>
+
+      <div class="role-legend">
+        <button class="role-badge type-filter active" data-type-filter="all">
+          All
+          <span class="role-count">{industryItems.length}</span>
+        </button>
+        {(["web", "youtube", "pdf"] as IndustryType[]).map((type) => (
+          <button class="role-badge type-filter" data-type-filter={type}>
+            {TYPE_LABELS[type].icon} {TYPE_LABELS[type].label}
+            <span class="role-count">{countForType(type)}</span>
+          </button>
+        ))}
+      </div>
+
+      {
+        groups.map((group) => (
+          <section class="project-section" data-topic={group.topic}>
+            <h2>{group.topic}</h2>
+            <div class="library-grid">
+              {group.items.map((item) => (
+                <a class="library-card" data-type={item.type} href={item.url} target="_blank" rel="noopener">
+                  <span class="library-card-icon">{TYPE_LABELS[item.type].icon}</span>
+                  <span class="library-card-title">{item.title}</span>
+                  {item.date && <span class="library-card-date">{item.date}</span>}
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </main>
+</PageLayout>

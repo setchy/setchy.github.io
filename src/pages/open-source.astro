@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { projects, ROLE_LABELS, type Project, type ProjectRole } from '../data/projects';
 import githubCache from '../data/github-cache.json';
+import stats from '../data/stats.json';
 
 interface RepoMeta {
   description: string | null;
@@ -67,9 +68,26 @@ const description = 'A collection of open source software projects which I enjoy
 
   <main class="main">
     <div class="container">
-      <p class="prose">
-        {description}:
-      </p>
+      <div class="oss-header">
+        <p class="prose">
+          {description}:
+        </p>
+        <div class="oss-badges">
+          <a class="stat-badge" href="https://github.com/setchy?tab=followers" target="_blank" rel="noopener">
+            <span class="stat-icon">👤</span>
+            <span class="stat-value">{stats.github.followers}</span>
+            <span class="stat-label">followers</span>
+          </a>
+          <a class="stat-badge" href="https://wakatime.com/@2b948ae2-4be1-4020-8a57-7de60b53fe1d" target="_blank" rel="noopener">
+            <span class="stat-icon">⌨️</span>
+            <span class="stat-value">{stats.wakatime.hours.toLocaleString()}</span>
+            <span class="stat-label">hrs coded</span>
+          </a>
+          <a class="sponsor-btn" href="https://github.com/sponsors/setchy" target="_blank" rel="noopener">
+            ❤️ Sponsor
+          </a>
+        </div>
+      </div>
 
       <div class="role-legend">
         <button class="role-badge role-filter active" data-role-filter="all">
