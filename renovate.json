@@ -2,9 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
+    ":disableRateLimiting",
     ":enableVulnerabilityAlerts",
     ":semanticCommitTypeAll(chore)",
     ":separateMultipleMajorReleases",
+    "customManagers:biomeVersions",
     "schedule:weekly"
   ],
   "labels": ["dependency"],
