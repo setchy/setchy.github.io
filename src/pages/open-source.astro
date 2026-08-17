@@ -1,25 +1,11 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { projects, ROLE_LABELS, type Project, type ProjectRole } from '../data/projects';
-import githubCache from '../data/github-cache.json';
-import stats from '../data/stats.json';
-
-interface RepoMeta {
-  description: string | null;
-  html_url: string;
-  homepage: string | null;
-  language: string | null;
-  stargazers_count: number;
-  forks_count: number;
-  topics: string[];
-  license: string | null;
-  archived: boolean;
-}
-
-type Cache = Record<string, RepoMeta>;
+import { githubCache, type GithubRepoMeta } from '../data/github-cache';
+import { stats } from '../data/stats';
 
 interface ProjectCard extends Project {
-  meta: RepoMeta | null;
+  meta: GithubRepoMeta | null;
   link: string;
   roleInfo: { label: string; icon: string };
 }
@@ -29,12 +15,10 @@ function formatStars(n: number): string {
   return String(n);
 }
 
-const cache = githubCache as Cache;
-
 const cards: ProjectCard[] = projects
   .map((p) => {
     const key = p.repo ? `${p.owner}/${p.repo}` : '';
-    const meta = key && cache[key] ? cache[key] : null;
+    const meta = key && githubCache[key] ? githubCache[key] : null;
     const link = p.url ?? `https://github.com/${p.owner}/${p.repo}`;
     return { ...p, meta, link, roleInfo: ROLE_LABELS[p.role] };
   })

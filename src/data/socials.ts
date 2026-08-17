@@ -1,4 +1,10 @@
-export const socials = [
+export interface SocialLink {
+  name: string;
+  href: string;
+  icon: string;
+}
+
+export const socials: SocialLink[] = [
   { name: 'RSS', href: '/feed.xml', icon: 'fa-solid fa-rss' },
   { name: 'Facebook', href: 'https://www.facebook.com/adam.setch', icon: 'fa-brands fa-facebook' },
   { name: 'GitHub', href: 'https://github.com/setchy', icon: 'fa-brands fa-github' },
