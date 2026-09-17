@@ -12,4 +12,5 @@ export const socials: SocialLink[] = [
   { name: 'YouTube', href: 'https://www.youtube.com/setchy87', icon: 'fa-brands fa-youtube' },
   { name: 'LinkedIn', href: 'https://linkedin.com/in/adamsetch', icon: 'fa-brands fa-linkedin-in' },
   { name: 'Untappd', href: 'https://untappd.com/user/setchy', icon: 'fa-brands fa-untappd' },
+  { name: 'Skratch', href: 'https://share.skratch.world/N0cBlEVoB8/visited', icon: 'fa-solid fa-map-location-dot' },
 ];
