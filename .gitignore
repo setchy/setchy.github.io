@@ -1,3 +1,15 @@
-/_site/*
+# Build output
+dist/
 
+# Astro
+.astro/
+
+# Dependencies
+node_modules/
+
+# OS
 .DS_Store
+
+# Env
+.env
+.env.*

@@ -1,0 +1,76 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { skillCategories } from '../data/skills';
+
+const title = 'About me';
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const bioList = [
+  'Distinguished Engineer & Senior Director — Cisco',
+  'Former Chief Architect & VP — World Fuel (Fortune 100)',
+  'OSS Maintainer and Contributor',
+];
+
+const interests = [
+  { icon: 'fa-solid fa-shield-halved', title: 'Software Health', description: 'Dependency management, SBOMs and technical debt — LeanIX, Renovate, Dependency-Track' },
+  { icon: 'fa-solid fa-bolt', title: 'Developer Experience', description: 'DX and developer productivity across the software delivery lifecycle' },
+  { icon: 'fa-solid fa-gauge-high', title: 'Engineering Productivity', description: 'Making engineering organizations faster to deliver, measure and improve' },
+  { icon: 'fa-solid fa-network-wired', title: 'Federated API Strategy', description: 'GraphQL, Apollo and federated API governance at scale' },
+  { icon: 'fa-solid fa-chart-line', title: 'Career Development', description: 'Engineering career pathways, guilds and communities of practice' },
+  { icon: 'fa-solid fa-lock', title: 'Software Security', description: 'Supply-chain security, SBOM and dependency risk management' },
+  { icon: 'fa-solid fa-compass', title: 'Technology Strategy', description: 'Technology radars and emerging tech trends for leadership teams' },
+];
+---
+<PageLayout title={title} description={subtitle} cover="/covers/home.svg">
+  <header class="hero" style="background-image: url('/covers/home.svg')">
+    <div class="hero-content">
+      <h1>{title}</h1>
+      {subtitle && <p class="hero-sub">{subtitle}</p>}
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="about-intro">
+        <img class="about-avatar" src="/avatar.png" alt="Adam Setch" />
+        <div class="about-bio">
+          <ul class="about-bio-list">
+            {bioList.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>Advisory & interests</h2>
+        <div class="interests-grid">
+          {interests.map((interest) => (
+            <div class="interest-card">
+              <i class={`interest-icon ${interest.icon}`} aria-hidden="true"></i>
+              <div>
+                <h3 class="interest-title">{interest.title}</h3>
+                <p class="interest-desc">{interest.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>Skills</h2>
+        {skillCategories.map((category) => (
+          <div class="skill-category">
+            <h3>{category.title}</h3>
+            <div class="skill-grid">
+              {category.skills.map((skill) => (
+                <a class="skill-item" href={skill.url} target="_blank" rel="noreferrer" title={skill.name}>
+                  <img src={`https://skills.syvixor.com/api/icons?i=${skill.slug}`} alt={skill.name} width="40" height="40" loading="lazy" />
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+    </div>
+  </main>
+</PageLayout>

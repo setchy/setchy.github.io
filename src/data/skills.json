@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Languages",
+    "skills": [
+      { "slug": "javascript", "name": "JavaScript", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { "slug": "typescript", "name": "TypeScript", "url": "https://www.typescriptlang.org/" },
+      { "slug": "java", "name": "Java", "url": "https://www.oracle.com/java/" },
+      { "slug": "html", "name": "HTML5", "url": "https://developer.mozilla.org/en-US/docs/Glossary/HTML5" },
+      { "slug": "css3", "name": "CSS3", "url": "https://www.w3.org/TR/CSS/#css" }
+    ]
+  },
+  {
+    "title": "Frameworks & Libraries",
+    "skills": [
+      { "slug": "reactjs", "name": "React", "url": "https://react.dev/" },
+      { "slug": "vuejs", "name": "Vue", "url": "https://vuejs.org/" },
+      { "slug": "astro", "name": "Astro", "url": "https://astro.build/" },
+      { "slug": "tailwindcss", "name": "Tailwind CSS", "url": "https://tailwindcss.com/" },
+      { "slug": "electron", "name": "Electron", "url": "https://www.electronjs.org/" },
+      { "slug": "expo", "name": "Expo", "url": "https://expo.dev/" }
+    ]
+  },
+  {
+    "title": "State & Data",
+    "skills": [
+      { "slug": "tanstack", "name": "TanStack", "url": "https://tanstack.com/" },
+      { "slug": "zustand", "name": "Zustand", "url": "https://github.com/pmndrs/zustand" },
+      { "slug": "axios", "name": "Axios", "url": "https://axios-http.com/" },
+      { "slug": "auth0", "name": "Auth0", "url": "https://auth0.com/" }
+    ]
+  },
+  {
+    "title": "Backend",
+    "skills": [
+      { "slug": "nodejs", "name": "Node.js", "url": "https://nodejs.org/" },
+      { "slug": "expressjs", "name": "Express", "url": "https://expressjs.com/" },
+      { "slug": "spring", "name": "Spring", "url": "https://spring.io/" },
+      { "slug": "springboot", "name": "Spring Boot", "url": "https://spring.io/projects/spring-boot" }
+    ]
+  },
+  {
+    "title": "APIs & Integrations",
+    "skills": [
+      { "slug": "graphql", "name": "GraphQL", "url": "https://graphql.org/" },
+      { "slug": "apollo", "name": "Apollo", "url": "https://apollographql.com/" },
+      { "slug": "netflixdgs", "name": "Netflix DGS", "url": "https://netflix.github.io/dgs/" },
+      { "slug": "openapi", "name": "OpenAPI", "url": "https://swagger.io/specification/" },
+      { "slug": "swagger", "name": "Swagger", "url": "https://swagger.io/" },
+      { "slug": "postman", "name": "Postman", "url": "https://www.postman.com/" }
+    ]
+  },
+  {
+    "title": "Package Management",
+    "skills": [
+      { "slug": "npm", "name": "npm", "url": "https://www.npmjs.com/" },
+      { "slug": "pnpm", "name": "pnpm", "url": "https://pnpm.io/" },
+      { "slug": "apachemaven", "name": "Maven", "url": "https://maven.apache.org/" }
+    ]
+  },
+  {
+    "title": "Build & Quality",
+    "skills": [
+      { "slug": "vite", "name": "Vite", "url": "https://vitejs.dev/" },
+      { "slug": "vitest", "name": "Vitest", "url": "https://vitest.dev/" },
+      { "slug": "biome", "name": "Biome", "url": "https://biomejs.dev/" },
+      { "slug": "sonarqube", "name": "SonarQube", "url": "https://www.sonarsource.com/products/sonarqube/" },
+      { "slug": "renovate", "name": "Renovate", "url": "https://docs.renovatebot.com/" }
+    ]
+  },
+  {
+    "title": "DevOps",
+    "skills": [
+      { "slug": "docker", "name": "Docker", "url": "https://docker.com/" },
+      { "slug": "githubactions", "name": "GitHub Actions", "url": "https://github.com/features/actions" },
+      { "slug": "githubpages", "name": "GitHub Pages", "url": "https://pages.github.com/" }
+    ]
+  },
+  {
+    "title": "Tools",
+    "skills": [
+      { "slug": "launchdarkly", "name": "LaunchDarkly", "url": "https://launchdarkly.com/" },
+      { "slug": "github", "name": "GitHub", "url": "https://github.com/" },
+      { "slug": "githubcopilot", "name": "GitHub Copilot", "url": "https://github.com/features/copilot" },
+      { "slug": "bitbucket", "name": "Bitbucket", "url": "https://www.atlassian.com/software/bitbucket" },
+      { "slug": "jira", "name": "Jira", "url": "https://www.atlassian.com/software/jira" },
+      { "slug": "confluence", "name": "Confluence", "url": "https://www.atlassian.com/software/confluence" },
+      { "slug": "slack", "name": "Slack", "url": "https://slack.com/" },
+      { "slug": "drawio", "name": "Draw.io", "url": "https://drawio-app.com/" },
+      { "slug": "intellijidea", "name": "IntelliJ", "url": "https://www.jetbrains.com/idea/" },
+      { "slug": "visualstudiocode", "name": "VSCode", "url": "https://code.visualstudio.com/" }
+    ]
+  }
+]

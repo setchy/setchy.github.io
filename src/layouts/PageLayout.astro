@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title,
+  description,
+  cover,
+} = Astro.props;
+---
+<BaseLayout title={title} description={description} cover={cover}>
+  <Navbar />
+
+  <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+    <div class="search-box">
+      <input id="search-input" type="search" placeholder="Search..." autocomplete="off" />
+      <ul id="search-results" class="search-results"></ul>
+    </div>
+  </div>
+
+  <slot />
+
+  <Footer />
+
+  <script>
+    import '../scripts/site';
+  </script>
+</BaseLayout>

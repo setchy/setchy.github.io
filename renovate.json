@@ -2,25 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
+    ":disableRateLimiting",
     ":enableVulnerabilityAlerts",
     ":semanticCommitTypeAll(chore)",
     ":separateMultipleMajorReleases",
+    "customManagers:biomeVersions",
     "schedule:weekly"
   ],
   "labels": ["dependency"],
-  "rangeStrategy": "pin",
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "**/*.css"
-      ],
-      "matchStrings": [
-        "@import url\\(\"https://cdnjs\\.cloudflare\\.com/ajax/libs/(?<depName>[^/]+)/(?<currentValue>[^/]+)/css/all\\.min\\.css\"\\);"
-      ],
-      "datasourceTemplate": "cdnjs",
-      "versioningTemplate": "semver",
-      "autoReplaceStringTemplate": "@import url(\"https://cdnjs.cloudflare.com/ajax/libs/{{depName}}/{{newValue}}/css/all.min.css\");"
-    }
-  ]
+  "rangeStrategy": "pin"
 }
