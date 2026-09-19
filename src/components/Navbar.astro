@@ -15,7 +15,9 @@ import { navLinks } from '../data/nav';
     <ul class="nav-links" data-nav-links>
       {navLinks.map((l) => (
         <li>
-          <a href={l.href}>{l.label}</a>
+          <a href={l.href} aria-current={l.href === Astro.url.pathname ? 'page' : undefined}>
+            {l.label}
+          </a>
         </li>
       ))}
     </ul>

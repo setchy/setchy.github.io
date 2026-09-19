@@ -436,7 +436,7 @@ img {
 /* ---- Card grid ---- */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
   padding: 1.5rem 0 3rem;
 }
@@ -650,6 +650,7 @@ img {
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   list-style: none;
@@ -808,7 +809,15 @@ img {
 @media (max-width: 720px) {
   .nav-toggle {
     display: inline-block;
-    margin-left: auto;
+    order: 1;
+  }
+
+  .brand {
+    order: 2;
+  }
+
+  .nav-actions {
+    order: 3;
   }
 
   .nav-links {
@@ -945,7 +954,7 @@ img {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 1rem;
 }
 
@@ -1084,7 +1093,7 @@ img {
 /* ---- Library page: compact cards ---- */
 .library-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 0.75rem;
 }
 
@@ -1181,7 +1190,7 @@ img {
 
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
 }
 
@@ -1347,7 +1356,7 @@ main.prose[data-page="radars"] {
 
 [data-page="radars"] ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
   gap: 0.6rem;
   list-style: none;
   padding-left: 0;
@@ -1505,7 +1514,7 @@ main.prose[data-page="radars"] {
 
 .feature-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
   gap: 0.5rem;
   padding: 0;
   margin: 1rem 0 1.5rem;
@@ -1531,7 +1540,7 @@ main.prose[data-page="radars"] {
 /* ---- Blogs page: topic link grids ---- */
 [data-page="blogs"] ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
   gap: 0.5rem;
   padding: 0;
   list-style: none;
@@ -1600,7 +1609,7 @@ main.prose[data-page="radars"] {
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
 }
 
@@ -1678,4 +1687,13 @@ main.prose[data-page="radars"] {
 
 .advisor-cta:hover {
   color: var(--accent-hover);
+}
+
+/* ---- Small viewport stacking ---- */
+@media (max-width: 480px) {
+  .about-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
