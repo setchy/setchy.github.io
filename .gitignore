@@ -13,3 +13,6 @@ node_modules/
 # Env
 .env
 .env.*
+
+# OpenSpec change tracking (kept local)
+openspec/
