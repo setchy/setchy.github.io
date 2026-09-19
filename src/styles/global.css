@@ -808,6 +808,7 @@ img {
 @media (max-width: 720px) {
   .nav-toggle {
     display: inline-block;
+    margin-left: auto;
   }
 
   .nav-links {
