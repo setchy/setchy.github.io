@@ -3,14 +3,21 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { skillCategories } from '../data/skills';
 
 const title = 'About me';
-const subtitle = 'Distinguished Engineer // Chief Architect // Senior Executive (VP)';
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const bioList = [
+  'Distinguished Engineer & Senior Director — Cisco',
+  'Former Chief Architect & VP — World Fuel (Fortune 100)',
+  'OSS Maintainer and Contributor',
+];
 
 const interests = [
-  { icon: 'fa-solid fa-bolt', title: 'DX', description: 'Developer Experience // Developer Productivity' },
-  { icon: 'fa-solid fa-people-group', title: 'Career Pathways', description: 'Building strong engineering communities of practice (guilds, chapters, etc)' },
-  { icon: 'fa-solid fa-plug', title: 'APIs & Integration', description: 'GraphQL // Apollo // REST // AsyncAPI' },
-  { icon: 'fa-solid fa-shield-halved', title: 'Dependency Management & Technical Health', description: 'LeanIX // Renovate // SBOM' },
-  { icon: 'fa-solid fa-lightbulb', title: 'Innovation', description: 'Communicating emerging technology trends via Tech Radars' },
+  { icon: 'fa-solid fa-shield-halved', title: 'Software Health', description: 'Dependency management, SBOMs and technical debt — LeanIX, Renovate, Dependency-Track' },
+  { icon: 'fa-solid fa-bolt', title: 'Developer Experience', description: 'DX and developer productivity across the software delivery lifecycle' },
+  { icon: 'fa-solid fa-gauge-high', title: 'Engineering Productivity', description: 'Making engineering organizations faster to deliver, measure and improve' },
+  { icon: 'fa-solid fa-network-wired', title: 'Federated API Strategy', description: 'GraphQL, Apollo and federated API governance at scale' },
+  { icon: 'fa-solid fa-chart-line', title: 'Career Development', description: 'Engineering career pathways, guilds and communities of practice' },
+  { icon: 'fa-solid fa-lock', title: 'Software Security', description: 'Supply-chain security, SBOM and dependency risk management' },
+  { icon: 'fa-solid fa-compass', title: 'Technology Strategy', description: 'Technology radars and emerging tech trends for leadership teams' },
 ];
 ---
 <PageLayout title={title} description={subtitle} cover="/covers/home.svg">
@@ -27,15 +34,15 @@ const interests = [
         <img class="about-avatar" src="/avatar.png" alt="Adam Setch" />
         <div class="about-bio">
           <ul class="about-bio-list">
-            <li>Distinguished Engineer // Chief Architect // Senior Executive (VP)</li>
-            <li>Technology Advisor</li>
-            <li>OSS Maintainer and Contributor</li>
+            {bioList.map((b) => (
+              <li>{b}</li>
+            ))}
           </ul>
         </div>
       </section>
 
       <section class="about-section">
-        <h2>Interests</h2>
+        <h2>Advisory & interests</h2>
         <div class="interests-grid">
           {interests.map((interest) => (
             <div class="interest-card">

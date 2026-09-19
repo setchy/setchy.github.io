@@ -453,7 +453,10 @@ img {
 
 .card-cover {
   position: relative;
-  height: 110px;
+  height: 112px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
   background-size: cover;
   background-position: center;
   background-color: var(--accent-soft);
@@ -463,43 +466,41 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(16, 24, 40, 0.16));
+  background: linear-gradient(180deg, transparent 30%, rgba(10, 14, 26, 0.55) 100%);
   pointer-events: none;
 }
 
+.card-cover-title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.25rem 0.85rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 10px rgba(10, 14, 26, 0.5);
+}
+
+.card-cover-title i {
+  font-size: 0.9em;
+  filter: drop-shadow(0 1px 6px rgba(10, 14, 26, 0.4));
+}
+
 .card-body {
-  padding: 1.25rem 1.5rem 1.5rem;
+  padding: 0.95rem 1.25rem 1.15rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.card-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.3rem;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text-strong);
-}
-
-.card-title i {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem;
-  margin-right: 0.6rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 1.15rem;
-  vertical-align: -0.25rem;
-}
-
 .card-desc {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  margin: 0 0 0.9rem;
   flex: 1;
 }
 
@@ -1571,4 +1572,99 @@ main.prose[data-page="radars"] {
 
 [data-page="blogs"] h4:first-of-type {
   margin-top: 0;
+}
+
+/* ---- Homepage: featured work + advisory ---- */
+.featured-section {
+  margin-bottom: 2.5rem;
+}
+
+.featured-title,
+.advisor-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.featured-more {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.featured-more a {
+  color: var(--link);
+}
+
+.advisor-section {
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.advisor-title {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.advisor-body {
+  flex: 1 1 360px;
+}
+
+.advisor-note {
+  margin: 0 0 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.advisor-topics {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0;
+}
+
+.advisor-topics li {
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.advisor-cta {
+  align-self: center;
+  margin-left: auto;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.advisor-cta:hover {
+  color: var(--accent-hover);
 }

@@ -2,18 +2,30 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { cards } from '../data/homepage';
 import { heroStats } from '../data/hero-stats';
+import { projects, ROLE_LABELS } from '../data/projects';
+import { githubCache } from '../data/github-cache';
 
 const title = 'Hi, I\'m Adam';
-const subtitle = 'Distinguished Engineer // Chief Architect // Senior Executive (VP)';
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+
+const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const tagline =
+  'I build engineering organizations, maintain open-source tools developers depend on, and grow communities that scale.';
+
+const featuredKeys = ['gitify-app/gitify', 'setchy/atlassify', 'setchy/thoughtworks-tech-radar-volumes'];
+const featured = projects
+  .filter((p) => featuredKeys.includes(`${p.owner}/${p.repo}`))
+  .map((p) => {
+    const key = `${p.owner}/${p.repo}`;
+    const meta = githubCache[key];
+    return { ...p, meta, roleInfo: ROLE_LABELS[p.role], stars: meta?.stargazers_count ?? 0 };
+  })
+  .sort((a, b) => b.stars - a.stars);
 
 function formatStars(n: number): string {
   if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
   return String(n);
 }
-
-const topLine = 'Distinguished Engineer & Chief Architect';
-const tagline =
-  'I build engineering organizations, open source that developers depend on, and communities that scale.';
 
 const stats = [
   { value: formatStars(heroStats.stars), label: 'GitHub stars', href: '/open-source/' },
@@ -43,17 +55,50 @@ const stats = [
   </header>
 
   <div class="container">
+    <section class="featured-section">
+      <h2 class="featured-title">Featured open source</h2>
+      <div class="featured-grid">
+        {
+          featured.map((p) => (
+            <a class="project-card" href={`https://github.com/${p.owner}/${p.repo}`} target="_blank" rel="noopener">
+              <div class="project-card-top">
+                <span class="project-role">
+                  <i class={p.roleInfo.icon} aria-hidden="true"></i>
+                  {p.roleInfo.label}
+                </span>
+                <span class="project-stars">★ {formatStars(p.stars)}</span>
+              </div>
+              <div class="project-name">{p.owner}/{p.repo}</div>
+              <p class="project-desc">{p.meta?.description ?? p.note}</p>
+            </a>
+          ))
+        }
+      </div>
+      <p class="featured-more">
+        …and <a href="/open-source/">18 more projects and contributions in the Open Source section</a>.
+      </p>
+    </section>
+
+    <section class="advisor-section">
+      <h2 class="advisor-title">Technology advisor</h2>
+      <p class="advisor-note">Open to advisory conversations with engineering leaders.</p>
+      <a class="advisor-cta" href="https://linkedin.com/in/adamsetch" target="_blank" rel="noopener">
+        Let's talk <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
     <div class="card-grid">
       {
         cards.map((s) => {
           return (
             <a class="card" href={`/${s.permalink}`}>
-              <div class="card-cover" style={`background-image: url('${s.cover}')`}></div>
-              <div class="card-body">
-                <div class="card-title">
+              <div class="card-cover" style={`background-image: url('${s.cover}')`}>
+                <span class="card-cover-title">
                   <i class={s.icon} aria-hidden="true"></i>
                   {s.title}
-                </div>
+                </span>
+              </div>
+              <div class="card-body">
                 <p class="card-desc">{s.blurb}</p>
                 <div class="card-meta">
                   <span class="card-link"> &rarr;</span>

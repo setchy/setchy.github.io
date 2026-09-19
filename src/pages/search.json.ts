@@ -39,7 +39,7 @@ const libraryBody = strip(
 
 const aboutBody = strip(
   skillCategories.flatMap((c) => [c.title, ...c.skills.map((s) => s.name)]).join(', ') +
-    '\nInterests: Developer Experience, Career Pathways and engineering communities of practice, APIs and Integration (GraphQL, Apollo, REST, AsyncAPI), Dependency Management and Technical Health (LeanIX, Renovate, SBOM), Innovation and technology radars.',
+    '\nCurrently Distinguished Engineer & Senior Director at Cisco; former VP at World Fuel (Fortune 100). Advisory & interests: Software Health (dependencies, SBOM, LeanIX, Renovate, Dependency-Track), Developer Experience, Engineering Productivity, Federated API Strategy (GraphQL, Apollo, AsyncAPI), Career Development (guilds, communities of practice), Software Security (supply chain), Technology Strategy (tech radars, emerging technology trends).',
 );
 
 const travelBody = `Where we have traveled — ${travelStats.countries} countries, ${travelStats.territories} territories, ${travelStats.regions} regions, ${travelStats.cities} cities and ${travelStats.attractions} attractions. The Skratch map and travels on Instagram @cassbtravels.`;
