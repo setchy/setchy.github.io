@@ -3,12 +3,13 @@ import { navLinks } from '../data/nav';
 ---
 <nav class="site-nav">
   <div class="container site-nav-inner">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="Adam Setch — home">
       <img class="avatar-nav" src="/avatar.png" alt="Adam Setch avatar" />
+      <span class="brand-name">Adam&nbsp;Setch</span>
     </a>
 
-    <button class="nav-toggle nav-btn" data-nav-toggle aria-label="Toggle navigation">
-      ☰
+    <button class="nav-toggle nav-btn" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
     </button>
 
     <ul class="nav-links" data-nav-links>
@@ -21,10 +22,10 @@ import { navLinks } from '../data/nav';
 
     <div class="nav-actions">
       <button class="nav-btn" data-search-toggle aria-label="Search">
-        🔍
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
       </button>
       <button class="nav-btn" data-theme-toggle aria-label="Toggle dark mode">
-        <span data-theme-icon>🌙</span>
+        <i class="fa-solid fa-moon" data-theme-icon aria-hidden="true"></i>
       </button>
     </div>
   </div>

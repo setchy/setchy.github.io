@@ -23,28 +23,28 @@ const instagramUrl = 'https://www.instagram.com/cassbtravels/';
         </p>
         <div class="oss-badges">
           <span class="stat-badge">
-            <span class="stat-icon">🌍</span>
-            <span class="stat-value">{travelStats.countries.toLocaleString()}</span>
+            <i class="stat-icon fa-solid fa-earth-americas" aria-hidden="true"></i>
+            <span class="stat-value" data-count-up data-count-to={travelStats.countries}>{travelStats.countries.toLocaleString()}</span>
             <span class="stat-label">countries</span>
           </span>
           <span class="stat-badge">
-            <span class="stat-icon">🏝️</span>
-            <span class="stat-value">{travelStats.territories.toLocaleString()}</span>
+            <i class="stat-icon fa-solid fa-umbrella-beach" aria-hidden="true"></i>
+            <span class="stat-value" data-count-up data-count-to={travelStats.territories}>{travelStats.territories.toLocaleString()}</span>
             <span class="stat-label">territories</span>
           </span>
           <span class="stat-badge">
-            <span class="stat-icon">🗺️</span>
-            <span class="stat-value">{travelStats.regions.toLocaleString()}</span>
+            <i class="stat-icon fa-solid fa-map" aria-hidden="true"></i>
+            <span class="stat-value" data-count-up data-count-to={travelStats.regions}>{travelStats.regions.toLocaleString()}</span>
             <span class="stat-label">regions</span>
           </span>
           <span class="stat-badge">
-            <span class="stat-icon">🏙️</span>
-            <span class="stat-value">{travelStats.cities.toLocaleString()}</span>
+            <i class="stat-icon fa-solid fa-city" aria-hidden="true"></i>
+            <span class="stat-value" data-count-up data-count-to={travelStats.cities}>{travelStats.cities.toLocaleString()}</span>
             <span class="stat-label">cities</span>
           </span>
           <span class="stat-badge">
-            <span class="stat-icon">🏛️</span>
-            <span class="stat-value">{travelStats.attractions.toLocaleString()}</span>
+            <i class="stat-icon fa-solid fa-landmark" aria-hidden="true"></i>
+            <span class="stat-value" data-count-up data-count-to={travelStats.attractions}>{travelStats.attractions.toLocaleString()}</span>
             <span class="stat-label">attractions</span>
           </span>
         </div>

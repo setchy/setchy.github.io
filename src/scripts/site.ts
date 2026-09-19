@@ -21,7 +21,8 @@ declare global {
   function applyIcon() {
     if (!themeIcon) return;
     const theme = document.documentElement.getAttribute('data-theme');
-    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    themeIcon.classList.toggle('fa-moon', theme !== 'dark');
+    themeIcon.classList.toggle('fa-sun', theme === 'dark');
   }
 
   themeBtn?.addEventListener('click', () => {
@@ -39,7 +40,8 @@ declare global {
   const navToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
   const navLinks = document.querySelector<HTMLElement>('[data-nav-links]');
   navToggle?.addEventListener('click', () => {
-    navLinks?.classList.toggle('open');
+    const open = navLinks?.classList.toggle('open');
+    navToggle?.setAttribute('aria-expanded', String(Boolean(open)));
   });
 
   // Search overlay
@@ -96,15 +98,24 @@ declare global {
         resultsEl.innerHTML = '<li class="search-empty">No results found</li>';
         return;
       }
+      const snippet = (text: string, needle: string) => {
+        const i = text.toLowerCase().indexOf(needle);
+        if (i === -1) return '';
+        const start = Math.max(0, i - 48);
+        const end = Math.min(text.length, i + needle.length + 72);
+        return (start > 0 ? '…' : '') + text.slice(start, end).trim() + (end < text.length ? '…' : '');
+      };
       resultsEl.innerHTML = found
         .map((item) => {
+          const snip = snippet(item.body ?? '', q);
+          const meta = snip ? snip : item.date;
           return (
             '<li><a href="' +
             item.url +
             '">' +
             item.title +
             '<small>' +
-            item.date +
+            meta +
             '</small></a></li>'
           );
         })
@@ -169,6 +180,51 @@ declare global {
       });
     });
   }
+
+  // Count-up numbers for [data-count-up] stats (starts when scrolled into view)
+  const initCountUps = () => {
+    const els = Array.from(document.querySelectorAll<HTMLElement>('[data-count-up]'));
+    if (!els.length) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fmt = new Intl.NumberFormat('en-US');
+    const duration = 900;
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const run = (el: HTMLElement) => {
+      const raw = el.dataset.countTo ?? el.textContent?.replace(/[^\d]/g, '') ?? '0';
+      const target = Number(raw);
+      if (reduced || Number.isNaN(target)) {
+        el.textContent = fmt.format(target);
+        return;
+      }
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - start) / duration);
+        el.textContent = fmt.format(Math.round(target * easeOutCubic(p)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              run(entry.target as HTMLElement);
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      els.forEach((el) => io.observe(el));
+    } else {
+      els.forEach(run);
+    }
+  };
+  initCountUps();
 })();
 
 export {};

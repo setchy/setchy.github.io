@@ -45,7 +45,8 @@ const description = 'A collection of my industry contributions through conferenc
         </button>
         {(["web", "youtube", "pdf"] as IndustryType[]).map((type) => (
           <button class="role-badge type-filter" data-type-filter={type}>
-            {TYPE_LABELS[type].icon} {TYPE_LABELS[type].label}
+            <i class={TYPE_LABELS[type].icon} aria-hidden="true"></i>
+            {TYPE_LABELS[type].label}
             <span class="role-count">{countForType(type)}</span>
           </button>
         ))}
@@ -58,7 +59,7 @@ const description = 'A collection of my industry contributions through conferenc
             <div class="library-grid">
               {group.items.map((item) => (
                 <a class="library-card" data-type={item.type} href={item.url} target="_blank" rel="noopener">
-                  <span class="library-card-icon">{TYPE_LABELS[item.type].icon}</span>
+                  <i class={`library-card-icon ${TYPE_LABELS[item.type].icon}`} aria-hidden="true"></i>
                   <span class="library-card-title">{item.title}</span>
                   {item.date && <span class="library-card-date">{item.date}</span>}
                 </a>

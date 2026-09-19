@@ -5,7 +5,7 @@
     "homepage": "https://atlassify.io",
     "language": "TypeScript",
     "stargazers_count": 39,
-    "forks_count": 2,
+    "forks_count": 3,
     "topics": [
       "atlassian",
       "atlassify",
@@ -26,17 +26,20 @@
     "html_url": "https://github.com/gitify-app/gitify",
     "homepage": "https://gitify.io",
     "language": "TypeScript",
-    "stargazers_count": 5315,
+    "stargazers_count": 5347,
     "forks_count": 291,
     "topics": [
       "bitbucket",
       "codeberg",
       "electron",
+      "electron-menubar",
       "forgejo",
+      "git",
       "gitea",
       "github",
       "github-api",
       "gitify",
+      "gitlab",
       "menubar",
       "node",
       "notifications",
@@ -51,8 +54,8 @@
     "html_url": "https://github.com/renovatebot/renovate",
     "homepage": "https://mend.io/renovate",
     "language": "TypeScript",
-    "stargazers_count": 22227,
-    "forks_count": 3235,
+    "stargazers_count": 22514,
+    "forks_count": 3313,
     "topics": [
       "azure-devops",
       "bitbucket",
@@ -72,8 +75,8 @@
     "html_url": "https://github.com/cdxgen/cdxgen",
     "homepage": "https://cdxgen.github.io/cdxgen/",
     "language": "JavaScript",
-    "stargazers_count": 1037,
-    "forks_count": 256,
+    "stargazers_count": 1072,
+    "forks_count": 261,
     "topics": [
       "bom",
       "cbom",
@@ -100,8 +103,8 @@
     "html_url": "https://github.com/DependencyTrack/frontend",
     "homepage": "https://dependencytrack.org/",
     "language": "Vue",
-    "stargazers_count": 168,
-    "forks_count": 246,
+    "stargazers_count": 171,
+    "forks_count": 250,
     "topics": [
       "front-end",
       "hacktoberfest",
@@ -116,8 +119,8 @@
     "html_url": "https://github.com/DependencyTrack/dependency-track",
     "homepage": "https://dependencytrack.org/",
     "language": "Java",
-    "stargazers_count": 4095,
-    "forks_count": 793,
+    "stargazers_count": 4211,
+    "forks_count": 815,
     "topics": [
       "appsec",
       "bill-of-materials",
@@ -148,7 +151,7 @@
     "html_url": "https://github.com/setchy/thoughtworks-tech-radar-volumes",
     "homepage": "https://setchy.io/radars",
     "language": "TypeScript",
-    "stargazers_count": 19,
+    "stargazers_count": 20,
     "forks_count": 4,
     "topics": [
       "tech-radar"
@@ -161,7 +164,7 @@
     "html_url": "https://github.com/thoughtworks/build-your-own-radar",
     "homepage": "",
     "language": "CSS",
-    "stargazers_count": 2562,
+    "stargazers_count": 2566,
     "forks_count": 1124,
     "topics": [
       "opensource",
@@ -176,8 +179,8 @@
     "html_url": "https://github.com/Netflix/dgs-framework",
     "homepage": "https://netflix.github.io/dgs",
     "language": "Kotlin",
-    "stargazers_count": 3385,
-    "forks_count": 337,
+    "stargazers_count": 3393,
+    "forks_count": 345,
     "topics": [
       "dgs",
       "graphql",
@@ -204,7 +207,7 @@
     "html_url": "https://github.com/graphql-java/graphql-java-extended-scalars",
     "homepage": null,
     "language": "Java",
-    "stargazers_count": 287,
+    "stargazers_count": 290,
     "forks_count": 62,
     "topics": [],
     "license": "MIT",
@@ -225,16 +228,16 @@
     "description": "Awesome list of GraphQL",
     "html_url": "https://github.com/chentsulin/awesome-graphql",
     "homepage": "",
-    "language": null,
-    "stargazers_count": 15084,
-    "forks_count": 1246,
+    "language": "Ruby",
+    "stargazers_count": 15118,
+    "forks_count": 1244,
     "topics": [
       "awesome",
       "awesome-list",
       "graphql",
       "list"
     ],
-    "license": null,
+    "license": "CC0-1.0",
     "archived": false
   },
   "tailrocks/graphql-java-datetime": {
@@ -255,6 +258,17 @@
     "license": "Apache-2.0",
     "archived": false
   },
+  "graphql-java-kickstart": {
+    "description": null,
+    "html_url": "https://github.com/graphql-java-kickstart",
+    "homepage": "7 public repos",
+    "language": null,
+    "stargazers_count": 1281,
+    "forks_count": 353,
+    "topics": [],
+    "license": null,
+    "archived": false
+  },
   "setchy/meme-driven.dev": {
     "description": "Meme Driven Development (MDD) - A novel (and fun) approach to modern software development",
     "html_url": "https://github.com/setchy/meme-driven.dev",
@@ -272,9 +286,9 @@
     "archived": false
   },
   "setchy/guidealong-maps": {
-    "description": "Global GuideAlong tour explorer",
+    "description": "Global GuideAlong Tours Explorer",
     "html_url": "https://github.com/setchy/guidealong-maps",
-    "homepage": "https://guidealong.setchy.io/",
+    "homepage": "https://guidealong.setchy.io",
     "language": "JavaScript",
     "stargazers_count": 0,
     "forks_count": 0,

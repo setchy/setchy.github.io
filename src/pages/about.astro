@@ -6,11 +6,11 @@ const title = 'About me';
 const subtitle = 'Distinguished Engineer // Chief Architect // Senior Executive (VP)';
 
 const interests = [
-  { icon: '⚡', title: 'DX', description: 'Developer Experience // Developer Productivity' },
-  { icon: '🔭', title: 'Career Pathways', description: 'Building strong engineering communities of practice (guilds, chapters, etc)' },
-  { icon: '🔗', title: 'APIs & Integration', description: 'GraphQL // Apollo // REST // AsyncAPI' },
-  { icon: '🛡️', title: 'Dependency Management & Technical Health', description: 'LeanIX // Renovate // SBOM' },
-  { icon: '💡', title: 'Innovation', description: 'Communicating emerging technology trends via Tech Radars' },
+  { icon: 'fa-solid fa-bolt', title: 'DX', description: 'Developer Experience // Developer Productivity' },
+  { icon: 'fa-solid fa-people-group', title: 'Career Pathways', description: 'Building strong engineering communities of practice (guilds, chapters, etc)' },
+  { icon: 'fa-solid fa-plug', title: 'APIs & Integration', description: 'GraphQL // Apollo // REST // AsyncAPI' },
+  { icon: 'fa-solid fa-shield-halved', title: 'Dependency Management & Technical Health', description: 'LeanIX // Renovate // SBOM' },
+  { icon: 'fa-solid fa-lightbulb', title: 'Innovation', description: 'Communicating emerging technology trends via Tech Radars' },
 ];
 ---
 <PageLayout title={title} description={subtitle} cover="/covers/home.svg">
@@ -39,7 +39,7 @@ const interests = [
         <div class="interests-grid">
           {interests.map((interest) => (
             <div class="interest-card">
-              <span class="interest-icon">{interest.icon}</span>
+              <i class={`interest-icon ${interest.icon}`} aria-hidden="true"></i>
               <div>
                 <h3 class="interest-title">{interest.title}</h3>
                 <p class="interest-desc">{interest.description}</p>

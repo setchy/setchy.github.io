@@ -1,15 +1,45 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { cards } from '../data/homepage';
+import { heroStats } from '../data/hero-stats';
 
 const title = 'Hi, I\'m Adam';
 const subtitle = 'Distinguished Engineer // Chief Architect // Senior Executive (VP)';
+
+function formatStars(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
+  return String(n);
+}
+
+const topLine = 'Distinguished Engineer & Chief Architect';
+const tagline =
+  'I build engineering organizations, open source that developers depend on, and communities that scale.';
+
+const stats = [
+  { value: formatStars(heroStats.stars), label: 'GitHub stars', href: '/open-source/' },
+  { value: String(heroStats.projects), label: 'open-source projects', href: '/open-source/' },
+  { value: String(heroStats.talks), label: 'talks & contributions', href: '/industry/' },
+  { value: String(heroStats.countries), label: 'countries traveled', href: '/travel/' },
+];
 ---
 <PageLayout title={title} description={subtitle}>
   <header class="home-hero">
     <img class="avatar" src="/avatar.png" alt="Adam Setch" />
+    <p class="hero-eyebrow">{topLine}</p>
     <h1>{title}</h1>
-    <p class="hero-sub">{subtitle}</p>
+    <p class="hero-tagline">{tagline}</p>
+    <ul class="hero-stats" aria-label="Highlights">
+      {
+        stats.map((s) => (
+          <li>
+            <a href={s.href}>
+              <span class="hero-stat-value mono">{s.value}</span>
+              <span class="hero-stat-label">{s.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </header>
 
   <div class="container">
@@ -21,7 +51,7 @@ const subtitle = 'Distinguished Engineer // Chief Architect // Senior Executive 
               <div class="card-cover" style={`background-image: url('${s.cover}')`}></div>
               <div class="card-body">
                 <div class="card-title">
-                  <span class="card-icon">{s.icon}</span>
+                  <i class={s.icon} aria-hidden="true"></i>
                   {s.title}
                 </div>
                 <p class="card-desc">{s.blurb}</p>

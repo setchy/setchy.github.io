@@ -22,7 +22,39 @@ if (process.env.GITHUB_TOKEN) {
 const cache = {};
 
 for (const p of projects) {
-  if (!p.repo) continue;
+  // Org aggregate: when a project has no single repo, sum stats across the
+  // organization's public repos and store them under the owner key. The entry
+  // keeps the GithubRepoMeta shape so the cache type stays unchanged.
+  if (!p.repo) {
+    const key = p.owner;
+    try {
+      const res = await fetch(`${GITHUB_API}/orgs/${encodeURIComponent(p.owner)}/repos?per_page=100`, { headers });
+      if (!res.ok) {
+        console.warn(`  ${res.status} ${key} (skipped)`);
+        continue;
+      }
+      const repos = await res.json();
+      const pub = repos.filter((r) => !r.archived);
+      const stars = pub.reduce((s, r) => s + (r.stargazers_count ?? 0), 0);
+      const forks = pub.reduce((s, r) => s + (r.forks_count ?? 0), 0);
+      cache[key] = {
+        description: null,
+        html_url: p.url ?? `https://github.com/${p.owner}`,
+        homepage: `${pub.length} public repos`,
+        language: null,
+        stargazers_count: stars,
+        forks_count: forks,
+        topics: [],
+        license: null,
+        archived: false,
+      };
+      console.log(`  ok  ${key} ★${stars} (${pub.length} public repos)`);
+    } catch (err) {
+      console.warn(`  err ${key}: ${err.message}`);
+    }
+    continue;
+  }
+
   const key = `${p.owner}/${p.repo}`;
   try {
     const res = await fetch(`${GITHUB_API}/repos/${key}`, { headers });

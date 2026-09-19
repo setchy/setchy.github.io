@@ -8,9 +8,9 @@ export interface LibraryItem {
 }
 
 export const TYPE_LABELS: Record<LibraryType, { label: string; icon: string }> = {
-  blog: { label: 'Blogs', icon: '📰' },
-  podcast: { label: 'Podcasts', icon: '🎧' },
-  ebook: { label: 'eBooks', icon: '📚' },
+  blog: { label: 'Blogs', icon: 'fa-solid fa-newspaper' },
+  podcast: { label: 'Podcasts', icon: 'fa-solid fa-headphones' },
+  ebook: { label: 'eBooks', icon: 'fa-solid fa-book' },
 };
 
 export const libraryItems: LibraryItem[] = [

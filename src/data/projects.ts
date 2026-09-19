@@ -11,9 +11,9 @@ export interface Project {
 }
 
 export const ROLE_LABELS: Record<ProjectRole, { label: string; icon: string }> = {
-  created: { label: 'Created', icon: '💡' },
-  maintain: { label: 'Maintain', icon: '👑' },
-  contribute: { label: 'Contribute', icon: '🤝' },
+  created: { label: 'Creator', icon: 'fa-solid fa-lightbulb' },
+  maintain: { label: 'Maintainer', icon: 'fa-solid fa-crown' },
+  contribute: { label: 'Contributor', icon: 'fa-solid fa-handshake' },
 };
 
 export const projects: Project[] = [
@@ -36,6 +36,8 @@ export const projects: Project[] = [
   { owner: 'chentsulin', repo: 'awesome-graphql', role: 'maintain', category: 'API Frameworks', note: 'Awesome list of GraphQL.' },
   { owner: 'tailrocks', repo: 'graphql-java-datetime', role: 'contribute', category: 'API Frameworks', note: 'GraphQL ISO Date is a set of RFC 3339 compliant date/time scalar types to be used with graphql-java.' },
   { owner: 'graphql-java-kickstart', repo: '', role: 'maintain', category: 'API Frameworks', note: 'GraphQL and GraphiQL Spring Framework Boot Starters.', url: 'https://github.com/graphql-java-kickstart' },
+  // Dining
+  { owner: 'setchy', repo: 'miami-spice', role: 'created', category: 'Dining', note: 'Miami Spice — restaurant week menus, deals and price tracking.', url: 'https://miamispice.app' },
   // Methodologies
   { owner: 'setchy', repo: 'meme-driven.dev', role: 'created', category: 'Methodologies', note: 'Meme Driven Development (MDD) - A novel (and fun) approach to modern software development.' },
   // Travel

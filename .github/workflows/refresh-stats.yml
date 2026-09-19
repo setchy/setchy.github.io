@@ -1,4 +1,4 @@
-name: Refresh GitHub stats
+name: Refresh site stats
 
 on:
   schedule:
@@ -11,7 +11,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: refresh-github-stats
+  group: refresh-site-stats
   cancel-in-progress: true
 
 jobs:
@@ -21,39 +21,49 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Fetch GitHub repository stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run fetch:github
+        run: pnpm run fetch:github
+
+      - name: Fetch travel stats
+        run: pnpm run fetch:travel
 
       - name: Create pull request
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(deps): refresh GitHub stats"
-          branch: chore/refresh-github-stats
+          commit-message: "chore(deps): refresh site stats"
+          branch: chore/refresh-site-stats
           delete-branch: true
           base: main
-          title: "chore(deps): refresh GitHub stats"
+          title: "chore(deps): refresh site stats"
           body: |
-            Auto-generated weekly refresh of GitHub repository statistics
-            (stars, forks, description, language) and user stats (followers)
-            from the GitHub API.
+            Auto-generated weekly refresh of:
+            - GitHub repository statistics (stars, forks, description,
+              language) and user stats (followers) from the GitHub API
+            - Travel statistics (countries, cities, regions) from the
+              Skratch share API
 
-            Run `npm run fetch:github` locally to refresh manually.
+            Run `pnpm run fetch:github` and `pnpm run fetch:travel` locally
+            to refresh manually.
           add-paths: |
             src/data/github-cache.json
             src/data/stats.json
+            src/data/travel.json
 
       - name: Summarize
         if: ${{ steps.cpr.outputs.pull-request-number }}

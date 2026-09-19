@@ -1,12 +1,31 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+const pages = [
+  { label: 'About', href: '/about/' },
+  { label: 'Open Source', href: '/open-source/' },
+  { label: 'Industry', href: '/industry/' },
+  { label: 'Radars', href: '/radars/' },
+  { label: 'Library', href: '/library/' },
+  { label: 'Travel', href: '/travel/' },
+];
 ---
-<PageLayout title="Oops!" description="Page not found">
+<PageLayout title="404 — Page not found" description="The requested page could not be found">
   <main class="main notfound">
-    <h1>404</h1>
-    <p><strong>Page not found :(</strong></p>
-    <img src="/this-is-fine.png" alt="This is fine" />
-    <p>The requested page could not be found.</p>
-    <p><a href="/">&larr; Back to home</a></p>
+    <p class="notfound-eyebrow mono">404</p>
+    <h1>Page not found</h1>
+    <p class="notfound-note">The page you're looking for doesn't exist, was moved, or never made it here. Let's get you back on track.</p>
+    <img class="notfound-img" src="/this-is-fine.png" alt="This is fine" loading="lazy" />
+    <p class="notfound-actions">
+      <a class="stat-badge" href="/">
+        <i class="fa-solid fa-house" aria-hidden="true"></i>
+        <span class="stat-value">Back to home</span>
+      </a>
+      <span>or</span>
+      {pages.slice(0, 4).map((p) => (
+        <a class="stat-badge" href={p.href}>
+          <span class="stat-label">{p.label}</span>
+        </a>
+      ))}
+    </p>
   </main>
 </PageLayout>
