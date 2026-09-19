@@ -40,6 +40,29 @@ const SITE = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {}
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        // Suppress theme transitions until first load so the correct theme
+        // applies instantly instead of flashing/animating from a light frame.
+        var guard = document.createElement('style');
+        guard.textContent =
+          'html, body, .site-nav, .site-footer { transition: none !important; }';
+        document.head.appendChild(guard);
+        window.addEventListener('load', function done() {
+          window.removeEventListener('load', done);
+          setTimeout(function () {
+            document.head.removeChild(guard);
+          }, 60);
+        });
+      })();
+    </script>
+
     <title>{title} | {SITE.title}</title>
     <meta name="author" content={SITE.author} />
     <meta name="description" content={description} />
@@ -60,17 +83,6 @@ const SITE = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={SITE.url + ogImage} />
-
-    <script is:inline>
-      (function () {
-        var stored = null;
-        try {
-          stored = localStorage.getItem('theme');
-        } catch (e) {}
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      })();
-    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KRZQ6HQZ6"></script>
