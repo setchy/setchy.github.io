@@ -15,15 +15,7 @@ declare global {
 }
 
 (function () {
-  const themeIcon = document.querySelector<HTMLElement>('[data-theme-icon]');
   const themeBtn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
-
-  function applyIcon() {
-    if (!themeIcon) return;
-    const theme = document.documentElement.getAttribute('data-theme');
-    themeIcon.classList.toggle('fa-moon', theme !== 'dark');
-    themeIcon.classList.toggle('fa-sun', theme === 'dark');
-  }
 
   themeBtn?.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme');
@@ -32,9 +24,7 @@ declare global {
     try {
       localStorage.setItem('theme', next);
     } catch (e) {}
-    applyIcon();
   });
-  applyIcon();
 
   // Mobile nav toggle
   const navToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');

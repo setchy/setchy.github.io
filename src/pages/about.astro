@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { skillCategories } from '../data/skills';
+import { sectionIcons, sectionIconFallback } from '../data/section-icons';
 
 const title = 'About me';
 const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
@@ -20,12 +21,11 @@ const interests = [
   { icon: 'fa-solid fa-compass', title: 'Technology Strategy', description: 'Technology radars and emerging tech trends for leadership teams' },
 ];
 ---
-<PageLayout title={title} description={subtitle} cover="/covers/home.svg">
-  <header class="hero" style="background-image: url('/covers/home.svg')">
-    <div class="hero-content">
-      <h1>{title}</h1>
-      {subtitle && <p class="hero-sub">{subtitle}</p>}
-    </div>
+<PageLayout title={title} description={subtitle}>
+  <header class="page-head">
+    <span class="page-head-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+    <h1>{title}</h1>
+    {subtitle && <p class="page-head-sub">{subtitle}</p>}
   </header>
 
   <main class="main">
@@ -42,7 +42,7 @@ const interests = [
       </section>
 
       <section class="about-section">
-        <h2>Advisory & interests</h2>
+        <h2><i class={`section-icon ${sectionIcons['Advisory & interests'] ?? sectionIconFallback}`} aria-hidden="true"></i>Advisory & interests</h2>
         <div class="interests-grid">
           {interests.map((interest) => (
             <div class="interest-card">
@@ -57,7 +57,7 @@ const interests = [
       </section>
 
       <section class="about-section">
-        <h2>Skills</h2>
+        <h2><i class={`section-icon ${sectionIcons['Skills'] ?? sectionIconFallback}`} aria-hidden="true"></i>Skills</h2>
         {skillCategories.map((category) => (
           <div class="skill-category">
             <h3>{category.title}</h3>

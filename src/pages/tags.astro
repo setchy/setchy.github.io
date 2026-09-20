@@ -16,10 +16,9 @@ for (const entry of sections) {
 const tags = [...tagMap.keys()].sort();
 ---
 <PageLayout title="Tag Index" description="All tags used across the site">
-  <header class="hero" style="background-image: url('/covers/home.svg')">
-    <div class="hero-content">
-      <h1>Tag Index</h1>
-    </div>
+  <header class="page-head">
+    <span class="page-head-icon"><i class="fa-solid fa-tags" aria-hidden="true"></i></span>
+    <h1>Tag Index</h1>
   </header>
   <main class="main prose tags-page">
     {

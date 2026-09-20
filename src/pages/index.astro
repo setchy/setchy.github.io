@@ -36,7 +36,7 @@ const stats = [
 ---
 <PageLayout title={title} description={subtitle}>
   <header class="home-hero">
-    <img class="avatar" src="/avatar.png" alt="Adam Setch" />
+    <img class="avatar" src="/avatar.png" alt="" width="96" height="96" decoding="async" />
     <p class="hero-eyebrow">{topLine}</p>
     <h1>{title}</h1>
     <p class="hero-tagline">{tagline}</p>
@@ -92,11 +92,9 @@ const stats = [
         cards.map((s) => {
           return (
             <a class="card" href={`/${s.permalink}`}>
-              <div class="card-cover" style={`background-image: url('${s.cover}')`}>
-                <span class="card-cover-title">
-                  <i class={s.icon} aria-hidden="true"></i>
-                  {s.title}
-                </span>
+              <div class="card-head">
+                <span class="card-icon"><i class={s.icon} aria-hidden="true"></i></span>
+                <span class="card-title">{s.title}</span>
               </div>
               <div class="card-body">
                 <p class="card-desc">{s.blurb}</p>

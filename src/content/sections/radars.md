@@ -5,6 +5,7 @@ tags: [radar, thoughtworks, technology radar, tech radar, blips]
 permalink: radars
 cover: /covers/radars.svg
 description: Technology Radars
+subtitle: A powerful communication medium for technology trends and opinionated recommendations
 ---
 
 <nav class="page-quicklinks" aria-label="On this page">

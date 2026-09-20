@@ -261,6 +261,20 @@ img {
   color: var(--accent);
 }
 
+/* Theme icon: both glyphs ship in the DOM; CSS shows the one matching
+   data-theme, which the inline <head> script sets before first paint —
+   so the correct icon renders immediately with no JS-swap flicker.
+   Scoped to .nav-btn so the display rules beat .fa-solid { display:block }. */
+.nav-btn [data-theme-icon-dark] {
+  display: none;
+}
+html[data-theme='dark'] .nav-btn [data-theme-icon-light] {
+  display: none;
+}
+html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
+  display: inline-block;
+}
+
 .avatar-nav {
   width: 36px;
   height: 36px;
@@ -268,61 +282,76 @@ img {
   object-fit: cover;
 }
 
-/* ---- Hero / cover ---- */
-.hero {
+/* ---- Page header (compact typographic) ---- */
+.page-head {
   position: relative;
-  min-height: 168px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  color: var(--hero-text);
   overflow: hidden;
-  animation: heroFadeIn 0.7s var(--ease) both;
+  text-align: center;
+  padding: 3rem 1.5rem 2.25rem;
 }
 
-.hero::after {
+.page-head::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(10, 14, 26, 0.3) 0%, rgba(10, 14, 26, 0.52) 100%);
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30rem;
+  height: 20rem;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero-content {
+.page-head > * {
   position: relative;
   z-index: 1;
-  padding: 1.75rem 1.5rem;
 }
 
-.hero h1 {
-  margin: 0 0 0.35rem;
-  color: var(--hero-text);
-  font-size: 2.25rem;
+.page-head-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.15rem;
+  margin-bottom: 0.9rem;
 }
 
-.hero .hero-sub {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.92);
+.page-head h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.page-head-sub {
   margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-muted);
 }
 
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* A page header owns its bottom spacing; main content flows directly
+   beneath it instead of stacking `.page-head` bottom + `.main` top padding. */
+.page-head + .main {
+  padding-top: 0;
+}
+
+/* First content block after the header shouldn't add its own top margin
+   (e.g. `.role-legend`'s `margin-top`) or subheading gaps go uneven. */
+.page-head + .main > .container > :first-child {
+  margin-top: 0;
 }
 
 /* ---- Homepage hero (typographic, no cover image) ---- */
 .home-hero {
   position: relative;
-  padding: 4.5rem 1.5rem 3.25rem;
+  padding: 3.5rem 1.5rem 3rem;
   text-align: center;
   overflow: hidden;
 }
@@ -461,47 +490,35 @@ img {
   text-decoration: none;
 }
 
-.card-cover {
-  position: relative;
-  height: 112px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--accent-soft);
-}
-
-.card-cover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(10, 14, 26, 0.55) 100%);
-  pointer-events: none;
-}
-
-.card-cover-title {
-  position: relative;
-  z-index: 1;
+.card-head {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0 1.25rem 0.85rem;
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  text-shadow: 0 1px 10px rgba(10, 14, 26, 0.5);
+  gap: 0.75rem;
+  padding: 1.1rem 1.25rem 0;
 }
 
-.card-cover-title i {
-  font-size: 0.9em;
-  filter: drop-shadow(0 1px 6px rgba(10, 14, 26, 0.4));
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
 }
 
 .card-body {
-  padding: 0.95rem 1.25rem 1.15rem;
+  padding: 0.6rem 1.25rem 1.15rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -808,16 +825,27 @@ img {
 /* ---- Responsive ---- */
 @media (max-width: 720px) {
   .nav-toggle {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     order: 1;
+    flex: 1 1 0;
+  }
+
+  .avatar-nav {
+    display: none;
   }
 
   .brand {
     order: 2;
+    flex: 0 0 auto;
+    margin-left: 0;
   }
 
   .nav-actions {
     order: 3;
+    flex: 1 1 0;
+    justify-content: flex-end;
   }
 
   .nav-links {
@@ -848,7 +876,7 @@ img {
   }
 
   .home-hero {
-    padding: 3rem 1.5rem 2.5rem;
+    padding: 2.5rem 1.5rem 2.25rem;
   }
 
   .home-hero h1 {
@@ -953,6 +981,13 @@ img {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--card-border);
+}
+
+.section-icon {
+  margin-right: 0.55rem;
+  color: var(--accent);
+  font-size: 0.85em;
+  vertical-align: 0.05em;
 }
 
 .project-grid {

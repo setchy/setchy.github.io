@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { libraryItems, TYPE_LABELS, type LibraryType } from '../data/library';
+import { sectionIcons, sectionIconFallback } from '../data/section-icons';
 
 type TopicGroup = {
   topic: string;
@@ -36,19 +37,15 @@ const countForType = (type: LibraryType) => libraryItems.filter((item) => item.t
 const title = 'Library';
 const description = 'A collection of my favorite technology resources that I use to keep up-to-date with the technology industry';
 ---
-<PageLayout title={title} description={description} cover="/covers/library.svg">
-  <header class="hero" style="background-image: url('/covers/library.svg')">
-    <div class="hero-content">
-      <h1>{title}</h1>
-    </div>
+<PageLayout title={title} description={description}>
+  <header class="page-head">
+    <span class="page-head-icon"><i class="fa-solid fa-book" aria-hidden="true"></i></span>
+    <h1>{title}</h1>
+    <p class="page-head-sub">{description}</p>
   </header>
 
   <main class="main">
     <div class="container">
-      <p class="prose">
-        {description}:
-      </p>
-
       <div class="role-legend">
         <button class="role-badge type-filter active" data-type-filter="all">
           All
@@ -66,7 +63,7 @@ const description = 'A collection of my favorite technology resources that I use
       {
         groups.map((group) => (
           <section class="project-section" data-topic={group.topic}>
-            <h2>{group.topic}</h2>
+            <h2><i class={`section-icon ${sectionIcons[group.topic] ?? sectionIconFallback}`} aria-hidden="true"></i>{group.topic}</h2>
             <div class="library-grid">
               {group.items.map((item) => (
                 <a class="library-card" data-type={item.type} href={item.url} target="_blank" rel="noopener">

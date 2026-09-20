@@ -7,8 +7,6 @@ cover: /covers/blogs.svg
 description: A collection of my favorite blogs
 ---
 
-A collection of my favorite blogs
-
 #### Architecture
 
 - <a href="https://architectelevator.com/" target="_blank" rel="noopener"><i class="fa-solid fa-rss" aria-hidden="true"></i>The Architect Elevator</a>

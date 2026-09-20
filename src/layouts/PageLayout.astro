@@ -6,10 +6,9 @@ import Footer from '../components/Footer.astro';
 const {
   title,
   description,
-  cover,
 } = Astro.props;
 ---
-<BaseLayout title={title} description={description} cover={cover}>
+<BaseLayout title={title} description={description}>
   <Navbar />
 
   <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
