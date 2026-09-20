@@ -8,9 +8,9 @@ import { githubCache } from '../data/github-cache';
 import { formatStars } from '../lib/format';
 
 const title = 'Hi, I\'m Adam';
-const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
 
-const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
 const tagline =
   'I build engineering organizations, maintain open-source tools developers depend on, and grow communities that scale.';
 
@@ -25,15 +25,35 @@ const featured = projects
   .sort((a, b) => b.stars - a.stars);
 
 const stats = [
-  { value: heroStats.contributions.toLocaleString(), label: 'GitHub contributions', href: 'https://github.com/setchy' },
-  { value: String(heroStats.projects), label: 'open-source projects', href: '/open-source/' },
-  { value: String(heroStats.talks), label: 'talks & case studies', href: '/industry/' },
-  { value: String(heroStats.countries), label: 'countries traveled', href: '/travel/' },
+  {
+    value: heroStats.contributions.toLocaleString(),
+    countTo: heroStats.contributions,
+    label: 'GitHub contributions',
+    href: 'https://github.com/setchy',
+  },
+  {
+    value: heroStats.projects.toLocaleString(),
+    countTo: heroStats.projects,
+    label: 'open-source projects',
+    href: '/open-source/',
+  },
+  {
+    value: heroStats.talks.toLocaleString(),
+    countTo: heroStats.talks,
+    label: 'talks & case studies',
+    href: '/industry/',
+  },
+  {
+    value: heroStats.countries.toLocaleString(),
+    countTo: heroStats.countries,
+    label: 'countries traveled',
+    href: '/travel/',
+  },
 ];
 ---
 <PageLayout title={title} description={subtitle}>
   <header class="home-hero">
-    <img class="avatar" src="/avatar.png" alt="" width="96" height="96" decoding="async" />
+    <img class="avatar" src="/avatar.png" alt="" width="96" height="96" decoding="sync" fetchpriority="high" />
     <p class="hero-eyebrow">{topLine}</p>
     <h1>{title}</h1>
     <p class="hero-tagline">{tagline}</p>
@@ -42,7 +62,7 @@ const stats = [
         stats.map((s) => (
           <li>
             <a href={s.href}>
-              <span class="hero-stat-value mono">{s.value}</span>
+              <span class="hero-stat-value mono" data-count-up data-count-to={s.countTo}>{s.value}</span>
               <span class="hero-stat-label">{s.label}</span>
             </a>
           </li>
@@ -53,7 +73,7 @@ const stats = [
 
   <div class="container">
     <section class="featured-section">
-      <h2 class="featured-title">Featured open source</h2>
+      <h2 class="featured-title">Featured open source projects</h2>
       <div class="featured-grid">
         {
           featured.map((p) => (
@@ -83,7 +103,7 @@ const stats = [
         Let's talk <span aria-hidden="true">&rarr;</span>
       </a>
     </section>
-
+  
     <div class="card-grid">
       {
         cards.map((s) => {

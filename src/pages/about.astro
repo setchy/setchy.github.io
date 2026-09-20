@@ -7,6 +7,33 @@ import { pageMeta } from '../data/page-meta';
 
 const { title, description } = pageMeta.about;
 
+const careerHistory = [
+  {
+    company: 'Cisco',
+    role: 'Distinguished Engineer & Senior Director',
+    period: '2026 — Present',
+    location: 'Miami, United States',
+    logo: '/logos/cisco.svg',
+    description: 'Agentic engineering, engineering productivity and DevOps platform leadership at a global networking and security leader.',
+  },
+  {
+    company: 'World Fuel',
+    role: 'Chief Architect & Vice President',
+    period: '2018 — 2026',
+    location: 'Miami, United States',
+    logo: '/logos/world-fuel.png',
+    description: 'Enterprise architecture, API and integration strategy at a Fortune 100 energy company.',
+  },
+  {
+    company: 'Suncorp Group',
+    role: 'Principal Domain Architect',
+    period: '2009 — 2018',
+    location: 'Brisbane, Australia',
+    logo: '/logos/suncorp.png',
+    description: 'Domain architecture across insurance and financial services at a leading Australian group.',
+  },
+];
+
 const interests = [
   { icon: 'fa-solid fa-shield-halved', title: 'Software Health', description: 'Dependency management, SBOMs and technical debt — LeanIX, Renovate, Dependency-Track' },
   { icon: 'fa-solid fa-bolt', title: 'Developer Experience', description: 'DX and developer productivity across the software delivery lifecycle' },
@@ -18,14 +45,23 @@ const interests = [
 ];
 ---
 <ContentPageLayout title={title} description={description} subtitle={description} permalink="about">
-  <section class="about-intro">
-    <img class="about-avatar" src="/avatar.png" alt="Adam Setch" />
-    <div class="about-bio">
-      <ul class="about-bio-list">
-        <li>Distinguished Engineer & Senior Director — Cisco</li>
-        <li>Former Chief Architect & VP — World Fuel (Fortune 100)</li>
-        <li>OSS Maintainer and Contributor</li>
-      </ul>
+  <section class="about-section">
+    <SectionHeading title="Career history" icon={sectionIcon('Career history')} />
+    <div class="career-grid">
+      {careerHistory.map((job) => (
+        <div class="career-card">
+          <div class="career-card-head">
+            <span class="career-icon"><img class="career-logo" src={job.logo} alt={`${job.company} logo`} width="40" height="40" decoding="sync" fetchpriority="high" /></span>
+            <div>
+              <h3 class="career-company">{job.company}</h3>
+              <p class="career-location"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> {job.location}</p>
+              <p class="career-period"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> {job.period}</p>
+            </div>
+          </div>
+          <p class="career-role">{job.role}</p>
+          <p class="career-desc">{job.description}</p>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -48,7 +84,7 @@ const interests = [
     <SectionHeading title="Skills" icon={sectionIcon('Skills')} />
     {skillCategories.map((category) => (
       <div class="skill-category">
-        <h3>{category.title}</h3>
+        <SectionHeading level="h3" title={category.title} icon={sectionIcon(category.title)} />
         <div class="skill-grid">
           {category.skills.map((skill) => (
             <a class="skill-item" href={skill.url} target="_blank" rel="noreferrer" title={skill.name}>

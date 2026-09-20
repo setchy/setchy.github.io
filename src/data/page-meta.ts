@@ -34,7 +34,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   about: {
     title: 'About me',
-    description: 'Distinguished Engineer · Chief Architect · Technology Advisor',
+    description: 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer',
     icon: 'fa-solid fa-user',
     ogTitle: 'About',
     ogDescription: 'Interests, skills and how I work',
