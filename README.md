@@ -12,7 +12,7 @@ Adam Setch's personal site: [setchy.io][setchyio]. Built with [Astro][astro]
 - **pnpm** — package manager (Node 24, pinned in `.nvmrc` / `packageManager`)
 - **Design tokens** — CSS custom properties in `src/styles/global.css`
   (light + dark themes, indigo accent)
-- **Self-hosted fonts** — Newsreader / Inter / JetBrains Mono via
+- **Self-hosted fonts** — Inter / JetBrains Mono via
   `@fontsource` (latin subsets only)
 - **Icons** — Font Awesome SVG paths rendered as CSS masks
   (`src/styles/icons.css`, generated — no icon fonts)
@@ -55,7 +55,7 @@ pnpm astro check    # type-check templates + data
 
 - Open Graph images are generated automatically at build time via
   `astro-og-canvas` (CanvasKit-rendered PNGs at `/open-graph/<page>.png`,
-  tinted with the site palette and bundled Newsreader/Inter fonts); `og:image`
+  tinted with the site palette and bundled Inter fonts); `og:image`
   is derived from the page path.
 - The site is deployed from `main`; build command `pnpm run build`, publish
   directory `dist` (see `netlify.toml`).

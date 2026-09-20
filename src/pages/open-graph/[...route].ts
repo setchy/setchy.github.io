@@ -34,7 +34,7 @@ export const { getStaticPaths, GET } = await OGImageRoute({
       description: { color: [107, 114, 128], size: 36 },
     },
     fonts: [
-      './node_modules/@fontsource/newsreader/files/newsreader-latin-600-normal.woff2',
+      './node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2',
       './node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2',
     ],
   }),
