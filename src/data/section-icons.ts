@@ -5,7 +5,7 @@ export const sectionIcons: Record<string, string> = {
   // OSS categories
   'API Frameworks': 'fa-solid fa-network-wired',
   'DevSecOps Tooling': 'fa-solid fa-shield-halved',
-  'Dining': 'fa-solid fa-crown',
+  'Dining': 'fa-solid fa-utensils',
   'Methodologies': 'fa-solid fa-book',
   'Productivity Tooling': 'fa-solid fa-keyboard',
   'Technology Radars': 'fa-solid fa-satellite-dish',
