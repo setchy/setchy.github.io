@@ -101,7 +101,6 @@ const homepageOf = (c: ProjectCardData): string | undefined => {
         <div class="project-grid">
           {group.items.map((c) => (
             <ProjectCard
-              variant="full"
               url={c.link}
               name={c.repo ? `${c.owner}/${c.repo}` : c.owner}
               description={c.meta?.description ?? c.note ?? ''}

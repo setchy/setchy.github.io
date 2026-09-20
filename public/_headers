@@ -1,0 +1,14 @@
+# Content-hashed build assets (fonts, CSS, JS, media emitted under /_astro/)
+# are immutable: their filenames change whenever content changes. Cache them
+# long-term to avoid revalidating fonts on every page load, which causes the
+# fallback->webfont swap flicker (font-display: swap) on each navigation.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Other static assets are also immutable between releases.
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+/avatar.png
+  Cache-Control: public, max-age=31536000, immutable
+/open-graph/*
+  Cache-Control: public, max-age=31536000, immutable

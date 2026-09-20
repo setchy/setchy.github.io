@@ -12,18 +12,16 @@ interface Props {
   roleIcon: string;
   /** Pre-formatted star count, e.g. "12.4k". */
   stars: string;
-  /** Owner avatar URL; shown in the `full` variant only. */
+  /** Owner avatar URL; shown beside the repo slug. */
   ownerAvatar?: string;
-  /** Primary language shown in the bottom metadata row (`full` variant). */
+  /** Primary language shown in the bottom metadata row. */
   language?: string;
-  /** Homepage shown in the bottom metadata row (`full` variant). */
+  /** Homepage shown in the bottom metadata row. */
   homepage?: string;
   /** Value for the generic card filter (`data-filter-value`). */
   filterValue?: string;
   /** Filter group id emitted as `data-filter-card` (e.g. "role"). */
   filterCard?: string;
-  /** Card style: `full` (OSS grid) or `featured` (homepage list). */
-  variant?: 'full' | 'featured';
 }
 
 const {
@@ -38,7 +36,6 @@ const {
   homepage,
   filterValue,
   filterCard,
-  variant = 'full',
 } = Astro.props;
 
 const filterAttrs =
@@ -48,7 +45,14 @@ const filterAttrs =
 ---
 <a class="project-card" href={url} target="_blank" rel="noopener" {...filterAttrs}>
   <div class="project-card-top">
-    {variant === 'full' && ownerAvatar && (
+    <span class="project-role" title={roleLabel}>
+      <i class={roleIcon} aria-hidden="true"></i>
+      {roleLabel}
+    </span>
+    <span class="project-stars">★ {stars}</span>
+  </div>
+  <div class="project-name-row">
+    {ownerAvatar && (
       <img
         class="project-owner-avatar"
         src={ownerAvatar}
@@ -58,15 +62,10 @@ const filterAttrs =
         onerror="this.style.display='none'"
       />
     )}
-    <span class="project-role" title={roleLabel}>
-      <i class={roleIcon} aria-hidden="true"></i>
-      {roleLabel}
-    </span>
-    <span class="project-stars">★ {stars}</span>
+    <span class="project-name">{name}</span>
   </div>
-  <div class="project-name">{name}</div>
   {description && <p class="project-desc">{description}</p>}
-  {variant === 'full' && (language || homepage) && (
+  {(language || homepage) && (
     <div class="project-card-bottom">
       {language && <span class="project-lang">{language}</span>}
       {homepage && <span class="project-homepage">{homepage}</span>}

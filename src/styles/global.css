@@ -1094,11 +1094,6 @@ html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
   color: var(--text-muted);
 }
 
-.project-since {
-  color: var(--text-muted);
-  white-space: nowrap;
-}
-
 .project-homepage {
   color: var(--tag-text);
   margin-left: auto;
