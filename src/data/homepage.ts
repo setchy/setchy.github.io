@@ -11,5 +11,5 @@ export const cards: HomepageCard[] = [
   { permalink: 'industry', title: 'Industry', icon: 'fa-solid fa-microphone', blurb: 'Industry contributions through conference presentations, webinars and case studies' },
   { permalink: 'radars', title: 'Radars', icon: 'fa-solid fa-satellite-dish', blurb: 'Technology radars, Thoughtworks radar volumes and enhancements' },
   { permalink: 'library', title: 'Library', icon: 'fa-solid fa-book', blurb: 'My favorite technology resources: blogs, podcasts and ebooks' },
-  { permalink: 'travel', title: 'Travel', icon: 'fa-solid fa-plane', blurb: "Where we've traveled — stats, the Skratch map and adventures" },
+  { permalink: 'travel', title: 'Travel', icon: 'fa-solid fa-plane', blurb: "Our world Skratch map and global adventures" },
 ];
