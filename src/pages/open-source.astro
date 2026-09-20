@@ -1,29 +1,19 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import { projects, ROLE_LABELS, type Project, type ProjectRole } from '../data/projects';
 import { githubCache, type GithubRepoMeta } from '../data/github-cache';
 import { stats } from '../data/stats';
 import { sectionIcons, sectionIconFallback } from '../data/section-icons';
 
-interface ProjectCard extends Project {
+interface ProjectCardData extends Project {
   meta: GithubRepoMeta | null;
-  link: string;
-  roleInfo: { label: string; icon: string };
-  since: number | null;
 }
 
-function formatStars(n: number): string {
-  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
-  return String(n);
-}
-
-const cards: ProjectCard[] = projects
+const cards: ProjectCardData[] = projects
   .map((p) => {
     const key = p.repo ? `${p.owner}/${p.repo}` : p.owner;
-    const meta = key && githubCache[key] ? githubCache[key] : null;
-    const link = p.url ?? `https://github.com/${p.owner}/${p.repo}`;
-    const since = meta?.first_commit_at ? new Date(meta.first_commit_at).getFullYear() : null;
-    return { ...p, meta, link, roleInfo: ROLE_LABELS[p.role], since };
+    return { ...p, meta: key && githubCache[key] ? githubCache[key] : null };
   })
   .sort((a, b) => {
     const aStars = a.meta?.stargazers_count ?? -1;
@@ -97,37 +87,7 @@ const description = 'A collection of open source software projects which I enjoy
               {cards
                 .filter((c) => c.category === cat)
                 .map((c) => (
-                  <a class="project-card" data-role={c.role} href={c.link} target="_blank" rel="noopener">
-                    <div class="project-card-top">
-                      <span class="project-role" title={c.roleInfo.label}>
-                        <i class={c.roleInfo.icon} aria-hidden="true"></i>
-                        {c.roleInfo.label}
-                      </span>
-                      <span class="project-stars">★ {formatStars(c.meta?.stargazers_count ?? 0)}</span>
-                    </div>
-                    <div class="project-name-row">
-                      <img
-                        class="project-owner-avatar"
-                        src={`https://github.com/${c.owner}.png?size=80`}
-                        alt=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        onerror="this.style.display='none'"
-                      />
-                      <span class="project-name">{c.repo ? `${c.owner}/${c.repo}` : c.owner}</span>
-                    </div>
-                    <p class="project-desc">{c.meta?.description ?? c.note ?? ''}</p>
-                    <div class="project-card-bottom">
-                      {c.since && <span class="project-since">since {c.since}</span>}
-                      {c.meta?.language && <span class="project-lang">{c.meta.language}</span>}
-                      {!c.meta && c.url && (
-                        <span class="project-homepage">{c.url.replace(/^https?:\/\//, '')}</span>
-                      )}
-                      {c.meta?.homepage && (
-                        <span class="project-homepage">{c.meta.homepage.replace(/^https?:\/\//, '')}</span>
-                      )}
-                    </div>
-                  </a>
+                  <ProjectCard owner={c.owner} repo={c.repo} role={c.role} meta={c.meta} url={c.url} note={c.note} />
                 ))}
             </div>
           </section>

@@ -1,0 +1,54 @@
+---
+import { ROLE_LABELS, type ProjectRole } from '../data/projects';
+import type { GithubRepoMeta } from '../data/github-cache';
+
+interface Props {
+  owner: string;
+  repo: string;
+  role: ProjectRole;
+  meta: GithubRepoMeta | null;
+  /** Override the default https://github.com/{owner}/{repo} link (e.g. org pages) */
+  url?: string;
+  note?: string;
+}
+
+const { owner, repo, role, meta, url, note } = Astro.props;
+const roleInfo = ROLE_LABELS[role];
+const repoName = repo ? `${owner}/${repo}` : owner;
+const link = url ?? (repo ? `https://github.com/${owner}/${repo}` : `https://github.com/${owner}`);
+const since = meta?.first_commit_at ? new Date(meta.first_commit_at).getFullYear() : null;
+
+function formatStars(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
+  return String(n);
+}
+---
+<a class="project-card" data-role={role} href={link} target="_blank" rel="noopener">
+  <div class="project-card-top">
+    <span class="project-role" title={roleInfo.label}>
+      <i class={roleInfo.icon} aria-hidden="true"></i>
+      {roleInfo.label}
+    </span>
+    <span class="project-stars">★ {formatStars(meta?.stargazers_count ?? 0)}</span>
+  </div>
+  <div class="project-name-row">
+    <img
+      class="project-owner-avatar"
+      src={`https://github.com/${owner}.png?size=80`}
+      alt=""
+      loading="lazy"
+      referrerpolicy="no-referrer"
+      onerror="this.style.display='none'"
+    />
+    <span class="project-name">{repoName}</span>
+  </div>
+  <p class="project-desc">{meta?.description ?? note ?? ''}</p>
+  <div class="project-card-bottom">
+    {since && <span class="project-since">since {since}</span>}
+    {meta?.language && <span class="project-lang">{meta.language}</span>}
+    {!meta && url && <span class="project-homepage">{url.replace(/^https?:\/\//, '')}</span>}
+    {meta?.homepage && (
+      <span class="project-homepage">{meta.homepage.replace(/^https?:\/\//, '')}</span>
+    )}
+  </div>
+</a>

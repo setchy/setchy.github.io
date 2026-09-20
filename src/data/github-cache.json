@@ -49,7 +49,7 @@
     ],
     "license": "MIT",
     "archived": false,
-    "first_commit_at": "2015-05-21T18:15:28Z"
+    "first_commit_at": "2023-09-14T01:43:20Z"
   },
   "renovatebot/renovate": {
     "description": "Home of the Renovate CLI: Cross-platform Dependency Automation by Mend.io",
@@ -71,7 +71,7 @@
     ],
     "license": "AGPL-3.0",
     "archived": false,
-    "first_commit_at": "2016-12-17T16:21:21Z"
+    "first_commit_at": "2021-10-07T07:20:54Z"
   },
   "CycloneDX/cdxgen": {
     "description": "Creates CycloneDX Bill of Materials (BOM) for your projects from source and container images. Supports many languages and package managers. Integrate in your CI/CD pipeline with automatic submission to Dependency Track server",
@@ -100,7 +100,7 @@
     ],
     "license": "Apache-2.0",
     "archived": false,
-    "first_commit_at": "2017-06-04T04:34:48Z"
+    "first_commit_at": "2023-09-23T16:57:26Z"
   },
   "DependencyTrack/frontend": {
     "description": "Frontend UI for Dependency-Track",
@@ -117,7 +117,7 @@
     ],
     "license": "Apache-2.0",
     "archived": false,
-    "first_commit_at": "2019-10-23T19:50:04Z"
+    "first_commit_at": "2024-01-16T20:26:48Z"
   },
   "DependencyTrack/dependency-track": {
     "description": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain.",
@@ -150,7 +150,7 @@
     ],
     "license": "Apache-2.0",
     "archived": false,
-    "first_commit_at": "2016-10-14T05:00:21Z"
+    "first_commit_at": "2024-01-16T20:27:25Z"
   },
   "setchy/thoughtworks-tech-radar-volumes": {
     "description": "CLI and complete collection of Thoughtworks Technology Radar datasets (JSON, CSV and Google Sheets)",
@@ -180,7 +180,7 @@
     ],
     "license": "AGPL-3.0",
     "archived": false,
-    "first_commit_at": "2014-02-25T12:48:46Z"
+    "first_commit_at": "2021-10-16T21:41:51Z"
   },
   "Netflix/dgs-framework": {
     "description": "GraphQL for Java with Spring Boot made easy.",
@@ -198,7 +198,7 @@
     ],
     "license": "Apache-2.0",
     "archived": false,
-    "first_commit_at": "2020-12-01T22:15:25Z"
+    "first_commit_at": "2022-04-25T12:50:03Z"
   },
   "setchy/dgs-extended-formatters": {
     "description": "A set of DGS Directives for common formatting use-cases",
@@ -222,7 +222,7 @@
     "topics": [],
     "license": "MIT",
     "archived": false,
-    "first_commit_at": "2018-09-28T01:05:42Z"
+    "first_commit_at": "2020-10-09T13:22:36Z"
   },
   "graphql-java/graphql-java-extended-validation": {
     "description": "Validation library for graphql-java input",
@@ -234,6 +234,103 @@
     "topics": [],
     "license": "MIT",
     "archived": false,
-    "first_commit_at": "2019-05-29T23:41:59Z"
+    "first_commit_at": "2020-09-07T12:28:04Z"
+  },
+  "chentsulin/awesome-graphql": {
+    "description": "Awesome list of GraphQL",
+    "html_url": "https://github.com/chentsulin/awesome-graphql",
+    "homepage": "",
+    "language": "Ruby",
+    "stargazers_count": 15119,
+    "forks_count": 1245,
+    "topics": [
+      "awesome",
+      "awesome-list",
+      "graphql",
+      "list"
+    ],
+    "license": "CC0-1.0",
+    "archived": false,
+    "first_commit_at": "2021-07-09T07:39:07Z"
+  },
+  "tailrocks/graphql-java-datetime": {
+    "description": "GraphQL ISO Date is a set of RFC 3339 compliant date/time scalar types to be used with graphql-java.",
+    "html_url": "https://github.com/tailrocks/graphql-java-datetime",
+    "homepage": "",
+    "language": "Java",
+    "stargazers_count": 153,
+    "forks_count": 25,
+    "topics": [
+      "date",
+      "datetime",
+      "graphql",
+      "graphql-java",
+      "scalars",
+      "time"
+    ],
+    "license": "Apache-2.0",
+    "archived": false,
+    "first_commit_at": "2020-10-09T13:11:51Z"
+  },
+  "graphql-java-kickstart": {
+    "description": null,
+    "html_url": "https://github.com/graphql-java-kickstart",
+    "homepage": "8 public repos",
+    "language": null,
+    "stargazers_count": 1281,
+    "forks_count": 353,
+    "topics": [],
+    "license": null,
+    "archived": false,
+    "first_commit_at": "2020-09-23T11:31:29Z"
+  },
+  "setchy/meme-driven.dev": {
+    "description": "Meme Driven Development (MDD) - A novel (and fun) approach to modern software development",
+    "html_url": "https://github.com/setchy/meme-driven.dev",
+    "homepage": "https://meme-driven.dev",
+    "language": "Astro",
+    "stargazers_count": 16,
+    "forks_count": 3,
+    "topics": [
+      "development",
+      "mdd",
+      "meme-driven",
+      "memes"
+    ],
+    "license": "MIT",
+    "archived": false,
+    "first_commit_at": "2024-11-07T16:10:02Z"
+  },
+  "setchy/guidealong-maps": {
+    "description": "Global GuideAlong Tours Explorer",
+    "html_url": "https://github.com/setchy/guidealong-maps",
+    "homepage": "https://guidealong.setchy.io",
+    "language": "JavaScript",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "topics": [],
+    "license": null,
+    "archived": false,
+    "first_commit_at": "2025-07-27T18:13:58Z"
+  },
+  "setchy/miami-spice": {
+    "description": "Miami Spice - Experience the best of Miami’s culinary scene",
+    "html_url": "https://github.com/setchy/miami-spice",
+    "homepage": "https://miamispice.app/",
+    "language": "HTML",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "topics": [
+      "dining",
+      "florida",
+      "miami",
+      "miami-spice",
+      "restaurant",
+      "restaurants",
+      "south-florida"
+    ],
+    "license": null,
+    "archived": false,
+    "first_commit_at": "2026-08-02T14:02:16Z"
   }
 }

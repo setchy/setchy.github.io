@@ -1,8 +1,9 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import { cards } from '../data/homepage';
 import { heroStats } from '../data/hero-stats';
-import { projects, ROLE_LABELS } from '../data/projects';
+import { projects } from '../data/projects';
 import { githubCache } from '../data/github-cache';
 
 const title = 'Hi, I\'m Adam';
@@ -16,16 +17,10 @@ const featuredKeys = ['gitify-app/gitify', 'setchy/atlassify', 'setchy/thoughtwo
 const featured = projects
   .filter((p) => featuredKeys.includes(`${p.owner}/${p.repo}`))
   .map((p) => {
-    const key = `${p.owner}/${p.repo}`;
-    const meta = githubCache[key];
-    return { ...p, meta, roleInfo: ROLE_LABELS[p.role], stars: meta?.stargazers_count ?? 0 };
+    const meta = githubCache[`${p.owner}/${p.repo}`] ?? null;
+    return { ...p, meta };
   })
-  .sort((a, b) => b.stars - a.stars);
-
-function formatStars(n: number): string {
-  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
-  return String(n);
-}
+  .sort((a, b) => (b.meta?.stargazers_count ?? 0) - (a.meta?.stargazers_count ?? 0));
 
 const stats = [
   { value: heroStats.stars.toLocaleString(), countTo: heroStats.stars, label: 'GitHub stars', href: '/open-source/' },
@@ -70,17 +65,7 @@ const stats = [
       <div class="featured-grid">
         {
           featured.map((p) => (
-            <a class="project-card" href={`https://github.com/${p.owner}/${p.repo}`} target="_blank" rel="noopener">
-              <div class="project-card-top">
-                <span class="project-role">
-                  <i class={p.roleInfo.icon} aria-hidden="true"></i>
-                  {p.roleInfo.label}
-                </span>
-                <span class="project-stars">★ {formatStars(p.stars)}</span>
-              </div>
-              <div class="project-name">{p.owner}/{p.repo}</div>
-              <p class="project-desc">{p.meta?.description ?? p.note}</p>
-            </a>
+            <ProjectCard owner={p.owner} repo={p.repo} role={p.role} meta={p.meta} url={p.url} note={p.note} />
           ))
         }
       </div>
