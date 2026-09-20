@@ -1,0 +1,38 @@
+---
+interface Props {
+  /** Font Awesome icon class rendered with the `stat-icon` class. */
+  icon: string;
+  /** Display value. */
+  value: string;
+  /** Label shown after the value. */
+  label: string;
+  /** Makes the badge a link (opened in a new tab). */
+  href?: string;
+  /** Enables the count-up animation on the value. */
+  countUp?: boolean;
+  /** Numeric count-up target; required when `countUp` is true. */
+  countTo?: number;
+}
+
+const { icon, value, label, href, countUp = false, countTo } = Astro.props;
+
+const countAttrs =
+  countUp && countTo !== undefined
+    ? { 'data-count-up': '', 'data-count-to': String(countTo) }
+    : {};
+---
+{
+  href ? (
+    <a class="stat-badge" href={href} target="_blank" rel="noopener">
+      <i class={`stat-icon ${icon}`} aria-hidden="true"></i>
+      <span class="stat-value" {...countAttrs}>{value}</span>
+      <span class="stat-label">{label}</span>
+    </a>
+  ) : (
+    <span class="stat-badge">
+      <i class={`stat-icon ${icon}`} aria-hidden="true"></i>
+      <span class="stat-value" {...countAttrs}>{value}</span>
+      <span class="stat-label">{label}</span>
+    </span>
+  )
+}

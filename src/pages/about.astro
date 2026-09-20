@@ -1,34 +1,11 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import { skillCategories } from '../data/skills';
-import { sectionIcons, sectionIconFallback } from '../data/section-icons';
+import { sectionIcon } from '../data/section-icons';
+import { pageMeta } from '../data/page-meta';
 
-const title = 'About me';
-const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
-
-const careerHistory = [
-  {
-    company: 'Cisco',
-    role: 'Distinguished Engineer & Senior Director',
-    period: '2026 — Present',
-    logo: '/logos/cisco.svg',
-    description: 'Agentic engineering, engineering productivity and DevOps platform leadership at a global networking and security leader.',
-  },
-  {
-    company: 'World Fuel (World Kinect)',
-    role: 'Chief Architect & Vice President',
-    period: '2018 — 2026',
-    logo: '/logos/world-fuel.png',
-    description: 'Enterprise architecture, API and integration strategy at a Fortune 100 energy company.',
-  },
-  {
-    company: 'Suncorp Group',
-    role: 'Principal Domain Architect',
-    period: '2009 — 2018',
-    logo: '/logos/suncorp.png',
-    description: 'Domain architecture across insurance and financial services at a leading Australian group.',
-  },
-];
+const { title, description } = pageMeta.about;
 
 const interests = [
   { icon: 'fa-solid fa-shield-halved', title: 'Software Health', description: 'Dependency management, SBOMs and technical debt — LeanIX, Renovate, Dependency-Track' },
@@ -40,64 +17,46 @@ const interests = [
   { icon: 'fa-solid fa-compass', title: 'Technology Strategy', description: 'Technology radars and emerging tech trends for leadership teams' },
 ];
 ---
-<PageLayout title={title} description={subtitle}>
-  <header class="page-head">
-    <span class="page-head-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
-    <h1>{title}</h1>
-    {subtitle && <p class="page-head-sub">{subtitle}</p>}
-  </header>
-
-  <main class="main">
-    <div class="container">
-      <section class="about-section">
-        <h2><i class={`section-icon ${sectionIcons['Career history'] ?? sectionIconFallback}`} aria-hidden="true"></i>Career history</h2>
-        <div class="career-grid">
-          {careerHistory.map((job) => (
-            <div class="career-card">
-              <div class="career-card-head">
-                <span class="career-icon"><img class="career-logo" src={job.logo} alt={`${job.company} logo`} width="40" height="40" loading="lazy" /></span>
-                <div>
-                  <h3 class="career-company">{job.company}</h3>
-                  <p class="career-period">{job.period}</p>
-                </div>
-              </div>
-              <p class="career-role">{job.role}</p>
-              <p class="career-desc">{job.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section class="about-section">
-        <h2><i class={`section-icon ${sectionIcons['Advisory & interests'] ?? sectionIconFallback}`} aria-hidden="true"></i>Advisory & interests</h2>
-        <div class="interests-grid">
-          {interests.map((interest) => (
-            <div class="interest-card">
-              <i class={`interest-icon ${interest.icon}`} aria-hidden="true"></i>
-              <div>
-                <h3 class="interest-title">{interest.title}</h3>
-                <p class="interest-desc">{interest.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section class="about-section">
-        <h2><i class={`section-icon ${sectionIcons['Skills'] ?? sectionIconFallback}`} aria-hidden="true"></i>Skills</h2>
-        {skillCategories.map((category) => (
-          <div class="skill-category">
-            <h3><i class={`section-icon ${sectionIcons[category.title] ?? sectionIconFallback}`} aria-hidden="true"></i>{category.title}</h3>
-            <div class="skill-grid">
-              {category.skills.map((skill) => (
-                <a class="skill-item" href={skill.url} target="_blank" rel="noreferrer" title={skill.name}>
-                  <img src={`https://skills.syvixor.com/api/icons?i=${skill.slug}`} alt={skill.name} width="40" height="40" loading="lazy" />
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
+<ContentPageLayout title={title} description={description} subtitle={description} permalink="about">
+  <section class="about-intro">
+    <img class="about-avatar" src="/avatar.png" alt="Adam Setch" />
+    <div class="about-bio">
+      <ul class="about-bio-list">
+        <li>Distinguished Engineer & Senior Director — Cisco</li>
+        <li>Former Chief Architect & VP — World Fuel (Fortune 100)</li>
+        <li>OSS Maintainer and Contributor</li>
+      </ul>
     </div>
-  </main>
-</PageLayout>
+  </section>
+
+  <section class="about-section">
+    <SectionHeading title="Advisory & interests" icon={sectionIcon('Advisory & interests')} />
+    <div class="interests-grid">
+      {interests.map((interest) => (
+        <div class="interest-card">
+          <i class={`interest-icon ${interest.icon}`} aria-hidden="true"></i>
+          <div>
+            <h3 class="interest-title">{interest.title}</h3>
+            <p class="interest-desc">{interest.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="about-section">
+    <SectionHeading title="Skills" icon={sectionIcon('Skills')} />
+    {skillCategories.map((category) => (
+      <div class="skill-category">
+        <h3>{category.title}</h3>
+        <div class="skill-grid">
+          {category.skills.map((skill) => (
+            <a class="skill-item" href={skill.url} target="_blank" rel="noreferrer" title={skill.name}>
+              <img src={`https://skills.syvixor.com/api/icons?i=${skill.slug}`} alt={skill.name} width="40" height="40" loading="lazy" />
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+</ContentPageLayout>

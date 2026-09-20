@@ -1,0 +1,25 @@
+---
+interface Props {
+  /** Group id that scopes the generic client-side filter
+   *  (matches `data-filter-card`/`data-filter-section` on cards/sections). */
+  group: string;
+  /** Per-type chips (excluding the "All" chip, which is auto-prepended). */
+  options: Array<{ value: string; label: string; icon?: string; count: number }>;
+  /** Total item count shown on the "All" chip. */
+  total: number;
+}
+
+const { group, options, total } = Astro.props;
+const chips = [{ value: 'all', label: 'All', count: total }, ...options];
+---
+<div class="role-legend" data-filter-group={group}>
+  {
+    chips.map((chip) => (
+      <button class={`role-badge${chip.value === 'all' ? ' active' : ''}`} data-filter-value={chip.value}>
+        {chip.icon && <i class={chip.icon} aria-hidden="true"></i>}
+        {chip.label}
+        <span class="role-count">{chip.count}</span>
+      </button>
+    ))
+  }
+</div>

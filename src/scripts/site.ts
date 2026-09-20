@@ -113,63 +113,43 @@ declare global {
     });
   }
 
-  // OSS role filtering
-  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.role-filter');
-  if (filterButtons.length) {
-    const allCards = document.querySelectorAll<HTMLElement>('.project-card[data-role]');
-    const allSections = document.querySelectorAll<HTMLElement>('.project-section[data-category]');
+  // Generic filtering driven by FilterLegend's data-filter-group contract:
+  // a legend group wires chips to cards ([data-filter-card]) and sections
+  // ([data-filter-section]) that share the same group id. Used by the OSS
+  // role filter and the Industry/Library type filters.
+  const filterGroups = document.querySelectorAll<HTMLElement>('[data-filter-group]');
+  filterGroups.forEach((groupEl) => {
+    const group = groupEl.getAttribute('data-filter-group') ?? '';
+    if (!group) return;
+    const buttons = Array.from(groupEl.querySelectorAll<HTMLButtonElement>('button[data-filter-value]'));
+    if (buttons.length === 0) return;
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(`[data-filter-card="${group}"]`));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(`[data-filter-section="${group}"]`));
 
-    filterButtons.forEach((btn) => {
+    buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        filterButtons.forEach((b) => b.classList.remove('active'));
+        buttons.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const role = btn.getAttribute('data-role-filter');
+        const value = btn.getAttribute('data-filter-value');
 
-        allCards.forEach((card) => {
-          if (role === 'all' || card.getAttribute('data-role') === role) {
+        cards.forEach((card) => {
+          if (value === 'all' || card.getAttribute('data-filter-value') === value) {
             card.removeAttribute('hidden');
           } else {
             card.setAttribute('hidden', '');
           }
         });
 
-        allSections.forEach((section) => {
-          const visibleCards = section.querySelectorAll('.project-card:not([hidden])');
+        sections.forEach((section) => {
+          const visibleCards = section.querySelectorAll<HTMLElement>(
+            `[data-filter-card="${group}"]:not([hidden])`,
+          );
           section.hidden = visibleCards.length === 0;
         });
       });
     });
-  }
-
-  // Library type filtering
-  const typeFilterButtons = document.querySelectorAll<HTMLButtonElement>('.type-filter');
-  if (typeFilterButtons.length) {
-    const allCards = document.querySelectorAll<HTMLElement>('.library-card[data-type]');
-    const allSections = document.querySelectorAll<HTMLElement>('.project-section[data-topic]');
-
-    typeFilterButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        typeFilterButtons.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const type = btn.getAttribute('data-type-filter');
-
-        allCards.forEach((card) => {
-          if (type === 'all' || card.getAttribute('data-type') === type) {
-            card.removeAttribute('hidden');
-          } else {
-            card.setAttribute('hidden', '');
-          }
-        });
-
-        allSections.forEach((section) => {
-          const visibleCards = section.querySelectorAll('.library-card:not([hidden])');
-          section.hidden = visibleCards.length === 0;
-        });
-      });
-    });
-  }
+  });
 
   // Count-up numbers for [data-count-up] stats (starts when scrolled into view)
   const initCountUps = () => {

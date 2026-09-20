@@ -1,8 +1,11 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { pageMeta } from '../data/page-meta';
 
 const sections = await getCollection('sections');
+
+const { title, description } = pageMeta.tags;
 
 const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
@@ -15,35 +18,29 @@ for (const entry of sections) {
 }
 const tags = [...tagMap.keys()].sort();
 ---
-<PageLayout title="Tag Index" description="All tags used across the site">
-  <header class="page-head">
-    <span class="page-head-icon"><i class="fa-solid fa-tags" aria-hidden="true"></i></span>
-    <h1>Tag Index</h1>
-  </header>
-  <main class="main prose tags-page">
-    {
-      tags.map((tag) => (
-        <a class="tag" href={`#${tag}`}>
-          #{tag} ({tagMap.get(tag)!.length})
-        </a>
-      ))
-    }
-    {
-      tags.map((tag) => (
-        <section>
-          <h2 id={tag}>#{tag} ({tagMap.get(tag)!.length})</h2>
-          <div class="post-list">
-            {
-              tagMap.get(tag)!.map((entry) => (
-                <div class="tag-entry">
-                  <a href={`/${entry.data.permalink}`}>{entry.data.title}</a>
-                  <span class="entry-date">{dateFmt.format(entry.data.date)}</span>
-                </div>
-              ))
-            }
-          </div>
-        </section>
-      ))
-    }
-  </main>
-</PageLayout>
+<ContentPageLayout title={title} description={description} permalink="tags" container={false} mainClass="prose tags-page">
+  {
+    tags.map((tag) => (
+      <a class="tag" href={`#${tag}`}>
+        #{tag} ({tagMap.get(tag)!.length})
+      </a>
+    ))
+  }
+  {
+    tags.map((tag) => (
+      <section>
+        <h2 id={tag}>#{tag} ({tagMap.get(tag)!.length})</h2>
+        <div class="post-list">
+          {
+            tagMap.get(tag)!.map((entry) => (
+              <div class="tag-entry">
+                <a href={`/${entry.data.permalink}`}>{entry.data.title}</a>
+                <span class="entry-date">{dateFmt.format(entry.data.date)}</span>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    ))
+  }
+</ContentPageLayout>

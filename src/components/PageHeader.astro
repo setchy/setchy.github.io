@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  /** Subtitle under the h1; rendered only when provided. */
+  subtitle?: string;
+  /** Font Awesome icon class for the header badge. */
+  icon: string;
+}
+
+const { title, subtitle, icon } = Astro.props;
+---
+<header class="page-head">
+  <span class="page-head-icon"><Icon icon={icon} /></span>
+  <h1>{title}</h1>
+  {subtitle && <p class="page-head-sub">{subtitle}</p>}
+</header>

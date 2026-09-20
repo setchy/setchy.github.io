@@ -1,0 +1,37 @@
+---
+import PageLayout from './PageLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { pageMeta, pageMetaFallbackIcon } from '../data/page-meta';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Page-header subtitle. Rendered only when provided. */
+  subtitle?: string;
+  /** Page permalink used to resolve the header icon from the metadata registry. */
+  permalink?: string;
+  /** Explicit header icon class, overriding the registry lookup. */
+  icon?: string;
+  /** Wrap content in the standard `.container` (default true). */
+  container?: boolean;
+  /** Extra classes appended to `<main class="main">`. */
+  mainClass?: string;
+  /** Optional `data-page` attribute on `<main>`. */
+  dataPage?: string;
+}
+
+const { title, description, subtitle, permalink, icon, container = true, mainClass, dataPage } =
+  Astro.props;
+
+const headerIcon =
+  icon ?? (permalink ? (pageMeta[permalink]?.icon ?? pageMetaFallbackIcon) : pageMetaFallbackIcon);
+
+const mainClasses = ['main', mainClass].filter(Boolean).join(' ');
+const pageAttrs = dataPage ? { 'data-page': dataPage } : {};
+---
+<PageLayout title={title} description={description}>
+  <PageHeader title={title} subtitle={subtitle} icon={headerIcon} />
+  <main class={mainClasses} {...pageAttrs}>
+    {container ? <div class="container"><slot /></div> : <slot />}
+  </main>
+</PageLayout>

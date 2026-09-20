@@ -1,0 +1,27 @@
+---
+interface Props {
+  /** Resource destination URL. */
+  url: string;
+  /** Font Awesome icon class for the resource type. */
+  typeIcon: string;
+  /** Resource title. */
+  title: string;
+  /** Optional date shown in the card. */
+  date?: string;
+  /** Value for the generic card filter (`data-filter-value`). */
+  filterValue?: string;
+  /** Filter group id emitted as `data-filter-card` (e.g. "type"). */
+  filterCard?: string;
+}
+
+const { url, typeIcon, title, date, filterValue, filterCard } = Astro.props;
+const filterAttrs =
+  filterValue || filterCard
+    ? { ...(filterValue ? { 'data-filter-value': filterValue } : {}), ...(filterCard ? { 'data-filter-card': filterCard } : {}) }
+    : {};
+---
+<a class="library-card" href={url} target="_blank" rel="noopener" {...filterAttrs}>
+  <i class={`library-card-icon ${typeIcon}`} aria-hidden="true"></i>
+  <span class="library-card-title">{title}</span>
+  {date && <span class="library-card-date">{date}</span>}
+</a>

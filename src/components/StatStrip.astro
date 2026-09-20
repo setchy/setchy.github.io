@@ -1,0 +1,14 @@
+---
+interface Props {
+  /** Extra classes on the `.oss-header` wrapper (e.g. custom spacing). */
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const wrapperClass = className ? `oss-header ${className}` : 'oss-header';
+---
+<div class={wrapperClass}>
+  <div class="oss-badges">
+    <slot />
+  </div>
+</div>

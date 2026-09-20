@@ -3,13 +3,14 @@ import PageLayout from '../layouts/PageLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { cards } from '../data/homepage';
 import { heroStats } from '../data/hero-stats';
-import { projects } from '../data/projects';
+import { projects, ROLE_LABELS } from '../data/projects';
 import { githubCache } from '../data/github-cache';
+import { formatStars } from '../lib/format';
 
 const title = 'Hi, I\'m Adam';
-const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
 
-const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
+const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor';
 const tagline =
   'I build engineering organizations, maintain open-source tools developers depend on, and grow communities that scale.';
 
@@ -17,26 +18,17 @@ const featuredKeys = ['gitify-app/gitify', 'setchy/atlassify', 'setchy/thoughtwo
 const featured = projects
   .filter((p) => featuredKeys.includes(`${p.owner}/${p.repo}`))
   .map((p) => {
-    const meta = githubCache[`${p.owner}/${p.repo}`] ?? null;
-    return { ...p, meta };
+    const key = `${p.owner}/${p.repo}`;
+    const meta = githubCache[key];
+    return { ...p, meta, roleInfo: ROLE_LABELS[p.role], stars: meta?.stargazers_count ?? 0 };
   })
-  .sort((a, b) => (b.meta?.stargazers_count ?? 0) - (a.meta?.stargazers_count ?? 0));
+  .sort((a, b) => b.stars - a.stars);
 
 const stats = [
-  { value: heroStats.stars.toLocaleString(), countTo: heroStats.stars, label: 'GitHub stars', href: '/open-source/' },
-  {
-    value: heroStats.projects.toLocaleString(),
-    countTo: heroStats.projects,
-    label: 'open-source projects',
-    href: '/open-source/',
-  },
-  { value: heroStats.talks.toLocaleString(), countTo: heroStats.talks, label: 'talks & case studies', href: '/industry/' },
-  {
-    value: heroStats.countries.toLocaleString(),
-    countTo: heroStats.countries,
-    label: 'countries traveled',
-    href: '/travel/',
-  },
+  { value: formatStars(heroStats.stars), label: 'GitHub stars', href: '/open-source/' },
+  { value: String(heroStats.projects), label: 'open-source projects', href: '/open-source/' },
+  { value: String(heroStats.talks), label: 'talks & case studies', href: '/industry/' },
+  { value: String(heroStats.countries), label: 'countries traveled', href: '/travel/' },
 ];
 ---
 <PageLayout title={title} description={subtitle}>
@@ -50,7 +42,7 @@ const stats = [
         stats.map((s) => (
           <li>
             <a href={s.href}>
-              <span class="hero-stat-value mono" data-count-up data-count-to={s.countTo}>{s.value}</span>
+              <span class="hero-stat-value mono">{s.value}</span>
               <span class="hero-stat-label">{s.label}</span>
             </a>
           </li>
@@ -65,7 +57,15 @@ const stats = [
       <div class="featured-grid">
         {
           featured.map((p) => (
-            <ProjectCard owner={p.owner} repo={p.repo} role={p.role} meta={p.meta} url={p.url} note={p.note} />
+            <ProjectCard
+              variant="featured"
+              url={`https://github.com/${p.owner}/${p.repo}`}
+              name={`${p.owner}/${p.repo}`}
+              description={p.meta?.description ?? p.note}
+              roleLabel={p.roleInfo.label}
+              roleIcon={p.roleInfo.icon}
+              stars={formatStars(p.stars)}
+            />
           ))
         }
       </div>

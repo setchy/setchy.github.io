@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  /** Font Awesome icon class rendered with the `section-icon` class. */
+  icon: string;
+  /** Heading level; defaults to h2. */
+  level?: 'h2' | 'h3';
+}
+
+const { title, icon, level = 'h2' } = Astro.props;
+const Heading = level;
+---
+<Heading>
+  <i class={`section-icon ${icon}`} aria-hidden="true"></i>
+  {title}
+</Heading>

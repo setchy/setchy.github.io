@@ -1,0 +1,12 @@
+---
+interface Props {
+  /** Font Awesome icon class, e.g. "fa-solid fa-user". */
+  icon: string;
+  /** Optional title attribute (e.g. for tooltips). */
+  title?: string;
+}
+
+const { icon, title } = Astro.props;
+const attrs = title ? { title } : {};
+---
+<i class={icon} aria-hidden="true" {...attrs}></i>

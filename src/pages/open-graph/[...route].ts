@@ -1,25 +1,15 @@
 import { OGImageRoute } from 'astro-og-canvas';
 import { getCollection } from 'astro:content';
-import { travelStats } from '../../data/travel';
+import { pageMeta } from '../../data/page-meta';
 
-const staticPages = {
-  home: {
-    title: "Hi, I'm Adam",
-    description: 'Distinguished Engineer & Chief Architect — building engineering organizations, open source, and communities that scale.',
-  },
-  about: { title: 'About', description: 'Interests, skills and how I work' },
-  'open-source': { title: 'Open Source', description: 'Creator, Maintainer, Contributor' },
-  industry: { title: 'Industry', description: 'Talks, webinars and case studies' },
-  radars: { title: 'Radars', description: 'Thoughtworks Technology Radar volumes' },
-  library: { title: 'Library', description: 'Favorite technology resources' },
-  blogs: { title: 'Blogs', description: 'A collection of favorite blogs' },
-  travel: {
-    title: 'Travel',
-    description: `Our holiday travels — ${travelStats.countries} countries, on the map and in numbers`,
-  },
-  tags: { title: 'Tags', description: 'Browse posts by tag' },
-  404: { title: 'Page not found', description: 'The requested page could not be found' },
-};
+// Titles/descriptions for the static pages derive from the shared page
+// metadata registry (ogTitle/ogDescription keep the shorter OG copy).
+const staticPages = Object.fromEntries(
+  Object.entries(pageMeta).map(([key, meta]) => [
+    key,
+    { title: meta.ogTitle ?? meta.title, description: meta.ogDescription ?? meta.description },
+  ]),
+);
 
 const sections = await getCollection('sections');
 const sectionPages = Object.fromEntries(
@@ -40,7 +30,7 @@ export const { getStaticPaths, GET } = await OGImageRoute({
     ],
     border: { color: [79, 70, 229], width: 12 },
     font: {
-      title: { color: [23, 29, 43], size: 70, weight: 600 },
+      title: { color: [23, 29, 43], size: 70, weight: 'SemiBold' },
       description: { color: [107, 114, 128], size: 36 },
     },
     fonts: [

@@ -1,12 +1,14 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FilterLegend from '../components/FilterLegend.astro';
+import LibraryCard from '../components/LibraryCard.astro';
 import { industryItems, TYPE_LABELS, type IndustryType } from '../data/industry';
-import { sectionIcons, sectionIconFallback } from '../data/section-icons';
+import { sectionIcon } from '../data/section-icons';
+import { groupBy } from '../lib/grouping';
+import { pageMeta } from '../data/page-meta';
 
-type TopicGroup = {
-  topic: string;
-  items: typeof industryItems;
-};
+const { title, description } = pageMeta.industry;
 
 const topicOrder = [
   'GraphQL',
@@ -14,57 +16,37 @@ const topicOrder = [
   'OWASP Dependency Track',
 ];
 
-const topics = topicOrder.filter((t) => industryItems.some((item) => item.topic === t));
-
-const groups: TopicGroup[] = topics.map((topic) => ({
-  topic,
-  items: industryItems.filter((item) => item.topic === topic),
-}));
+const groups = groupBy(industryItems, (item) => item.topic, topicOrder);
 
 const countForType = (type: IndustryType) => industryItems.filter((item) => item.type === type).length;
 
-const title = 'Industry';
-const description = 'A collection of my industry contributions through conference presentations, webinars and case studies';
+const filterOptions = (['web', 'youtube', 'pdf'] as IndustryType[]).map((type) => ({
+  value: type,
+  label: TYPE_LABELS[type].label,
+  icon: TYPE_LABELS[type].icon,
+  count: countForType(type),
+}));
 ---
-<PageLayout title={title} description={description}>
-  <header class="page-head">
-    <span class="page-head-icon"><i class="fa-solid fa-microphone" aria-hidden="true"></i></span>
-    <h1>{title}</h1>
-    <p class="page-head-sub">{description}</p>
-  </header>
+<ContentPageLayout title={title} description={description} subtitle={description} permalink="industry">
+  <FilterLegend group="type" options={filterOptions} total={industryItems.length} />
 
-  <main class="main">
-    <div class="container">
-      <div class="role-legend">
-        <button class="role-badge type-filter active" data-type-filter="all">
-          All
-          <span class="role-count">{industryItems.length}</span>
-        </button>
-        {(["web", "youtube", "pdf"] as IndustryType[]).map((type) => (
-          <button class="role-badge type-filter" data-type-filter={type}>
-            <i class={TYPE_LABELS[type].icon} aria-hidden="true"></i>
-            {TYPE_LABELS[type].label}
-            <span class="role-count">{countForType(type)}</span>
-          </button>
-        ))}
-      </div>
-
-      {
-        groups.map((group) => (
-          <section class="project-section" data-topic={group.topic}>
-            <h2><i class={`section-icon ${sectionIcons[group.topic] ?? sectionIconFallback}`} aria-hidden="true"></i>{group.topic}</h2>
-            <div class="library-grid">
-              {group.items.map((item) => (
-                <a class="library-card" data-type={item.type} href={item.url} target="_blank" rel="noopener">
-                  <i class={`library-card-icon ${TYPE_LABELS[item.type].icon}`} aria-hidden="true"></i>
-                  <span class="library-card-title">{item.title}</span>
-                  {item.date && <span class="library-card-date">{item.date}</span>}
-                </a>
-              ))}
-            </div>
-          </section>
-        ))
-      }
-    </div>
-  </main>
-</PageLayout>
+  {
+    groups.map((group) => (
+      <section class="project-section" data-filter-section="type">
+        <SectionHeading title={group.key} icon={sectionIcon(group.key)} />
+        <div class="library-grid">
+          {group.items.map((item) => (
+            <LibraryCard
+              url={item.url}
+              typeIcon={TYPE_LABELS[item.type].icon}
+              title={item.title}
+              date={item.date}
+              filterValue={item.type}
+              filterCard="type"
+            />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</ContentPageLayout>

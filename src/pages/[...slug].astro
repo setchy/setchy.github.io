@@ -1,5 +1,5 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -13,26 +13,15 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const sectionIcons: Record<string, string> = {
-  about: 'fa-solid fa-user',
-  'open-source': 'fa-solid fa-code-branch',
-  industry: 'fa-solid fa-microphone',
-  radars: 'fa-solid fa-satellite-dish',
-  library: 'fa-solid fa-book',
-  travel: 'fa-solid fa-plane',
-  blogs: 'fa-solid fa-newspaper',
-};
-const pageIcon = sectionIcons[entry.data.permalink] ?? 'fa-solid fa-rss';
+const subtitle = entry.data.subtitle || entry.data.description;
 ---
-<PageLayout title={entry.data.title} description={entry.data.description}>
-  <header class="page-head">
-    <span class="page-head-icon"><i class={pageIcon} aria-hidden="true"></i></span>
-    <h1>{entry.data.title}</h1>
-    {(entry.data.subtitle || entry.data.description) && (
-      <p class="page-head-sub">{entry.data.subtitle || entry.data.description}</p>
-    )}
-  </header>
-  <main class="main prose" data-page={entry.data.permalink}>
-    <Content />
-  </main>
-</PageLayout>
+<ContentPageLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  subtitle={subtitle}
+  permalink={entry.data.permalink}
+  mainClass="prose"
+  dataPage={entry.data.permalink}
+>
+  <Content />
+</ContentPageLayout>

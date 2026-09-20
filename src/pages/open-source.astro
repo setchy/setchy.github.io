@@ -1,19 +1,32 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FilterLegend from '../components/FilterLegend.astro';
+import StatStrip from '../components/StatStrip.astro';
+import StatBadge from '../components/StatBadge.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { projects, ROLE_LABELS, type Project, type ProjectRole } from '../data/projects';
 import { githubCache, type GithubRepoMeta } from '../data/github-cache';
 import { stats } from '../data/stats';
-import { sectionIcons, sectionIconFallback } from '../data/section-icons';
+import { sectionIcon } from '../data/section-icons';
+import { groupBy } from '../lib/grouping';
+import { formatStars } from '../lib/format';
+import { pageMeta } from '../data/page-meta';
 
 interface ProjectCardData extends Project {
   meta: GithubRepoMeta | null;
+  link: string;
+  roleInfo: { label: string; icon: string };
 }
+
+const { title, description } = pageMeta['open-source'];
 
 const cards: ProjectCardData[] = projects
   .map((p) => {
     const key = p.repo ? `${p.owner}/${p.repo}` : p.owner;
-    return { ...p, meta: key && githubCache[key] ? githubCache[key] : null };
+    const meta = key && githubCache[key] ? githubCache[key] : null;
+    const link = p.url ?? `https://github.com/${p.owner}/${p.repo}`;
+    return { ...p, meta, link, roleInfo: ROLE_LABELS[p.role] };
   })
   .sort((a, b) => {
     const aStars = a.meta?.stargazers_count ?? -1;
@@ -30,69 +43,72 @@ const categoryOrder = [
   'Travel',
   'Dining',
 ];
-const categories = categoryOrder.filter((c) => cards.some((card) => card.category === c));
-const roleOrder: Record<ProjectRole, number> = { created: 0, maintain: 1, contribute: 2 };
+const groups = groupBy(cards, (card) => card.category, categoryOrder);
 const countForRole = (role: ProjectRole) => cards.filter((c) => c.role === role).length;
 
-const title = 'Open Source Projects';
-const description = 'A collection of open source software projects which I enjoy working on';
+const roleOptions = (['created', 'maintain', 'contribute'] as ProjectRole[]).map((role) => ({
+  value: role,
+  label: ROLE_LABELS[role].label,
+  icon: ROLE_LABELS[role].icon,
+  count: countForRole(role),
+}));
+
+/** Homepage shown in the card footer when present (e.g. org pages or meta homepage). */
+const homepageOf = (c: ProjectCardData): string | undefined => {
+  if (c.meta?.homepage) return c.meta.homepage.replace(/^https?:\/\//, '');
+  if (!c.meta && c.url) return c.url.replace(/^https?:\/\//, '');
+  return undefined;
+};
 ---
-<PageLayout title={title} description={description}>
-  <header class="page-head">
-    <span class="page-head-icon"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span>
-    <h1>{title}</h1>
-    <p class="page-head-sub">{description}</p>
-  </header>
+<ContentPageLayout title={title} description={description} subtitle={description} permalink="open-source">
+  <StatStrip>
+    <StatBadge
+      icon="fa-solid fa-user"
+      href="https://github.com/setchy?tab=followers"
+      value={stats.github.followers.toLocaleString()}
+      label="followers"
+      countUp
+      countTo={stats.github.followers}
+    />
+    <StatBadge
+      icon="fa-solid fa-keyboard"
+      href="https://wakatime.com/@2b948ae2-4be1-4020-8a57-7de60b53fe1d"
+      value={stats.wakatime.hours.toLocaleString()}
+      label="hrs coded"
+      countUp
+      countTo={stats.wakatime.hours}
+    />
+    <a class="sponsor-btn" href="https://github.com/sponsors/setchy" target="_blank" rel="noopener">
+      <i class="fa-solid fa-heart" aria-hidden="true"></i>
+      Sponsor
+    </a>
+  </StatStrip>
 
-  <main class="main">
-    <div class="container">
-      <div class="oss-header">
-        <div class="oss-badges">
-          <a class="stat-badge" href="https://github.com/setchy?tab=followers" target="_blank" rel="noopener">
-            <i class="stat-icon fa-solid fa-user" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={stats.github.followers}>{stats.github.followers}</span>
-            <span class="stat-label">followers</span>
-          </a>
-          <a class="stat-badge" href="https://wakatime.com/@2b948ae2-4be1-4020-8a57-7de60b53fe1d" target="_blank" rel="noopener">
-            <i class="stat-icon fa-solid fa-keyboard" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={stats.wakatime.hours}>{stats.wakatime.hours.toLocaleString()}</span>
-            <span class="stat-label">hrs coded</span>
-          </a>
-          <a class="sponsor-btn" href="https://github.com/sponsors/setchy" target="_blank" rel="noopener">
-            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-            Sponsor
-          </a>
+  <FilterLegend group="role" options={roleOptions} total={cards.length} />
+
+  {
+    groups.map((group) => (
+      <section class="project-section" data-filter-section="role">
+        <SectionHeading title={group.key} icon={sectionIcon(group.key)} />
+        <div class="project-grid">
+          {group.items.map((c) => (
+            <ProjectCard
+              variant="full"
+              url={c.link}
+              name={c.repo ? `${c.owner}/${c.repo}` : c.owner}
+              description={c.meta?.description ?? c.note ?? ''}
+              roleLabel={c.roleInfo.label}
+              roleIcon={c.roleInfo.icon}
+              stars={formatStars(c.meta?.stargazers_count ?? 0)}
+              ownerAvatar={`https://github.com/${c.owner}.png?size=80`}
+              language={c.meta?.language ?? undefined}
+              homepage={homepageOf(c)}
+              filterValue={c.role}
+              filterCard="role"
+            />
+          ))}
         </div>
-      </div>
-
-      <div class="role-legend">
-        <button class="role-badge role-filter active" data-role-filter="all">
-          All
-          <span class="role-count">{cards.length}</span>
-        </button>
-        {(["created", "maintain", "contribute"] as ProjectRole[]).map((role) => (
-          <button class="role-badge role-filter" data-role-filter={role}>
-            <i class={ROLE_LABELS[role].icon} aria-hidden="true"></i>
-            {ROLE_LABELS[role].label}
-            <span class="role-count">{countForRole(role)}</span>
-          </button>
-        ))}
-      </div>
-
-      {
-        categories.map((cat) => (
-          <section class="project-section" data-category={cat}>
-            <h2><i class={`section-icon ${sectionIcons[cat] ?? sectionIconFallback}`} aria-hidden="true"></i>{cat}</h2>
-            <div class="project-grid">
-              {cards
-                .filter((c) => c.category === cat)
-                .map((c) => (
-                  <ProjectCard owner={c.owner} repo={c.repo} role={c.role} meta={c.meta} url={c.url} note={c.note} />
-                ))}
-            </div>
-          </section>
-        ))
-      }
-    </div>
-  </main>
-</PageLayout>
+      </section>
+    ))
+  }
+</ContentPageLayout>

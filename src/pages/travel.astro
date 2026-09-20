@@ -1,73 +1,75 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
+import StatStrip from '../components/StatStrip.astro';
+import StatBadge from '../components/StatBadge.astro';
 import { travelStats } from '../data/travel';
+import { pageMeta } from '../data/page-meta';
 
-const title = 'Travel';
-const description = 'Our holiday travels in stats and on the map';
+const { title, description } = pageMeta.travel;
+
+const headerSubtitle = 'Our holiday travels, on the map and in numbers';
 const skratchUrl = 'https://share.skratch.world/N0cBlEVoB8/visited';
 const instagramUrl = 'https://www.instagram.com/cassbtravels/';
 ---
-<PageLayout title={title} description={description}>
-  <header class="page-head">
-    <span class="page-head-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></span>
-    <h1>{title}</h1>
-    <p class="page-head-sub">Our holiday travels, on the map and in numbers</p>
-  </header>
+<ContentPageLayout title={title} description={description} subtitle={headerSubtitle} permalink="travel">
+  <StatStrip>
+    <StatBadge
+      icon="fa-solid fa-earth-americas"
+      value={travelStats.countries.toLocaleString()}
+      label="countries"
+      countUp
+      countTo={travelStats.countries}
+    />
+    <StatBadge
+      icon="fa-solid fa-umbrella-beach"
+      value={travelStats.territories.toLocaleString()}
+      label="territories"
+      countUp
+      countTo={travelStats.territories}
+    />
+    <StatBadge
+      icon="fa-solid fa-map"
+      value={travelStats.regions.toLocaleString()}
+      label="regions"
+      countUp
+      countTo={travelStats.regions}
+    />
+    <StatBadge
+      icon="fa-solid fa-city"
+      value={travelStats.cities.toLocaleString()}
+      label="cities"
+      countUp
+      countTo={travelStats.cities}
+    />
+    <StatBadge
+      icon="fa-solid fa-landmark"
+      value={travelStats.attractions.toLocaleString()}
+      label="attractions"
+      countUp
+      countTo={travelStats.attractions}
+    />
+  </StatStrip>
 
-  <main class="main">
-    <div class="container">
-      <div class="oss-header">
-        <div class="oss-badges">
-          <span class="stat-badge">
-            <i class="stat-icon fa-solid fa-earth-americas" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={travelStats.countries}>{travelStats.countries.toLocaleString()}</span>
-            <span class="stat-label">countries</span>
-          </span>
-          <span class="stat-badge">
-            <i class="stat-icon fa-solid fa-umbrella-beach" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={travelStats.territories}>{travelStats.territories.toLocaleString()}</span>
-            <span class="stat-label">territories</span>
-          </span>
-          <span class="stat-badge">
-            <i class="stat-icon fa-solid fa-map" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={travelStats.regions}>{travelStats.regions.toLocaleString()}</span>
-            <span class="stat-label">regions</span>
-          </span>
-          <span class="stat-badge">
-            <i class="stat-icon fa-solid fa-city" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={travelStats.cities}>{travelStats.cities.toLocaleString()}</span>
-            <span class="stat-label">cities</span>
-          </span>
-          <span class="stat-badge">
-            <i class="stat-icon fa-solid fa-landmark" aria-hidden="true"></i>
-            <span class="stat-value" data-count-up data-count-to={travelStats.attractions}>{travelStats.attractions.toLocaleString()}</span>
-            <span class="stat-label">attractions</span>
-          </span>
-        </div>
-      </div>
+  <section class="travel-map">
+    <iframe
+      src={skratchUrl}
+      title="Skratch travel map of visited places"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+    <p class="travel-map-note">
+      <a href={skratchUrl} target="_blank" rel="noopener">Open full map ↗</a>
+    </p>
+  </section>
 
-      <section class="travel-map">
-        <iframe
-          src={skratchUrl}
-          title="Skratch travel map of visited places"
-          loading="lazy"
-          allowfullscreen
-        ></iframe>
-        <p class="travel-map-note">
-          <a href={skratchUrl} target="_blank" rel="noopener">Open full map ↗</a>
-        </p>
-      </section>
-
-      <div class="oss-header travel-instagram">
-        <a class="stat-badge" href={instagramUrl} target="_blank" rel="noopener">
-          <span class="stat-icon"><i class="fa-brands fa-instagram"></i></span>
-          <span class="stat-value">@cassbtravels</span>
-          <span class="stat-label">follow our travels on Instagram</span>
-        </a>
-      </div>
-    </div>
-  </main>
-</PageLayout>
+  <div class="oss-header travel-instagram">
+    <a class="stat-badge" href={instagramUrl} target="_blank" rel="noopener">
+      <span class="stat-icon"><i class="fa-brands fa-instagram"></i></span>
+      <span class="stat-value">@cassbtravels</span>
+      <span class="stat-label">follow our travels on Instagram</span>
+    </a>
+  </div>
+</ContentPageLayout>
 
 <style>
   .travel-map {

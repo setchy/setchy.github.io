@@ -46,3 +46,6 @@ export const sectionIcons: Record<string, string> = {
 };
 
 export const sectionIconFallback = 'fa-solid fa-map';
+
+/** Resolves a section/topic key to its registered icon, falling back to a default. */
+export const sectionIcon = (key: string): string => sectionIcons[key] ?? sectionIconFallback;
