@@ -18,6 +18,35 @@ if (process.env.GITHUB_TOKEN) {
   headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
 }
 
+// Oldest commit date on the default branch (the repo's first commit on main).
+// The commits API lists newest-first, so hop to the last page via Link rel="last"
+// and take its final item. Falls back to the repo's created_at timestamp.
+async function firstCommitAt(owner, repo, fallback) {
+  const commitsUrl = (page, perPage) =>
+    `${GITHUB_API}/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/commits?per_page=${perPage}&page=${page}`;
+  try {
+    const res = await fetch(commitsUrl(1, 100), { headers });
+    if (!res.ok) return fallback;
+    const first = await res.json();
+    const oldestDate = (arr) => arr[arr.length - 1]?.commit?.committer?.date ?? null;
+    if (!Array.isArray(first) || first.length === 0) return fallback;
+    if (first.length < 100) return oldestDate(first) ?? fallback;
+
+    const link = res.headers.get('link') ?? '';
+    const last = link.match(/[?&]page=(\d+)>; rel="last"/);
+    const lastPage = last ? Number(last[1]) : 1;
+    if (lastPage === 1) return oldestDate(first) ?? fallback;
+
+    const lastRes = await fetch(commitsUrl(lastPage, 100), { headers });
+    if (!lastRes.ok) return fallback;
+    const lastData = await lastRes.json();
+    if (!Array.isArray(lastData) || lastData.length === 0) return oldestDate(first) ?? fallback;
+    return oldestDate(lastData) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 // Fetch repo cache
 const cache = {};
 
@@ -47,6 +76,7 @@ for (const p of projects) {
         topics: [],
         license: null,
         archived: false,
+        first_commit_at: null,
       };
       console.log(`  ok  ${key} ★${stars} (${pub.length} public repos)`);
     } catch (err) {
@@ -73,6 +103,7 @@ for (const p of projects) {
       topics: data.topics ?? [],
       license: data.license?.spdx_id ?? null,
       archived: data.archived,
+      first_commit_at: await firstCommitAt(p.owner, p.repo, data.created_at ?? null),
     };
     console.log(`  ok  ${key} ★${data.stargazers_count}`);
   } catch (err) {

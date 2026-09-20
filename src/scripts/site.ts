@@ -178,8 +178,11 @@ declare global {
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const fmt = new Intl.NumberFormat('en-US');
-    const duration = 900;
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+    const easeOutQuad = (t: number) => 1 - Math.pow(1 - t, 2);
+
+    // Longer counts need more time to climb without large per-frame jumps.
+    const durationFor = (target: number) =>
+      Math.min(2400, 900 + Math.max(0, String(Math.round(target)).length - 2) * 400);
 
     const run = (el: HTMLElement) => {
       const raw = el.dataset.countTo ?? el.textContent?.replace(/[^\d]/g, '') ?? '0';
@@ -188,10 +191,11 @@ declare global {
         el.textContent = fmt.format(target);
         return;
       }
+      const duration = durationFor(target);
       const start = performance.now();
       const tick = (now: number) => {
         const p = Math.min(1, (now - start) / duration);
-        el.textContent = fmt.format(Math.round(target * easeOutCubic(p)));
+        el.textContent = fmt.format(Math.round(target * easeOutQuad(p)));
         if (p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);

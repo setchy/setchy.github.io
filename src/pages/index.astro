@@ -6,9 +6,9 @@ import { projects, ROLE_LABELS } from '../data/projects';
 import { githubCache } from '../data/github-cache';
 
 const title = 'Hi, I\'m Adam';
-const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
 
-const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor';
+const topLine = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
 const tagline =
   'I build engineering organizations, maintain open-source tools developers depend on, and grow communities that scale.';
 
@@ -28,10 +28,20 @@ function formatStars(n: number): string {
 }
 
 const stats = [
-  { value: formatStars(heroStats.stars), label: 'GitHub stars', href: '/open-source/' },
-  { value: String(heroStats.projects), label: 'open-source projects', href: '/open-source/' },
-  { value: String(heroStats.talks), label: 'talks & case studies', href: '/industry/' },
-  { value: String(heroStats.countries), label: 'countries traveled', href: '/travel/' },
+  { value: heroStats.stars.toLocaleString(), countTo: heroStats.stars, label: 'GitHub stars', href: '/open-source/' },
+  {
+    value: heroStats.projects.toLocaleString(),
+    countTo: heroStats.projects,
+    label: 'open-source projects',
+    href: '/open-source/',
+  },
+  { value: heroStats.talks.toLocaleString(), countTo: heroStats.talks, label: 'talks & case studies', href: '/industry/' },
+  {
+    value: heroStats.countries.toLocaleString(),
+    countTo: heroStats.countries,
+    label: 'countries traveled',
+    href: '/travel/',
+  },
 ];
 ---
 <PageLayout title={title} description={subtitle}>
@@ -45,7 +55,7 @@ const stats = [
         stats.map((s) => (
           <li>
             <a href={s.href}>
-              <span class="hero-stat-value mono">{s.value}</span>
+              <span class="hero-stat-value mono" data-count-up data-count-to={s.countTo}>{s.value}</span>
               <span class="hero-stat-label">{s.label}</span>
             </a>
           </li>

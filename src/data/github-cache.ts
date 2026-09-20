@@ -10,6 +10,8 @@ export interface GithubRepoMeta {
   topics: string[];
   license: string | null;
   archived: boolean;
+  /** ISO timestamp of the oldest commit on the default branch (null for org aggregates) */
+  first_commit_at: string | null;
 }
 
 export type GithubCache = Record<string, GithubRepoMeta>;

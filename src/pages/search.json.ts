@@ -39,7 +39,7 @@ const libraryBody = strip(
 
 const aboutBody = strip(
   skillCategories.flatMap((c) => [c.title, ...c.skills.map((s) => s.name)]).join(', ') +
-    '\nCurrently Distinguished Engineer & Senior Director at Cisco; former VP at World Fuel (Fortune 100). Advisory & interests: Software Health (dependencies, SBOM, LeanIX, Renovate, Dependency-Track), Developer Experience, Engineering Productivity, Federated API Strategy (GraphQL, Apollo, AsyncAPI), Career Development (guilds, communities of practice, Skills Framework for the Information Age / SFIA), Software Security (supply chain), Technology Strategy (tech radars, emerging technology trends).',
+    '\nCurrently Distinguished Engineer & Senior Director at Cisco (agentic engineering, engineering productivity, DevOps platform); former Chief Architect & Vice President at World Fuel (Fortune 100) and former Principal Domain Architect at Suncorp Group. Advisory & interests: Software Health (dependencies, SBOM, LeanIX, Renovate, Dependency-Track), Developer Experience, Engineering Productivity, Federated API Strategy (GraphQL, Apollo, AsyncAPI), Career Development (guilds, communities of practice, Skills Framework for the Information Age / SFIA), Software Security (supply chain), Technology Strategy (tech radars, emerging technology trends).',
 );
 
 const travelBody = `Where we have traveled — ${travelStats.countries} countries, ${travelStats.territories} territories, ${travelStats.regions} regions, ${travelStats.cities} cities and ${travelStats.attractions} attractions. The Skratch map and travels on Instagram @cassbtravels.`;

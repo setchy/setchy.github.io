@@ -1030,7 +1030,12 @@ html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
   object-fit: cover;
   border: 1px solid var(--card-border);
   flex-shrink: 0;
-  margin-right: 0.5rem;
+}
+
+.project-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .project-role {
@@ -1063,6 +1068,7 @@ html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
   font-size: 1.05rem;
   color: var(--link);
   word-break: break-word;
+  min-width: 0;
 }
 
 .project-card:hover .project-name {
@@ -1086,6 +1092,11 @@ html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
 
 .project-lang {
   color: var(--text-muted);
+}
+
+.project-since {
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .project-homepage {
@@ -1183,38 +1194,6 @@ html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
 }
 
 /* ---- About page ---- */
-.about-intro {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
-
-.about-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.about-bio-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.about-bio-list li {
-  font-size: 1rem;
-  color: var(--text);
-  padding: 0.25rem 0;
-}
-
 .about-section {
   margin-bottom: 2.5rem;
 }
@@ -1268,6 +1247,80 @@ html[data-theme='dark'] .nav-btn [data-theme-icon-dark] {
   color: var(--text-muted);
   margin: 0;
   line-height: 1.4;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1rem;
+}
+
+.career-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.career-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--hover);
+}
+
+.career-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.career-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.career-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.career-company {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.1rem;
+  color: var(--text-strong);
+}
+
+.career-period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.career-role {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.career-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
 }
 
 .skill-category {
@@ -1725,13 +1778,4 @@ main.prose[data-page="radars"] {
 
 .advisor-cta:hover {
   color: var(--accent-hover);
-}
-
-/* ---- Small viewport stacking ---- */
-@media (max-width: 480px) {
-  .about-intro {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 }

@@ -19,15 +19,16 @@
       "tailwindcss"
     ],
     "license": "MIT",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2024-09-13T09:54:22Z"
   },
   "gitify-app/gitify": {
     "description": "Git notifications on your menu bar. Available on macOS, Windows & Linux.",
     "html_url": "https://github.com/gitify-app/gitify",
     "homepage": "https://gitify.io",
     "language": "TypeScript",
-    "stargazers_count": 5347,
-    "forks_count": 291,
+    "stargazers_count": 5351,
+    "forks_count": 292,
     "topics": [
       "bitbucket",
       "codeberg",
@@ -47,15 +48,16 @@
       "tailwindcss"
     ],
     "license": "MIT",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2015-05-21T18:15:28Z"
   },
   "renovatebot/renovate": {
     "description": "Home of the Renovate CLI: Cross-platform Dependency Automation by Mend.io",
     "html_url": "https://github.com/renovatebot/renovate",
     "homepage": "https://mend.io/renovate",
     "language": "TypeScript",
-    "stargazers_count": 22514,
-    "forks_count": 3313,
+    "stargazers_count": 22542,
+    "forks_count": 3317,
     "topics": [
       "azure-devops",
       "bitbucket",
@@ -68,14 +70,15 @@
       "package-management"
     ],
     "license": "AGPL-3.0",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2016-12-17T16:21:21Z"
   },
   "CycloneDX/cdxgen": {
     "description": "Creates CycloneDX Bill of Materials (BOM) for your projects from source and container images. Supports many languages and package managers. Integrate in your CI/CD pipeline with automatic submission to Dependency Track server",
     "html_url": "https://github.com/cdxgen/cdxgen",
     "homepage": "https://cdxgen.github.io/cdxgen/",
     "language": "JavaScript",
-    "stargazers_count": 1072,
+    "stargazers_count": 1074,
     "forks_count": 261,
     "topics": [
       "bom",
@@ -96,7 +99,8 @@
       "supply-chain"
     ],
     "license": "Apache-2.0",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2017-06-04T04:34:48Z"
   },
   "DependencyTrack/frontend": {
     "description": "Frontend UI for Dependency-Track",
@@ -104,7 +108,7 @@
     "homepage": "https://dependencytrack.org/",
     "language": "Vue",
     "stargazers_count": 171,
-    "forks_count": 250,
+    "forks_count": 252,
     "topics": [
       "front-end",
       "hacktoberfest",
@@ -112,15 +116,16 @@
       "vuejs"
     ],
     "license": "Apache-2.0",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2019-10-23T19:50:04Z"
   },
   "DependencyTrack/dependency-track": {
     "description": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain.",
     "html_url": "https://github.com/DependencyTrack/dependency-track",
     "homepage": "https://dependencytrack.org/",
     "language": "Java",
-    "stargazers_count": 4211,
-    "forks_count": 815,
+    "stargazers_count": 4224,
+    "forks_count": 817,
     "topics": [
       "appsec",
       "bill-of-materials",
@@ -144,7 +149,8 @@
       "vulnerability-detection"
     ],
     "license": "Apache-2.0",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2016-10-14T05:00:21Z"
   },
   "setchy/thoughtworks-tech-radar-volumes": {
     "description": "CLI and complete collection of Thoughtworks Technology Radar datasets (JSON, CSV and Google Sheets)",
@@ -157,14 +163,15 @@
       "tech-radar"
     ],
     "license": null,
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2023-04-23T10:17:26Z"
   },
   "thoughtworks/build-your-own-radar": {
     "description": "A library that generates an interactive radar, inspired by https://thoughtworks.com/radar/.",
     "html_url": "https://github.com/thoughtworks/build-your-own-radar",
     "homepage": "",
     "language": "CSS",
-    "stargazers_count": 2566,
+    "stargazers_count": 2567,
     "forks_count": 1124,
     "topics": [
       "opensource",
@@ -172,15 +179,16 @@
       "thoughtworks"
     ],
     "license": "AGPL-3.0",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2014-02-25T12:48:46Z"
   },
   "Netflix/dgs-framework": {
     "description": "GraphQL for Java with Spring Boot made easy.",
     "html_url": "https://github.com/Netflix/dgs-framework",
     "homepage": "https://netflix.github.io/dgs",
     "language": "Kotlin",
-    "stargazers_count": 3393,
-    "forks_count": 345,
+    "stargazers_count": 3394,
+    "forks_count": 344,
     "topics": [
       "dgs",
       "graphql",
@@ -189,7 +197,8 @@
       "spring-boot"
     ],
     "license": "Apache-2.0",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2020-12-01T22:15:25Z"
   },
   "setchy/dgs-extended-formatters": {
     "description": "A set of DGS Directives for common formatting use-cases",
@@ -200,7 +209,8 @@
     "forks_count": 0,
     "topics": [],
     "license": "MIT",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2022-05-03T12:26:26Z"
   },
   "graphql-java/graphql-java-extended-scalars": {
     "description": "A library of extended scalars for graphql-java",
@@ -211,7 +221,8 @@
     "forks_count": 62,
     "topics": [],
     "license": "MIT",
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2018-09-28T01:05:42Z"
   },
   "graphql-java/graphql-java-extended-validation": {
     "description": "Validation library for graphql-java input",
@@ -222,78 +233,7 @@
     "forks_count": 34,
     "topics": [],
     "license": "MIT",
-    "archived": false
-  },
-  "chentsulin/awesome-graphql": {
-    "description": "Awesome list of GraphQL",
-    "html_url": "https://github.com/chentsulin/awesome-graphql",
-    "homepage": "",
-    "language": "Ruby",
-    "stargazers_count": 15118,
-    "forks_count": 1244,
-    "topics": [
-      "awesome",
-      "awesome-list",
-      "graphql",
-      "list"
-    ],
-    "license": "CC0-1.0",
-    "archived": false
-  },
-  "tailrocks/graphql-java-datetime": {
-    "description": "GraphQL ISO Date is a set of RFC 3339 compliant date/time scalar types to be used with graphql-java.",
-    "html_url": "https://github.com/tailrocks/graphql-java-datetime",
-    "homepage": "",
-    "language": "Java",
-    "stargazers_count": 153,
-    "forks_count": 25,
-    "topics": [
-      "date",
-      "datetime",
-      "graphql",
-      "graphql-java",
-      "scalars",
-      "time"
-    ],
-    "license": "Apache-2.0",
-    "archived": false
-  },
-  "graphql-java-kickstart": {
-    "description": null,
-    "html_url": "https://github.com/graphql-java-kickstart",
-    "homepage": "7 public repos",
-    "language": null,
-    "stargazers_count": 1281,
-    "forks_count": 353,
-    "topics": [],
-    "license": null,
-    "archived": false
-  },
-  "setchy/meme-driven.dev": {
-    "description": "Meme Driven Development (MDD) - A novel (and fun) approach to modern software development",
-    "html_url": "https://github.com/setchy/meme-driven.dev",
-    "homepage": "https://meme-driven.dev",
-    "language": "Astro",
-    "stargazers_count": 16,
-    "forks_count": 3,
-    "topics": [
-      "development",
-      "mdd",
-      "meme-driven",
-      "memes"
-    ],
-    "license": "MIT",
-    "archived": false
-  },
-  "setchy/guidealong-maps": {
-    "description": "Global GuideAlong Tours Explorer",
-    "html_url": "https://github.com/setchy/guidealong-maps",
-    "homepage": "https://guidealong.setchy.io",
-    "language": "JavaScript",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "topics": [],
-    "license": null,
-    "archived": false
+    "archived": false,
+    "first_commit_at": "2019-05-29T23:41:59Z"
   }
 }

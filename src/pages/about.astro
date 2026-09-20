@@ -4,11 +4,30 @@ import { skillCategories } from '../data/skills';
 import { sectionIcons, sectionIconFallback } from '../data/section-icons';
 
 const title = 'About me';
-const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor';
-const bioList = [
-  'Distinguished Engineer & Senior Director — Cisco',
-  'Former Chief Architect & VP — World Fuel (Fortune 100)',
-  'OSS Maintainer and Contributor',
+const subtitle = 'Distinguished Engineer · Chief Architect · Technology Advisor · OSS Maintainer';
+
+const careerHistory = [
+  {
+    company: 'Cisco',
+    role: 'Distinguished Engineer & Senior Director',
+    period: '2026 — Present',
+    logo: '/logos/cisco.svg',
+    description: 'Agentic engineering, engineering productivity and DevOps platform leadership at a global networking and security leader.',
+  },
+  {
+    company: 'World Fuel (World Kinect)',
+    role: 'Chief Architect & Vice President',
+    period: '2018 — 2026',
+    logo: '/logos/world-fuel.png',
+    description: 'Enterprise architecture, API and integration strategy at a Fortune 100 energy company.',
+  },
+  {
+    company: 'Suncorp Group',
+    role: 'Principal Domain Architect',
+    period: '2009 — 2018',
+    logo: '/logos/suncorp.png',
+    description: 'Domain architecture across insurance and financial services at a leading Australian group.',
+  },
 ];
 
 const interests = [
@@ -30,14 +49,22 @@ const interests = [
 
   <main class="main">
     <div class="container">
-      <section class="about-intro">
-        <img class="about-avatar" src="/avatar.png" alt="Adam Setch" />
-        <div class="about-bio">
-          <ul class="about-bio-list">
-            {bioList.map((b) => (
-              <li>{b}</li>
-            ))}
-          </ul>
+      <section class="about-section">
+        <h2><i class={`section-icon ${sectionIcons['Career history'] ?? sectionIconFallback}`} aria-hidden="true"></i>Career history</h2>
+        <div class="career-grid">
+          {careerHistory.map((job) => (
+            <div class="career-card">
+              <div class="career-card-head">
+                <span class="career-icon"><img class="career-logo" src={job.logo} alt={`${job.company} logo`} width="40" height="40" loading="lazy" /></span>
+                <div>
+                  <h3 class="career-company">{job.company}</h3>
+                  <p class="career-period">{job.period}</p>
+                </div>
+              </div>
+              <p class="career-role">{job.role}</p>
+              <p class="career-desc">{job.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -60,7 +87,7 @@ const interests = [
         <h2><i class={`section-icon ${sectionIcons['Skills'] ?? sectionIconFallback}`} aria-hidden="true"></i>Skills</h2>
         {skillCategories.map((category) => (
           <div class="skill-category">
-            <h3>{category.title}</h3>
+            <h3><i class={`section-icon ${sectionIcons[category.title] ?? sectionIconFallback}`} aria-hidden="true"></i>{category.title}</h3>
             <div class="skill-grid">
               {category.skills.map((skill) => (
                 <a class="skill-item" href={skill.url} target="_blank" rel="noreferrer" title={skill.name}>

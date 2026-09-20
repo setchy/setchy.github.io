@@ -9,6 +9,7 @@ interface ProjectCard extends Project {
   meta: GithubRepoMeta | null;
   link: string;
   roleInfo: { label: string; icon: string };
+  since: number | null;
 }
 
 function formatStars(n: number): string {
@@ -21,7 +22,8 @@ const cards: ProjectCard[] = projects
     const key = p.repo ? `${p.owner}/${p.repo}` : p.owner;
     const meta = key && githubCache[key] ? githubCache[key] : null;
     const link = p.url ?? `https://github.com/${p.owner}/${p.repo}`;
-    return { ...p, meta, link, roleInfo: ROLE_LABELS[p.role] };
+    const since = meta?.first_commit_at ? new Date(meta.first_commit_at).getFullYear() : null;
+    return { ...p, meta, link, roleInfo: ROLE_LABELS[p.role], since };
   })
   .sort((a, b) => {
     const aStars = a.meta?.stargazers_count ?? -1;
@@ -97,6 +99,13 @@ const description = 'A collection of open source software projects which I enjoy
                 .map((c) => (
                   <a class="project-card" data-role={c.role} href={c.link} target="_blank" rel="noopener">
                     <div class="project-card-top">
+                      <span class="project-role" title={c.roleInfo.label}>
+                        <i class={c.roleInfo.icon} aria-hidden="true"></i>
+                        {c.roleInfo.label}
+                      </span>
+                      <span class="project-stars">★ {formatStars(c.meta?.stargazers_count ?? 0)}</span>
+                    </div>
+                    <div class="project-name-row">
                       <img
                         class="project-owner-avatar"
                         src={`https://github.com/${c.owner}.png?size=80`}
@@ -105,15 +114,11 @@ const description = 'A collection of open source software projects which I enjoy
                         referrerpolicy="no-referrer"
                         onerror="this.style.display='none'"
                       />
-                      <span class="project-role" title={c.roleInfo.label}>
-                        <i class={c.roleInfo.icon} aria-hidden="true"></i>
-                        {c.roleInfo.label}
-                      </span>
-                      <span class="project-stars">★ {formatStars(c.meta?.stargazers_count ?? 0)}</span>
+                      <span class="project-name">{c.repo ? `${c.owner}/${c.repo}` : c.owner}</span>
                     </div>
-                    <div class="project-name">{c.repo ? `${c.owner}/${c.repo}` : c.owner}</div>
                     <p class="project-desc">{c.meta?.description ?? c.note ?? ''}</p>
                     <div class="project-card-bottom">
+                      {c.since && <span class="project-since">since {c.since}</span>}
                       {c.meta?.language && <span class="project-lang">{c.meta.language}</span>}
                       {!c.meta && c.url && (
                         <span class="project-homepage">{c.url.replace(/^https?:\/\//, '')}</span>

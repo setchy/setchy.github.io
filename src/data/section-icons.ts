@@ -1,4 +1,5 @@
-// Curated section-heading icons for Library / Industry / OSS group headers.
+// Curated section-heading icons for Library / Industry / OSS group headers
+// and About page sections / skill categories.
 // Keys are the exact topic/category strings used in the section headings.
 // All icons must exist in src/styles/icons.css (generated FA mask set).
 export const sectionIcons: Record<string, string> = {
@@ -30,7 +31,18 @@ export const sectionIcons: Record<string, string> = {
   'WoW': 'fa-solid fa-handshake',
   // About sections
   'Advisory & interests': 'fa-solid fa-compass',
+  'Career history': 'fa-solid fa-briefcase',
   'Skills': 'fa-solid fa-gauge-high',
+  // Skills categories (About page)
+  'Languages': 'fa-solid fa-code',
+  'Frameworks & Libraries': 'fa-solid fa-layer-group',
+  'State & Data': 'fa-solid fa-database',
+  'Backend': 'fa-solid fa-server',
+  'APIs & Integrations': 'fa-solid fa-network-wired',
+  'Package Management': 'fa-solid fa-box',
+  'Build & Quality': 'fa-solid fa-hammer',
+  'DevOps': 'fa-solid fa-gears',
+  'Tools': 'fa-solid fa-wrench',
 };
 
 export const sectionIconFallback = 'fa-solid fa-map';
