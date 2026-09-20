@@ -34,6 +34,47 @@ try {
   process.exit(1);
 }
 
+// Run a GraphQL query via the `gh` CLI (no user authorization scopes beyond gh's token required).
+function apiGraphql(query) {
+  const res = spawnSync('gh', ['api', 'graphql', '--input', '-'], {
+    encoding: 'utf8',
+    input: JSON.stringify({ query }),
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  if (res.status !== 0) return null;
+  try {
+    return JSON.parse(res.stdout);
+  } catch {
+    return null;
+  }
+}
+
+// Sum of setchy's PUBLIC contributions across every year GitHub tracks.
+// Each year is fetched as a separate alias in a single batched query.
+// Reacts to GraphQL failures by returning undefined (caller keeps prior data).
+async function totalPublicContributions(author) {
+  const meta = apiGraphql(
+    `query { user(login: ${JSON.stringify(author)}) { contributionsCollection { contributionYears } } }`,
+  );
+  const years = meta?.data?.user?.contributionsCollection?.contributionYears;
+  if (!Array.isArray(years) || years.length === 0) return undefined;
+
+  let q = 'query {';
+  for (const year of years) {
+    q += ` y${year}: user(login: ${JSON.stringify(author)}) { contributionsCollection(from: "${year}-01-01T00:00:00Z", to: "${year}-12-31T00:00:00Z") { contributionCalendar { totalContributions } } }`;
+  }
+  q += ' }';
+  const res = apiGraphql(q);
+  if (!res?.data) return undefined;
+
+  let total = 0;
+  for (const [key, value] of Object.entries(res.data)) {
+    if (!key.startsWith('y')) continue;
+    total += value?.contributionsCollection?.contributionCalendar?.totalContributions ?? 0;
+  }
+  return total;
+}
+
 // GET an API resource via the `gh` CLI. Returns { ok, status, body, link }.
 function apiGet(pathAndQuery, { includeHeaders = false } = {}) {
   const args = ['api'];
@@ -194,17 +235,31 @@ for (const p of projects) {
 writeFileSync(CACHE_OUT, JSON.stringify(cache, null, 2) + '\n');
 console.log(`\nWrote ${Object.keys(cache).length} entries to ${CACHE_OUT.pathname.split('/').slice(-1)}`);
 
-// Fetch user stats (followers)
+// Fetch user stats (followers + all-time public contributions)
 try {
   const res = await apiGet('users/setchy');
+  const contributions = await totalPublicContributions('setchy');
   if (res.ok) {
     const user = res.body;
-    const stats = {
-      github: { followers: user.followers },
+    const previous = readFileSync(STATS_OUT, 'utf8');
+    let prevContributions = 0;
+    try {
+      prevContributions = JSON.parse(previous).github?.contributions ?? 0;
+    } catch {
+      prevContributions = 0;
+    }
+    const statsData = {
+      github: {
+        followers: user.followers,
+        // keep the previously cached value when this run couldn't determine one
+        contributions: contributions ?? prevContributions,
+      },
       wakatime: { hours: 2879 },
     };
-    writeFileSync(STATS_OUT, JSON.stringify(stats, null, 2) + '\n');
-    console.log(`Wrote stats to ${STATS_OUT.pathname.split('/').slice(-1)} (followers: ${user.followers})`);
+    writeFileSync(STATS_OUT, JSON.stringify(statsData, null, 2) + '\n');
+    console.log(
+      `Wrote stats to ${STATS_OUT.pathname.split('/').slice(-1)} (followers: ${user.followers}, contributions: ${contributions})`,
+    );
   }
 } catch (err) {
   console.warn(`  err fetching user stats: ${err.message}`);

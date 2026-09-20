@@ -54,7 +54,8 @@ jobs:
           body: |
             Auto-generated weekly refresh of:
             - GitHub repository statistics (stars, forks, description,
-              language) and user stats (followers) from the GitHub API
+              language) and user stats (followers, all-time contributions)
+              from the GitHub API
             - Travel statistics (countries, cities, regions) from the
               Skratch share API
 

@@ -71,6 +71,14 @@ const homepageOf = (c: ProjectCardData): string | undefined => {
       countTo={stats.github.followers}
     />
     <StatBadge
+      icon="fa-solid fa-chart-line"
+      href="https://github.com/setchy"
+      value={stats.github.contributions.toLocaleString()}
+      label="contributions"
+      countUp
+      countTo={stats.github.contributions}
+    />
+    <StatBadge
       icon="fa-solid fa-keyboard"
       href="https://wakatime.com/@2b948ae2-4be1-4020-8a57-7de60b53fe1d"
       value={stats.wakatime.hours.toLocaleString()}

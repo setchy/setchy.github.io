@@ -25,7 +25,7 @@ const featured = projects
   .sort((a, b) => b.stars - a.stars);
 
 const stats = [
-  { value: formatStars(heroStats.stars), label: 'GitHub stars', href: '/open-source/' },
+  { value: heroStats.contributions.toLocaleString(), label: 'GitHub contributions', href: 'https://github.com/setchy' },
   { value: String(heroStats.projects), label: 'open-source projects', href: '/open-source/' },
   { value: String(heroStats.talks), label: 'talks & case studies', href: '/industry/' },
   { value: String(heroStats.countries), label: 'countries traveled', href: '/travel/' },

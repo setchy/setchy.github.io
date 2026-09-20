@@ -5,6 +5,7 @@ import { githubCache } from '../data/github-cache';
 import { industryItems, TYPE_LABELS as INDUSTRY_TYPES } from '../data/industry';
 import { libraryItems, TYPE_LABELS as LIBRARY_TYPES } from '../data/library';
 import { skillCategories } from '../data/skills';
+import { stats } from '../data/stats';
 import { travelStats } from '../data/travel';
 
 const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -16,7 +17,7 @@ const strip = (s: string) =>
     .replace(/\s+/g, ' ')
     .trim();
 
-const totalStars = Object.values(githubCache).reduce((s, r) => s + (r.stargazers_count ?? 0), 0);
+const totalContributions = stats.github.contributions;
 
 const openSourceBody = strip(
   projects
@@ -26,7 +27,7 @@ const openSourceBody = strip(
       return [p.repo ? `${p.owner}/${p.repo}` : `${p.owner} (organization)`, p.category, ROLE_LABELS[p.role].label, meta?.description ?? p.note ?? '', meta?.homepage ?? ''].join(' — ');
     })
     .join('\n') +
-    `\nTotal GitHub stars across projects: ${totalStars}. Followers of Adam Setch, open-source maintainer and contributor.`,
+    `\nAll-time GitHub contributions: ${totalContributions}. Followers of Adam Setch, open-source maintainer and contributor.`,
 );
 
 const industryBody = strip(
