@@ -27,7 +27,7 @@
     "html_url": "https://github.com/gitify-app/gitify",
     "homepage": "https://gitify.io",
     "language": "TypeScript",
-    "stargazers_count": 5351,
+    "stargazers_count": 5352,
     "forks_count": 292,
     "topics": [
       "bitbucket",
@@ -56,8 +56,8 @@
     "html_url": "https://github.com/renovatebot/renovate",
     "homepage": "https://mend.io/renovate",
     "language": "TypeScript",
-    "stargazers_count": 22542,
-    "forks_count": 3319,
+    "stargazers_count": 22549,
+    "forks_count": 3322,
     "topics": [
       "azure-devops",
       "bitbucket",
@@ -78,7 +78,7 @@
     "html_url": "https://github.com/cdxgen/cdxgen",
     "homepage": "https://cdxgen.github.io/cdxgen/",
     "language": "JavaScript",
-    "stargazers_count": 1074,
+    "stargazers_count": 1075,
     "forks_count": 261,
     "topics": [
       "bom",
@@ -124,7 +124,7 @@
     "html_url": "https://github.com/DependencyTrack/dependency-track",
     "homepage": "https://dependencytrack.org/",
     "language": "Java",
-    "stargazers_count": 4224,
+    "stargazers_count": 4226,
     "forks_count": 817,
     "topics": [
       "appsec",
@@ -188,7 +188,7 @@
     "homepage": "https://netflix.github.io/dgs",
     "language": "Kotlin",
     "stargazers_count": 3394,
-    "forks_count": 344,
+    "forks_count": 345,
     "topics": [
       "dgs",
       "graphql",
@@ -241,7 +241,7 @@
     "html_url": "https://github.com/chentsulin/awesome-graphql",
     "homepage": "",
     "language": "Ruby",
-    "stargazers_count": 15119,
+    "stargazers_count": 15118,
     "forks_count": 1245,
     "topics": [
       "awesome",
@@ -275,7 +275,7 @@
   "graphql-java-kickstart": {
     "description": null,
     "html_url": "https://github.com/graphql-java-kickstart",
-    "homepage": "8 public repos",
+    "homepage": "7 public repos",
     "language": null,
     "stargazers_count": 1281,
     "forks_count": 353,
