@@ -27,8 +27,8 @@
     "html_url": "https://github.com/gitify-app/gitify",
     "homepage": "https://gitify.io",
     "language": "TypeScript",
-    "stargazers_count": 5352,
-    "forks_count": 292,
+    "stargazers_count": 5354,
+    "forks_count": 293,
     "topics": [
       "bitbucket",
       "codeberg",
@@ -56,8 +56,8 @@
     "html_url": "https://github.com/renovatebot/renovate",
     "homepage": "https://mend.io/renovate",
     "language": "TypeScript",
-    "stargazers_count": 22549,
-    "forks_count": 3322,
+    "stargazers_count": 22587,
+    "forks_count": 3332,
     "topics": [
       "azure-devops",
       "bitbucket",
@@ -78,7 +78,7 @@
     "html_url": "https://github.com/cdxgen/cdxgen",
     "homepage": "https://cdxgen.github.io/cdxgen/",
     "language": "JavaScript",
-    "stargazers_count": 1075,
+    "stargazers_count": 1077,
     "forks_count": 261,
     "topics": [
       "bom",
@@ -107,8 +107,8 @@
     "html_url": "https://github.com/DependencyTrack/frontend",
     "homepage": "https://dependencytrack.org/",
     "language": "Vue",
-    "stargazers_count": 171,
-    "forks_count": 252,
+    "stargazers_count": 172,
+    "forks_count": 253,
     "topics": [
       "front-end",
       "hacktoberfest",
@@ -124,7 +124,7 @@
     "html_url": "https://github.com/DependencyTrack/dependency-track",
     "homepage": "https://dependencytrack.org/",
     "language": "Java",
-    "stargazers_count": 4226,
+    "stargazers_count": 4236,
     "forks_count": 817,
     "topics": [
       "appsec",
@@ -158,7 +158,7 @@
     "homepage": "https://setchy.io/radars",
     "language": "TypeScript",
     "stargazers_count": 20,
-    "forks_count": 4,
+    "forks_count": 5,
     "topics": [
       "tech-radar"
     ],
@@ -171,8 +171,8 @@
     "html_url": "https://github.com/thoughtworks/build-your-own-radar",
     "homepage": "",
     "language": "CSS",
-    "stargazers_count": 2567,
-    "forks_count": 1124,
+    "stargazers_count": 2570,
+    "forks_count": 1123,
     "topics": [
       "opensource",
       "radar",
@@ -187,8 +187,8 @@
     "html_url": "https://github.com/Netflix/dgs-framework",
     "homepage": "https://netflix.github.io/dgs",
     "language": "Kotlin",
-    "stargazers_count": 3394,
-    "forks_count": 345,
+    "stargazers_count": 3395,
+    "forks_count": 344,
     "topics": [
       "dgs",
       "graphql",
@@ -241,8 +241,8 @@
     "html_url": "https://github.com/chentsulin/awesome-graphql",
     "homepage": "",
     "language": "Ruby",
-    "stargazers_count": 15118,
-    "forks_count": 1245,
+    "stargazers_count": 15123,
+    "forks_count": 1247,
     "topics": [
       "awesome",
       "awesome-list",
